@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHP BO component</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css">
+    <style media="all">
+        .wrap{display: block;}
+        .container{display: block;}
+        .guide_inner{padding: 0 40px 40px;}
+        .guide_inner .h2 {margin:0 -40px 40px;padding: 10px 40px;font-size: 24px;font-weight: 700;background-color: #F3F5F6;}
+        .guide_inner .h3{position: relative;margin-top: 30px;margin-bottom: 10px;font-size: 18px;}
+        .guide_inner .h3:first-of-type{margin-top:0;}
+        .guide_inner .inputbox input+input{margin-top:5px}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <!--title-->
+            <div class="guide_sec">
+                <div class="guide_inner">
+                    <h2 class="h2">Title</h2>
+                    <h3 class="h3">title</h3>
+                    <div class="title bdr">
+                        <h2>회원관리</h2>
+                    </div>
+                    <h3 class="h3">title+버튼</h3>
+                    <div class="tit_wrap bdr">
+                        <div class="tit_area">
+                            <div class="title">
+                                <h2>회원 정보 상세</h2>
+                            </div>
+                            <button type="button" class="btn small bctype2"><span>수정</span></button>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" class="btn small bctype2"><span>임시카드등록</span></button>
+                            <button type="button" class="btn small bctype2"><span>쿠폰/1일권</span></button>
+                            <button type="button" class="btn small bctype2"><span>청구</span></button>
+                            <button type="button" class="btn small bctype2"><span>환불</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//title-->
+
+
+            <!--button-->
+            <div class="guide_sec">
+                <div class="guide_inner">
+                    <h2 class="h2">Button</h2>
+                    <h3 class="h3">.btn.big[H40]</h3>
+                    <button type="button" class="btn big bctype1"><span>검색</span></button>
+                    <button type="button" class="btn big bctype2"><span>초기화</span></button>
+                    <h3 class="h3">.btn[H32]</h3>
+                    <button type="button" class="btn bctype1"><span>검색</span></button>
+                    <button type="button" class="btn bctype2"><span>초기화</span></button>
+                    <h3 class="h3">.btn.small[H24]</h3>
+                    <button type="button" class="btn small bctype1"><span>검색</span></button>
+                    <button type="button" class="btn small bctype2"><span>초기화</span></button>
+                </div>
+            </div>
+            <!--//button-->
+
+            <!--form-->
+            <div class="guide_sec">
+                <div class="guide_inner">
+                    <h2 class="h2">Form</h2>
+                    <h3 class="h3">checkbox</h3>
+                    <span class="checkbox">
+                        <input type="checkbox" id="checkbox1" name="checkbox" title="해당항목 선택">
+                        <label for="checkbox1">체크박스 (Dafault)</label>
+                    </span>
+                    <span class="checkbox">
+                        <input type="checkbox" id="checkbox2" name="checkbox" title="해당항목 선택" checked>
+                        <label for="checkbox2">체크박스 (Active)</label>
+                    </span>
+                    <span class="checkbox">
+                        <input type="checkbox" id="checkbox3" name="checkbox" title="해당항목 선택" disabled>
+                        <label for="checkbox3">체크박스 (Disable)</label>
+                    </span>
+
+                    <h3 class="h3">radio</h3>
+                    <span class="radio">
+                        <input type="radio" id="radio1" name="radio" title="해당항목 선택">
+                        <label for="radio1">라디오버튼 (Dafault)</label>
+                    </span>
+                    <span class="radio">
+                        <input type="radio" id="radio1" name="radio" title="해당항목 선택" checked>
+                        <label for="radio1">라디오버튼 (Active)</label>
+                    </span>
+                    <span class="radio">
+                        <input type="radio" id="radio1" name="radio" title="해당항목 선택" disabled>
+                        <label for="radio1">라디오버튼 (Disable)</label>
+                    </span>
+
+                    <h3 class="h3">input</h3>
+                    <div class="inputbox">
+                        <input type="text" placeholder="Default 텍스트필드" value="" title="텍스트를 입력해주세요">
+                        <input type="text" placeholder="Done 텍스트필드" value="" title="텍스트를 입력해주세요">
+                        <input type="text" placeholder="Disabled 텍스트필드" value="" title="텍스트를 입력해주세요" disabled="">
+                    </div>
+                    <h3 class="h3">select</h3>
+                    <select id="idDep" title="">
+                        <option value="" selected="">전체</option>
+                        <option value="">전체</option>
+                    </select>
+                    <h3 class="h3">calendar</h3>
+                    <div class="input_date">
+                        <span class="date">
+                            <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
+                        </span>
+                        <span class="dash">~</span>
+                        <span class="date">
+                            <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
+                        </span>
+                    </div>
+                    <h3 class="h3">search</h3>
+                    <div class="inputbox search">
+                        <input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력해주세요." title="검색어 입력" autocomplete="off" value="">
+                        <button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+                    </div>
+                </div>
+            </div>
+            <!--//form-->
+
+        </div>
+    </div>
+</body>
+</html>

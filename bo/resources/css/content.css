@@ -1,0 +1,104 @@
+@charset "utf-8";
+:root{
+    --point : #267DFF;
+}
+
+
+button{overflow:visible;display:inline-block;margin:0;padding:0;border:0;border-radius:0;background:none;font-family:inherit;font-size:16px;font-weight:400;color:var(--point);line-height:inherit;vertical-align:top;text-decoration:none;cursor:pointer;touch-action:manipulation;}
+button::-moz-focus-inner{padding:0;border:0;}
+button span,
+button:after{position:relative;}
+button[disabled], a.disabled{cursor:default;pointer-events:none;}
+
+/************************* Form *************************/
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="tel"]{padding:0 12px;width:100%;height:32px;font-size:12px;font-weight:500;border:1px solid #DCE0E5;border-radius:4px;background-color:#fff;color:#111;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;}
+input[type="text"]:disabled,
+input[type="password"]:disabled,
+input[type="tel"]:disabled,
+input[type="search"]:disabled{background-color:#E7EBEE;opacity:1;color:#7F8A94;cursor:default;-webkit-tap-highlight-color:transparent;}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="search"]:focus{border-color:#333;}
+input[type="file"]::-webkit-file-upload-button{cursor:pointer;}
+
+input[disabled],
+input[disabled] + label{cursor:default;pointer-events:none;}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{height:auto;}
+
+input[type="text"]::-ms-clear,
+input[type="password"]::-ms-reveal,
+input[type="tel"]::-ms-clear,
+input[type="tel"]::-ms-reveal,
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal{display:none;}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration{display:none;}
+
+::-webkit-input-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
+::-moz-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
+:-ms-input-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
+:-moz-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
+
+select{position: relative;display: inline-block;position: relative;height:32px;padding:0 36px 0 12px;vertical-align: middle;font-size:12px;-webkit-appearance: none;appearance: none;border:1px solid #DCE0E5;border-radius:4px;background:#fff url('../images/ico_select.png') right 8px center no-repeat;}
+select::-ms-expand{display: none; /* IE 10, 11 */}
+select:disabled{border-color:#ccc;background-color:#f7f7f7;/* opacity:0.5; */}
+
+/*checkbox*/
+.checkbox{display: inline-block;position: relative;line-height: 1;}
+.checkbox input[type="checkbox"]{overflow:hidden;position:absolute;left:0;top:0;width:16px;height:16px;margin:0;padding:0;border:0 none;opacity:0;}
+.checkbox label{display:inline-block;position:relative;padding-left:24px;font-size:12px;line-height:16px;color:#111;vertical-align:top;word-break:break-all;cursor:pointer;background-color:#fff;}
+.checkbox label:before{content:'';display:inline-block;position:absolute;left:0;top:0;width:16px;height:16px;border:1px solid #DCE0E5;border-radius:2px}
+.checkbox input[type="checkbox"]:checked + label:before{border-color:var(--point);background:var(--point) url('../images/ico_checkbox.svg') no-repeat center;}
+.checkbox label > span{display:inline-block;font-size:inherit;word-break:inherit;}
+.checkbox input[type="checkbox"]:disabled+label:before{border-color:#bdc5d3;background:#e7eaef;}
+.checkbox input[type="checkbox"].readonly+label:before{border-color:#bdc5d3;background:url('../../images/sp/common/ico-readonly.png') no-repeat 0 0 #e7eaef;}
+.checkbox input[type="checkbox"]:disabled+label,.checkbox input[type="checkbox"].readonly+label{color:#727272;}
+
+/*radio*/
+.radio{display: inline-block;position: relative;line-height: 1;}
+.radio input[type="radio"]{overflow:hidden;position:absolute;left:0;top:0;width:16px;height:16px;margin:0;padding:0;border:0 none;opacity:0;}
+.radio label{display:inline-block;position:relative;padding-left:24px;font-size:12px;line-height:16px;color:#111;vertical-align:top;word-break:break-all;cursor:pointer;}
+.radio label:before{content:'';display:inline-block;position:absolute;left:0;top:0;width:16px;height:16px;border:1px solid #DCE0E5;background-color:#fff;border-radius: 50%;}
+.radio input[type="radio"]:checked+label:before{border-color:var(--point);background-color:var(--point);}
+.radio input[type="radio"]:checked+label:after, .radio input[type="radio"].readonly+label:after{content: '';display: inline-block;position: absolute;top:5px;left:5px;width:6px;height: 6px;border-radius: 50%;background: #fff;}
+.radio label > span{display:inline-block;font-size:inherit;word-break:inherit;}
+.radio input[type="radio"].readonly+label:before{border-color:#bdc5d3;background:#e7eaef;}
+.radio input[type="radio"].readonly+label:after{background:#8992a0;}
+.radio input[type="radio"].readonly+label,.radio input[type="radio"]:disabled+label{color:#727272;}
+.radio input[type="radio"]:disabled+label:before{border-color:#bdc5d3;background:#e7eaef;}
+
+/*date*/
+.input_date .date{position: relative;display: inline-block;}
+.input_date .date input{width: 140px;}
+.input_date .dash{display: inline-block;padding: 0 4px;color:#213A56;font-size:12px;font-weight:600;}
+
+
+/*btn_ico*/
+.btn_ico{display: inline-flex;}
+.btn_ico.search{width:16px;height:16px;background: url('../images/ico_search.svg') no-repeat center center / 16px auto;}
+.inputbox{position: relative;}
+.inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
+
+/*button*/
+.btn{display:inline-flex;position:relative;align-items:center;justify-content:center;width:auto;min-width:80px;height:32px;padding:0 12px;line-height:12px;font-size:12px;font-weight:500;border:1px solid transparent;text-align:center;border-radius:4px;}/* h32 */
+.btn.big{height:40px;line-height:16px;font-size:14px;font-weight:600;min-width:120px;}/*h40*/
+.btn.small{height:24px;min-width:37px;}/*h24*/
+
+/* button : bgcolor */
+.bctype1{background-color:var(--point);border-color:var(--point);color:#fff;}
+.bctype2{background-color:#fff;border-color:var(--point);color:var(--point);}
+
+
+/*title*/
+.bdr{border-bottom:1px solid #E7EBEE;margin-bottom:12px;}
+.title h2{font-size:16px;font-weight:600;padding:10px 0;}
+.tit_wrap{display:flex;align-items:center;justify-content:space-between;}
+.tit_wrap .tit_area,.tit_wrap .btn_area{display:inline-flex;column-gap:8px;align-items:center;}
