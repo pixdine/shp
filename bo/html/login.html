@@ -4,8 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css">
 </head>
 <body>
-    
+    <div id="wrap" class="wrap">
+        <div class="container login">
+            <div class="login_wrapper">
+                <h1 class="login_logo">
+                    <a href="#">
+                        <img src="../resources/images/logo_login.svg" alt="SHP">
+                    </a>
+                </h1>
+                <div class="login_area">
+                    <div class="log_img">
+                        <img src="../resources/images/login_img.png" alt="">
+                    </div>
+                    <div class="log_area">
+                        <div class="login_input">
+                            <div class="heading_area">
+                                <h2 class="tit">
+                                    SHP 운영시스템
+                                </h2>
+                            </div>
+                            <div class="form">
+                                <div class="radio_list">
+                                    <span class="radio">
+                                        <input type="radio" id="radio1" name="radio" title="운영매니저 선택">
+                                        <label for="radio1">운영매니저</label>
+                                    </span>
+                                    <span class="radio">
+                                        <input type="radio" id="radio2" name="radio" title="강사 선택">
+                                        <label for="radio2">강사</label>
+                                    </span>
+                                </div>
+                                <div class="input_list">
+                                    <div class="inputbox">
+                                        <input type="text" name="username" id="id" placeholder="ID">
+                                    </div>
+                                    <div class="inputbox">
+                                        <input type="password" name="password" id="password" placeholder="PW">
+                                    </div>
+                                </div>
+                                <div class="login_etc">
+                                    <div class="checkbox_list">
+                                        <span class="checkbox">
+                                            <input type="checkbox" id="checkbox1" name="checkbox" title="아이디 저장 선택">
+                                            <label for="checkbox1">아이디 저장</label>
+                                        </span>
+                                    </div>
+                                    <ul class="find_wrap">
+                                        <li><a href="" class="find_text">아이디찾기</a></li>
+                                        <li><a href="" class="find_text">비밀번호찾기</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--부가 인증-->
+                            <div class="function_wrap">
+                                <h3>부가 인증</h3>
+                                <div class="form_item">
+                                    <label class="form_label" for="text3">SMS</label>
+                                    <div class="form_control">
+                                        <div class="inputbox">
+                                            <input type="text" placeholder="인증 번호를 입력해주세요" value="" title="텍스트를 입력해주세요">
+                                        </div>
+                                        <button class="btn bctype2"><span>인증번호 요청</span></button>
+                                    </div>
+                                </div>
+                                <div class="time_area">
+                                    <span>남은시간 02:59</span>
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="btn_login_wrap">
+                            <button type="submit" class="btn big bctype1" id=""><span class="btn_text">로그인</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
