@@ -6,9 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
-	<!-- css, Jquery -->
+
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
-	<!-- //css, Jquery -->
 </head>
 <body>
 	<div id="wrap" class="wrap">
@@ -76,12 +75,35 @@
                 
                 <nav>
                     <ul class="menu_list">
-                        <li><a href="#">회원관리</a></li>
-                        <li class="on"><a href="#">강사/강습관리</a></li>
+                        <li>
+                            <a href="#">회원관리</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">개인 회원 관리</a></li>
+                                <li><a href="#">로그인 이력 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="on">
+                            <a href="#">강사/강습관리</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">개인 회원 관리</a></li>
+                                <li><a href="#">로그인 이력 관리</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#">업장/출입관리</a></li>
                         <li><a href="#">매출관리</a></li>
                         <li><a href="#">통계관리</a></li>
-                        <li><a href="#">시스템관리</a></li>
+                        <li>
+                            <a href="#">시스템관리</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">업무그룹관리</a></li>
+                                <li><a href="#">앱버전관리</a></li>
+                                <li><a href="#">메뉴관리</a></li>
+                                <li><a href="#">사용자관리</a></li>
+                                <li><a href="#">기본정보관리</a></li>
+                                <li><a href="#">모니터링관리</a></li>
+                                <li><a href="#">개인관리</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
 
@@ -93,7 +115,7 @@
 		<!-- container -->
 		<div id="container" class="container">
             <!-- aside -->
-            <aside class="aside active">
+            <aside class="aside active" id="sidebar">
                 <div class="aside_cont">
                     <h2>강사/강습관리</h2>
 
@@ -103,7 +125,7 @@
                             <li><a href="#" class="btn_menu">강사계약관리</a></li>
                             <li class="has_sub on">
                                 <button type="button" class="btn_menu">강사실적관리</button>
-                                <ul class="sub_menu">
+                                <ul class="lnb_depth2">
                                     <li class="on"><a href="#" class="btn_menu">강습실적조회</a></li>
                                     <li><a href="#" class="btn_menu">강습실적관리</a></li>
                                 </ul>
@@ -112,18 +134,13 @@
                     </div>
                 </div>
 
-                <div class="bookmark">
+                <div class="bookmark" id="bookmark">
                     <p class="tit"><button type="button" class="btn_bookmark">즐겨찾기</button></p>
 
                     <div class="bookmark_list_wrap">
                         <ul class="bookmark_list">
                             <li><a href="#">강사관리</a></li>
                             <li><a href="#">강사계약관리</a></li>
-                            <li><a href="#">강사일정관리</a></li>
-                            <li><a href="#">강사일정관리</a></li>
-                            <li><a href="#">강사일정관리</a></li>
-                            <li><a href="#">강사일정관리</a></li>
-                            <li><a href="#">강사일정관리</a></li>
                         </ul>
                     </div>
                 </div>
