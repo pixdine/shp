@@ -15,32 +15,78 @@
 	<div id="wrap" class="wrap">
 		<!-- header -->
 		<header id="header" class="header">
-            <div class="header_wrap">
+            <div class="header_top">
                 <div class="header_item">
                     <h1 class="logo"><a href="#"><img src="../resources/images/logo.svg" alt="SHP Backoffice"></a></h1>
 
                     <div class="utils">
-                        <span class="item noti">
-                            <a href="#">공지사항 <span class="cnt">4</span></a>
-                        </span>
-                        <span class="item doc">
-                            <a href="#">매출 <span class="cnt">4</span></a>
-                        </span>
-                        <span class="item voc">
-                            <a href="#">VOC <span class="cnt">4</span></a>
-                        </span>
+                        <a href="#">
+                            <span class="item noti">
+                                <i class="ico_noti"></i>
+                                <span class="txt">공지사항</span>
+                                <span class="cnt">4</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="item doc">
+                                <i class="ico_doc"></i>
+                                <span class="txt">매출</span>
+                                <span class="cnt">4</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="item voc"> 
+                                <i class="ico_voc"></i>
+                                <span class="txt">VOC</span>
+                                <span class="cnt">100</span>
+                            </span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="header_item">
-                    <span class="time_area">남은시간 <em class="time">04:34</em></span>
+                <div class="header_item time_area">
+                    <span class="item">
+                        <i class="ico_time"></i>
+                        <span class="txt">남은시간 <em class="time">04:34</em></span>
+                    </span>
                 </div>
 
                 <div class="header_item">
-                    <div class="user">
-                        <span class="nm">김민수</span>
+                    <button type="button">
+                        <span class="item user">
+                            <i class="ico_user"></i>
+                            <span class="txt">김민수</span>
+                        </span>
+                    </button>
+                    <div class="sorting">
+                        <select title="업장선택">
+                            <option>업장선택</option>
+                        </select>
+                        <select title="지점선택">
+                            <option>지점선택</option>
+                        </select>
                     </div>
                 </div>
+            </div>
+
+            <div class="gnb_wrap">
+                <div class="search">
+                    <input type="text" title="메뉴 검색어 입력" placeholder="메뉴 검색">
+                    <button type="button" class="btn_search"><span class="blind">검색</span></button>
+                </div>
+                
+                <nav>
+                    <ul class="menu_list">
+                        <li><a href="#">회원관리</a></li>
+                        <li class="on"><a href="#">강사/강습관리</a></li>
+                        <li><a href="#">업장/출입관리</a></li>
+                        <li><a href="#">매출관리</a></li>
+                        <li><a href="#">통계관리</a></li>
+                        <li><a href="#">시스템관리</a></li>
+                    </ul>
+                </nav>
+
+                <button type="button" class="btn_allmenu"><span class="blind">전체메뉴 보기</span></button>
             </div>
 		</header>
 		<!-- //header -->
@@ -48,24 +94,33 @@
 		<!-- container -->
 		<div id="container" class="container">
             <!-- aside -->
-            <aside class="aside"></aside>
+            <aside class="aside">
+                <div class="aside_cont">
+                    
+
+                    <div class="lnb_menu_wrap">
+                        <ul class="lnb_menu">
+                            <li>
+                                <a href="#">강사관리</a>
+                            </li>
+                            <li>
+                                <a href="#">강사계약관리</a>
+                            </li>
+                            <li>
+                                <a href="#">강사실적관리</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bookmark">
+                    <p class="tit">즐겨찾기</p>
+                </div>
+            </aside>
             <!-- //aside -->
 
             <!-- contents -->
             <main role="main" class="contents">
-                <div class="gnb_wrap">
-                    <nav>
-                        <ul class="menu_list">
-                            <li><a href="#">회원관리</a></li>
-                            <li class="on"><a href="#">강사/강습관리</a></li>
-                            <li><a href="#">업장/출입관리</a></li>
-                            <li><a href="#">매출관리</a></li>
-                            <li><a href="#">통계관리</a></li>
-                            <li><a href="#">시스템관리</a></li>
-                        </ul>
-                    </nav>
-                </div>
-
                 <iframe>contents</iframe>
             </main>
             <!-- contents -->
