@@ -8,3 +8,22 @@
 .title h2{font-size:16px;font-weight:600;padding:10px 0;}
 .tit_wrap{display:flex;align-items:center;justify-content:space-between;}
 .tit_wrap .tit_area,.tit_wrap .btn_area{display:inline-flex;column-gap:8px;align-items:center;}
+
+
+/*login*/
+.login{position:relative;background:url('../images/login_bg.png') no-repeat;background-size: 100% 100%;display: flex;align-items: center;}
+.login::before{content:'';position:absolute;top: 0;left: 0;right: 0;bottom: 0;width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.6);}
+.login_wrapper{width:850px;margin:0 auto;padding: 100px 0;z-index: 1;}
+.login_logo{text-align: center;margin-bottom:32px;}
+.login_area{display:flex;column-gap:32px;padding:64px;background:#fff;}
+.login_area .log_img{width:390px;}
+.log_area{display:flex;flex-direction:column;justify-content: space-between;width:calc(100% - 422px);}
+.log_area .heading_area{margin-bottom:32px;}
+.log_area .heading_area .tit{font-size:24px;font-weight:700;}
+.log_area .form .input_list{margin:16px 0}
+.log_area .form .login_etc{display:flex;align-items:center;justify-content:space-between;}
+.log_area .form .login_etc .find_wrap{display:flex;column-gap:12px;}
+.log_area .form .login_etc .find_wrap li a{font-size:12px;color:var(--point);text-decoration:underline;}
+.btn_login_wrap .btn{width:100%;}
+.function_wrap{margin-top:32px;}
+.function_wrap h3{font-size:16px;font-weight:600;line-height:19px;}

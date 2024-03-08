@@ -94,6 +94,8 @@ input[type="search"]::-webkit-search-results-decoration{display:none;}
 :-ms-input-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
 :-moz-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
 
+::before, ::after {box-sizing: border-box;}
+
 select{position: relative;display: inline-block;position: relative;height:32px;padding:0 36px 0 12px;vertical-align: middle;font-size:12px;-webkit-appearance: none;appearance: none;border:1px solid #DCE0E5;border-radius:4px;background:#fff url('../images/ico_select.png') right 8px center no-repeat;}
 select::-ms-expand{display: none; /* IE 10, 11 */}
 select:disabled{border-color:#ccc;background-color:#f7f7f7;/* opacity:0.5; */}
@@ -142,11 +144,14 @@ button[disabled], a.disabled{cursor:default;pointer-events:none;}
 .radio input[type="radio"].readonly+label:after{background:#8992a0;}
 .radio input[type="radio"].readonly+label,.radio input[type="radio"]:disabled+label{color:#727272;}
 .radio input[type="radio"]:disabled+label:before{border-color:#bdc5d3;background:#e7eaef;}
+.radio_list .radio{margin-right:20px;}
+
 
 /*date*/
 .input_date .date{position: relative;display: inline-block;}
 .input_date .date input{width: 140px;}
 .input_date .dash{display: inline-block;padding: 0 4px;color:#213A56;font-size:12px;font-weight:600;}
+.inputbox+.inputbox{margin-top:8px}
 
 /***********************************************************************
 Layout
