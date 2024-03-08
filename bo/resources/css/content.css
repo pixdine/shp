@@ -1,0 +1,10 @@
+@charset "utf-8";
+:root{
+    --point : #267DFF;
+}
+
+/*title*/
+.bdr{border-bottom:1px solid #E7EBEE;margin-bottom:12px;}
+.title h2{font-size:16px;font-weight:600;padding:10px 0;}
+.tit_wrap{display:flex;align-items:center;justify-content:space-between;}
+.tit_wrap .tit_area,.tit_wrap .btn_area{display:inline-flex;column-gap:8px;align-items:center;}
