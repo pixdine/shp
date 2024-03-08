@@ -4,6 +4,8 @@ window.onload = () => {
     checkDevice(ww);
     handleSideBar();
     handleBookmark();
+    handleAllMenu();
+    activeTooltip("[data-tooltip]");
 }
 
 window.addEventListener("resize", () => {
@@ -59,5 +61,37 @@ function handleBookmark() {
 
 // 전체메뉴
 function handleAllMenu() {
+    const gnb = document.querySelector("#gnb");
+    const handler = gnb.querySelector(".btn_allmenu");
+    let navHeight = gnb.querySelector(".menu_list").offsetHeight;
+    let height = 53;
+    // let activeHeight = height + navHeight;
 
+    gnb.style.height = `${height}px`;
+
+    toggleClass(gnb, handler, "active");
+
+
+    handler.addEventListener("click", () => {
+        if(gnb.classList.contains("active")) {
+            gnb.style.height = `${navHeight}px`;
+        } else {
+            gnb.style.height = `${height}px`;
+        }
+    });
+}
+
+// tooltip layer
+function activeTooltip(selector) {
+    const wrap = document.querySelector(selector);
+    const handler = wrap.querySelector(".tooltip_btn");
+    const layer = wrap.querySelector(".tooltip_layer");
+
+    handler.addEventListener("click", () => {
+        if(wrap.classList.contains("active")) {
+            wrap.classList.remove("active");
+        } else {
+            wrap.classList.add("active");
+        }
+    });
 }
