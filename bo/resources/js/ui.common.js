@@ -38,12 +38,23 @@ function handleBookmark() {
 
     const bookmark = document.getElementById("bookmark");
     const handler = bookmark.querySelector(".btn_bookmark");
+    const listWrap = bookmark.querySelector(".bookmark_list_wrap");
+    const list = bookmark.querySelector(".bookmark_list");
     let titleHeight = bookmark.querySelector(".tit").offsetHeight;
-    let listWrapHeight = bookmark.querySelector(".bookmark_list_wrap").offsetHeight;
+    let listWrapHeight = listWrap.offsetHeight;
     let bookmarkHeight = titleHeight + listWrapHeight;
-    console.log(bookmarkHeight);
+
+    list.childElementCount > 3 ? listWrap.classList.add("shadow") : listWrap.classList.remove("shadow");
+
     toggleClass(bookmark, handler, "active");
-    // bookmark.style.height = `${bookmarkHeight}px`;
+    
+    handler.addEventListener("click", () => {
+        if(bookmark.classList.contains("active")) {
+            bookmark.style.height = `${bookmarkHeight}px`;
+        } else {
+            bookmark.style.height = `${titleHeight}px`;
+        }
+    });
 }
 
 // 전체메뉴
