@@ -221,11 +221,11 @@ Layout
 .aside .lnb_menu .lnb_depth2 > li.on {background-color: #E9F2FF;}
 
 /* aside - bookmark */
-.aside .bookmark {margin-top: auto;border-top: 1px solid #E7EBEE;}
+.aside .bookmark {overflow: hidden;height: 48px;margin-top: auto;border-top: 1px solid #E7EBEE;}
 .aside .bookmark .tit {padding: 8px 0;}
 .aside .bookmark .btn_bookmark {position: relative;width: 100%;padding: 0 24px;font-size: 12px;color: #525960;font-weight: bold;line-height: 32px;text-align: left;}
 .aside .bookmark .btn_bookmark::after {content: "";position: absolute;top: 50%;right: 24px;transform: translateY(-50%);width: 16px;height: 16px;background: url("../images/ico_arrowdown_16.svg") no-repeat center center / contain;transition: all 0.5s ease;}
-.aside .bookmark_list_wrap {display: none;overflow: hidden;position: relative;}
+.aside .bookmark_list_wrap {overflow: hidden;position: relative;opacity: 0;transition: all 0.5s ease;}
 .aside .bookmark_list_wrap::after {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 20px;background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);}
 .aside .bookmark_list {overflow-y: auto;max-height: 132px;}
 .aside .bookmark_list::-webkit-scrollbar{width:10px;height:8px;}
@@ -235,5 +235,6 @@ Layout
 .aside .bookmark_list > li > a {position: relative;display: block;width: 100%;padding-left: 22px;line-height: 36px;font-size: 14px;font-weight: bold;}
 .aside .bookmark_list > li > a::before {content: "";position: absolute;top: 50%;left: 0;transform: translateY(-50%);width: 16px;height: 16px;margin-top: -2px;background: url("../images/ico_star_16.svg") no-repeat center center / contain;}
 .aside .bookmark.active .btn_bookmark::after {transform: translateY(-50%) rotate(180deg);}
-.aside .bookmark.active .bookmark_list_wrap {display: block;}
+.aside .bookmark.active .bookmark_list_wrap {opacity: 1;}
+/* .aside .bookmark.active .bookmark_list_wrap {display: block;} */
 
