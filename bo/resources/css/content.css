@@ -19,11 +19,18 @@
 .login_area .log_img{width:390px;}
 .log_area{display:flex;flex-direction:column;justify-content: space-between;width:calc(100% - 422px);}
 .log_area .heading_area{margin-bottom:32px;}
-.log_area .heading_area .tit{font-size:24px;font-weight:700;}
+.log_area .heading_area .tit{font-size:24px;font-weight:700;line-height: 1;}
+.log_area .form .radio_list input{color:#213A56;}
 .log_area .form .input_list{margin:16px 0}
 .log_area .form .login_etc{display:flex;align-items:center;justify-content:space-between;}
 .log_area .form .login_etc .find_wrap{display:flex;column-gap:12px;}
 .log_area .form .login_etc .find_wrap li a{font-size:12px;color:var(--point);text-decoration:underline;}
 .btn_login_wrap .btn{width:100%;}
 .function_wrap{margin-top:32px;}
-.function_wrap h3{font-size:16px;font-weight:600;line-height:19px;}
+.function_wrap h3{font-size:16px;font-weight:600;line-height:19px;margin-bottom:16px;}
+.function_wrap .form_item{display:flex;align-items:center;}
+.function_wrap .form_item .form_label{font-size:12px;font-weight:700;color:#213A56;margin-right:10px;}
+.function_wrap .form_item .form_control{display:flex;align-items:center;gap:4px;}
+.function_wrap .form_item .form_control .inputbox input{width:170px;}
+.function_wrap .form_item .form_control .btn{padding:0px 5px;width: 90px;}
+.function_wrap .time_area{margin-top:8px;padding-left:36px;font-size:12px;font-weight:500;color:var(--point);}
