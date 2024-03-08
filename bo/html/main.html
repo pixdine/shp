@@ -4,11 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<title>SHP</title>
+	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 	<!-- css, Jquery -->
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
-	<script src="../resources/js/lib/jquery-3.6.0.min.js"></script>
 	<!-- //css, Jquery -->
 </head>
 <body>
@@ -70,9 +69,9 @@
             </div>
 
             <div class="gnb_wrap">
-                <div class="search">
-                    <input type="text" title="메뉴 검색어 입력" placeholder="메뉴 검색">
-                    <button type="button" class="btn_search"><span class="blind">검색</span></button>
+                <div class="inputbox search">
+                    <input type="search" class="inp" id="name" name="name" placeholder="메뉴검색" title="메뉴검색 입력" autocomplete="off" value="">
+                    <button type="button" class="btn_ico search"><span class="blind">검색</span></button>
                 </div>
                 
                 <nav>
@@ -94,28 +93,42 @@
 		<!-- container -->
 		<div id="container" class="container">
             <!-- aside -->
-            <aside class="aside">
+            <aside class="aside active">
                 <div class="aside_cont">
-                    
+                    <h2>강사/강습관리</h2>
 
                     <div class="lnb_menu_wrap">
                         <ul class="lnb_menu">
-                            <li>
-                                <a href="#">강사관리</a>
-                            </li>
-                            <li>
-                                <a href="#">강사계약관리</a>
-                            </li>
-                            <li>
-                                <a href="#">강사실적관리</a>
+                            <li><a href="#" class="btn_menu">강사관리</a></li>
+                            <li><a href="#" class="btn_menu">강사계약관리</a></li>
+                            <li class="has_sub on">
+                                <button type="button" class="btn_menu">강사실적관리</button>
+                                <ul class="sub_menu">
+                                    <li class="on"><a href="#" class="btn_menu">강습실적조회</a></li>
+                                    <li><a href="#" class="btn_menu">강습실적관리</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="bookmark">
-                    <p class="tit">즐겨찾기</p>
+                    <p class="tit"><button type="button" class="btn_bookmark">즐겨찾기</button></p>
+
+                    <div class="bookmark_list_wrap">
+                        <ul class="bookmark_list">
+                            <li><a href="#">강사관리</a></li>
+                            <li><a href="#">강사계약관리</a></li>
+                            <li><a href="#">강사일정관리</a></li>
+                            <li><a href="#">강사일정관리</a></li>
+                            <li><a href="#">강사일정관리</a></li>
+                            <li><a href="#">강사일정관리</a></li>
+                            <li><a href="#">강사일정관리</a></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <button type="button" class="btn_handler"><span class="blind">메뉴 열기</span></button>
             </aside>
             <!-- //aside -->
 
@@ -133,9 +146,6 @@
 	<!-- //js -->
 
 <script>
-	$(() => {
-		
-	});
 </script>
 </body>
 </html>
