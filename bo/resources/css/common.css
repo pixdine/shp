@@ -114,7 +114,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .table th{text-align:left}
 
 /*button*/
-.btn{display:inline-flex;position:relative;align-items:center;justify-content:center;width:auto;min-width:80px;height:32px;padding:0 12px;line-height:12px;font-size:12px;font-weight:500;border:1px solid transparent;text-align:center;border-radius:4px;}/* h32 */
+.btn{display:inline-flex;position:relative;align-items:center;justify-content:center;width:auto;min-width:60px;height:32px;padding:0 12px;line-height:12px;font-size:12px;font-weight:500;border:1px solid transparent;text-align:center;border-radius:4px;}/* h32 */
 .btn.big{height:40px;line-height:16px;font-size:14px;font-weight:600;min-width:120px;}/*h40*/
 .btn.small{height:24px;min-width:37px;}/*h24*/
 
@@ -126,8 +126,10 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .btn_ico{display: inline-flex;width:16px;height:16px;background: url('') no-repeat center center / 16px auto;}
 .btn_ico.search{background-image: url('../images/ico_search.svg');}
 .btn_ico.calendar{background-image: url('../images/ico_calendar.svg');width:24px;height:24px;}
+.btn_ico.delete{background-image: url('../images/ico_delete.svg');width:24px;height:24px;}
 
 .inputbox{position: relative;}
+.inputbox .txt_fix{position:absolute;top: 50%;right: 12px;transform: translateY(-50%);}
 .inputbox.search input{padding-right:40px;}
 .inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
 .input_date{display:flex;align-items:center;}
@@ -143,7 +145,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .checkbox input[type="checkbox"]:disabled+label:before{border-color:#bdc5d3;background:#e7eaef;}
 .checkbox input[type="checkbox"].readonly+label:before{border-color:#bdc5d3;background:url('../../images/sp/common/ico-readonly.png') no-repeat 0 0 #e7eaef;}
 .checkbox input[type="checkbox"]:disabled+label,.checkbox input[type="checkbox"].readonly+label{color:#727272;}
-.checkbox_list,.radio_list{font-size:0;}
+.checkbox_list,.radio_list{display:flex;}
 .checkbox_list .checkbox+.checkbox{margin-left:20px;}
 
 

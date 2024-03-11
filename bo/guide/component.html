@@ -27,6 +27,11 @@
                     <div class="title bdr">
                         <h2>회원관리</h2>
                     </div>
+                    <h3 class="h3">title+sub</h3>
+                    <div class="title bdr">
+                        <h2>메뉴정보</h2>
+                        <p>메뉴 정보는 한 사용자 별로 지정하여야 합니다.</p>
+                    </div>
                     <h3 class="h3">title+버튼</h3>
                     <div class="tit_wrap bdr">
                         <div class="tit_area">
@@ -126,6 +131,18 @@
                     <div class="inputbox search">
                         <input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력해주세요." title="검색어 입력" autocomplete="off" value="">
                         <button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+                    </div>
+                    <h3 class="h3">sort</h3>
+                    <div class="sort_wrap">
+                        <div class="btn_area">
+                            <button type="button" class="btn bctype2"><span>추가</span></button>
+                            <button type="button" class="btn bctype2"><span>삭제</span></button>
+                            <button type="button" class="btn bctype2"><span>저장</span></button>
+                        </div>
+                        <div class="inputbox search">
+                            <input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력해주세요." title="검색어 입력" autocomplete="off" value="">
+                            <button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -332,6 +349,32 @@
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="휴대폰번호" value="" title="텍스트를 입력해주세요">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">비밀번호<em class="required">*</em></th>
+                                    <td>
+                                        <div class="form_control">
+                                            <div class="inputbox">
+                                                <input type="text" placeholder="" value="" title="비밀번호를 입력해주세요" disabled>
+                                                <span class="txt_fix">회</span>
+                                            </div>
+                                            <button type="button" class="btn bctype1"><span>초기화</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">사용기간</th>
+                                    <td>
+                                        <div class="input_date">
+                                            <span class="date">
+                                                <input type="text" name="" value="" class="datepicker" id="" title="" disabled> 
+                                            </span>
+                                            <span class="dash">~</span>
+                                            <span class="date">
+                                                <input type="text" name="" value="" class="datepicker" id="" title="" disabled>
+                                            </span>
+                                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                                            <button type="button" class="btn_ico delete"><span class="blind">초기화</span></button>
                                         </div>
                                     </td>
                                 </tr>
