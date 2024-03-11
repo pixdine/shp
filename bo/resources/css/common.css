@@ -125,7 +125,9 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 /*btn_ico*/
 .btn_ico{display: inline-flex;}
 .btn_ico.search{width:16px;height:16px;background: url('../images/ico_search.svg') no-repeat center center / 16px auto;}
+
 .inputbox{position: relative;}
+.inputbox.search input{padding-right:40px;}
 .inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
 
 /*checkbox*/
