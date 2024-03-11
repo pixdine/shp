@@ -34,3 +34,12 @@
 .function_wrap .form_item .form_control .inputbox input{width:170px;}
 .function_wrap .form_item .form_control .btn{padding:0px 5px;width: 90px;}
 .function_wrap .time_area{margin-top:8px;padding-left:36px;font-size:12px;font-weight:500;color:var(--point);}
+
+
+/*main*/
+.period{display:flex;align-items:center;column-gap: 12px;}
+.period .radio_list{display:flex;align-items:center;column-gap:4px;margin-left: 20px;}
+.range {display: inline-block;position: relative;line-height: 1;}
+.range input{position: absolute;left: -9999px;}
+.range label{display: inline-block;min-width:80px;border:1px solid #DCE0E5;border-radius:4px;padding:9px 12px;box-sizing: border-box;text-align:center;font-weight: 400;vertical-align: top;word-break: break-all;cursor: pointer;}
+.range input:checked+label{background: #E9F2FF;color: var(--point);border-color:var(--point);}

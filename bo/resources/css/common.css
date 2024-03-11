@@ -158,7 +158,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .radio input[type="radio"].readonly+label:after{background:#8992a0;}
 .radio input[type="radio"].readonly+label,.radio input[type="radio"]:disabled+label{color:#727272;}
 .radio input[type="radio"]:disabled+label:before{border-color:#bdc5d3;background:#e7eaef;}
-.radio_list .radio+.checkbox{margin-left:20px;}
+.radio_list .radio+.radio{margin-left:20px;}
 
 
 /*date*/
