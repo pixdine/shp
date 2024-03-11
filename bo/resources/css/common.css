@@ -123,12 +123,15 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .bctype2{background-color:#fff;border-color:var(--point);color:var(--point);}
 
 /*btn_ico*/
-.btn_ico{display: inline-flex;}
-.btn_ico.search{width:16px;height:16px;background: url('../images/ico_search.svg') no-repeat center center / 16px auto;}
+.btn_ico{display: inline-flex;width:16px;height:16px;background: url('') no-repeat center center / 16px auto;}
+.btn_ico.search{background-image: url('../images/ico_search.svg');}
+.btn_ico.calendar{background-image: url('../images/ico_calendar.svg');width:24px;height:24px;}
 
 .inputbox{position: relative;}
 .inputbox.search input{padding-right:40px;}
 .inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
+.input_date{display:flex;align-items:center;}
+.input_date .btn_ico{margin-left:4px;}
 
 /*checkbox*/
 .checkbox{display: inline-block;position: relative;line-height: 1;}
@@ -160,7 +163,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 
 /*date*/
 .input_date .date{position: relative;display: inline-block;}
-.input_date .date input{width: 140px;}
+.input_date .date input{width:92px;}
 .input_date .dash{display: inline-block;padding: 0 4px;color:#213A56;font-size:12px;font-weight:600;}
 .inputbox+.inputbox{margin-top:8px}
 
