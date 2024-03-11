@@ -143,6 +143,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .checkbox input[type="checkbox"]:disabled+label:before{border-color:#bdc5d3;background:#e7eaef;}
 .checkbox input[type="checkbox"].readonly+label:before{border-color:#bdc5d3;background:url('../../images/sp/common/ico-readonly.png') no-repeat 0 0 #e7eaef;}
 .checkbox input[type="checkbox"]:disabled+label,.checkbox input[type="checkbox"].readonly+label{color:#727272;}
+.checkbox_list,.radio_list{font-size:0;}
 .checkbox_list .checkbox+.checkbox{margin-left:20px;}
 
 
