@@ -50,3 +50,5 @@
 .sort_wrap{display:flex;align-items:center;justify-content:space-between;}
 
 .form_control{display:flex;align-items:center;flex-wrap: wrap;gap:4px;}
+.form_control.tel input{width:77px;}
+.form_control .inputbox+.inputbox{margin-top:0;}

@@ -9,7 +9,7 @@
     <style media="all">
         .container{margin-top:0;}
         .wrap{display: block;}
-        .container{display: block;}
+        .container{display: block;height:auto;}
         .guide_inner{padding: 0 40px 40px;}
         .guide_inner .h2 {margin:0 -40px 40px;padding: 10px 40px;font-size: 24px;font-weight: 700;background-color: #F3F5F6;}
         .guide_inner .h3{position: relative;margin-top: 30px;margin-bottom: 10px;font-size: 18px;}
@@ -378,13 +378,57 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th scope="row">전화번호</th>
+                                    <td>
+                                        <div class="form_control tel">
+                                            <div class="inputbox">
+                                                <input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+                                            </div>
+                                            <span class="dash">-</span>
+                                            <div class="inputbox">
+                                                <input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+                                            </div>
+                                            <span class="dash">-</span>
+                                            <div class="inputbox">
+                                                <input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <th scope="row">비밀번호<em class="required">*</em></th>
+                                    <td>
+                                        <div class="form_control">
+                                            <div class="inputbox">
+                                                <input type="text" placeholder="" value="aaaaaaaaaaaa" title="비밀번호를 입력해주세요" disabled>
+                                            </div>
+                                            <div class="inputbox">
+                                                <input type="text" placeholder="" value="aaaaaaaaaaaa" title="비밀번호를 입력해주세요" disabled>
+                                            </div>
+                                            <button type="button" class="btn bctype1"><span>초기화</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">업무그룹</th>
+                                    <td>
+                                        <div class="form_control">
+                                            <div class="inputbox">
+                                                <input type="text" placeholder="" value="" title="비밀번호를 입력해주세요" disabled>
+                                            </div>
+                                            <div class="inputbox search">
+                                                <input type="search" class="inp" id="search" name="search" placeholder="" title="검색어 입력" autocomplete="off" value="" disabled>
+                                                <button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <!--//button-->
-
+            <!--//table-->
+            
         </div>
     </div>
 </body>
