@@ -32,8 +32,27 @@ function handleSideBar() {
 
     const sidebar = document.getElementById("sidebar");
     const handler = sidebar.querySelector(".btn_handler");
+    const handlerTxt = handler.querySelector(".blind");
     toggleClass(sidebar, handler, "active");
+
+    stateSideBar();
+
+    handler.addEventListener("click", () => {
+        stateSideBar();
+    });
 }
+
+// 사이드바 상태
+function stateSideBar() {
+    const sidebar = document.getElementById("sidebar");
+    const handlerTxt = document.querySelector(".btn_handler .blind");
+    if(sidebar.classList.contains("active")) {
+        handlerTxt.textContent = "메뉴 닫기";
+    } else {
+        handlerTxt.textContent = "메뉴 열기";
+    }
+}
+
 
 // lnb메뉴
 function handleLnb() {
