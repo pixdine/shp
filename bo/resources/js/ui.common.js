@@ -40,26 +40,21 @@ function handleLnb() {
     const lnb = document.querySelector(".lnb_menu");
     const depth2 = lnb.querySelectorAll(".btn_depth2");
     const btnMenu = lnb.querySelectorAll(".btn_menu");
-    const test = lnb.querySelector(".has_sub");
     let prevItem = null;
 
     // console.log(prevItem);
 
     btnMenu.forEach((item, index) => {
         item.addEventListener("click", (e) => {
-            console.log(item.parentElement.parentElement.parentElement);
+            // console.log(item.parentElement.parentElement.parentElement);
             if(!item.classList.contains("btn_depth2")) {
-                // console.log(btnMenu);
-                // btnMenu.closest("li").classList.remove("on");
                 if(prevItem !== null) {
-                    // console.log(btnMenu[prevItem]);
                     btnMenu[prevItem].closest("li").classList.remove("on");
                     btnMenu[prevItem].parentElement.parentElement.parentElement.classList.remove("on");
                 }
                 item.closest("li").classList.add("on");
                 
-                if(item.parentElement.parentElement.parentElement === test) {
-                    console.log("dd");
+                if(item.parentElement.parentElement.parentElement.classList.contains("has_sub")) {
                     item.parentElement.parentElement.parentElement.classList.add("on");
                 }
                 prevItem = index;
@@ -91,16 +86,10 @@ function handleLnb() {
     });
 }
 
-// lnb 높이
-function setLnbHeight() {
-
-}
-
 // 즐겨찾기
 function handleBookmark() {
     if(document.getElementById("bookmark").length === 0) return;
 
-    const body = document.querySelector("body");
     const bookmark = document.getElementById("bookmark");
     const handler = bookmark.querySelector(".btn_bookmark");
     const listWrap = bookmark.querySelector(".bookmark_list_wrap");
