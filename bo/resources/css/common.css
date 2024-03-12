@@ -270,4 +270,4 @@ Layout
 .aside .bookmark.active {padding: 16px 0 0;}
 .aside .bookmark.active .btn_bookmark::after {transform: translateY(-50%) rotate(180deg);}
 .aside .bookmark.active .bookmark_list_wrap {opacity: 1;}
-.aside .bookmark.shadow::after {content: "";position: absolute;bottom: 0;left: 0;width: calc(100% - 10px);height: 20px;background: linear-gradient(180deg, rgba(0,0,0,0.006061799719887961) 0%, rgba(255,255,255,1) 100%);}
+.aside .bookmark.shadow::after {content: "";position: absolute;bottom: 0;left: 0;width: calc(100% - 10px);height: 20px;background: linear-gradient(180deg, rgba(0,0,0,0.006061799719887961) 0%, rgba(255,255,255,0.8) 100%);}

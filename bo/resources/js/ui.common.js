@@ -42,8 +42,6 @@ function handleLnb() {
     const btnMenu = lnb.querySelectorAll(".btn_menu");
     let prevItem = null;
 
-    // console.log(prevItem);
-
     btnMenu.forEach((item, index) => {
         item.addEventListener("click", (e) => {
             // console.log(item.parentElement.parentElement.parentElement);
@@ -61,7 +59,6 @@ function handleLnb() {
             }
         });
     });
-    
 
     depth2.forEach((item, index) => {
         item.addEventListener("click", (e) => {
@@ -71,8 +68,6 @@ function handleLnb() {
             const depth3 = item.nextElementSibling;
             let depth3Height = depth3.offsetHeight;
             let openHeight = defaultHeight + depth3Height;
-            // console.log(depth3Height);
-            // let tt = e.target.closest(".has_sub");
 
             item.closest(".has_sub").classList.toggle("open");
 
@@ -81,7 +76,6 @@ function handleLnb() {
             } else {
                 item.closest(".has_sub").style.height = `${defaultHeight}px`;
             }
-            // console.log(tt);
         });
     });
 }
@@ -96,21 +90,19 @@ function handleBookmark() {
     const list = bookmark.querySelector(".bookmark_list");
     let titleHeight = bookmark.querySelector(".tit").offsetHeight;
     let listWrapHeight = listWrap.offsetHeight;
-    let listHeight = list.offsetHeight;
     let padding = 16;
-    let bookmarkHeight = titleHeight + listWrapHeight + padding;
-
-    list.childElementCount > 6 ? bookmark.classList.add("shadow") : bookmark.classList.remove("shadow");
+    let openHeight = titleHeight + listWrapHeight + padding + 2;
+    let defaultHeight = titleHeight + padding;
 
     toggleClass(bookmark, handler, "active");
-
-    // console.log(listHeight);
     
     handler.addEventListener("click", () => {
         if(bookmark.classList.contains("active")) {
-            bookmark.style.height = `${bookmarkHeight}px`;
+            bookmark.style.height = `${openHeight}px`;
+            list.childElementCount > 6 ? bookmark.classList.add("shadow") : bookmark.classList.remove("shadow");
         } else {
-            bookmark.style.height = `${titleHeight + padding}px`;
+            bookmark.style.height = `${defaultHeight}px`;
+            bookmark.classList.remove("shadow");
         }
     });
 }
