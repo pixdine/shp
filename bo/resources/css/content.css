@@ -60,8 +60,9 @@
 .wrap.frame .container{margin-top:0;height:auto;flex-direction: column;}
 .section{padding:32px 32px 40px 32px;background: #Fff;}
 .section + .section{margin-top:12px;}
-/* .table table .inputbox{width:calc(100% - 200px);} */
 .table .inputbox{width:calc(100% - 295px);}
 .table .form_control .inputbox{width:auto;}
 
 .btn_wrap{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:4px;}
+.btn_acdion{position: relative;font-size:12px;font-weight:400;padding-right:20px;}
+.btn_acdion::after{content: ""; position: absolute;top: 50%;right:0;transform: translateY(-50%);width: 16px;height: 16px;background: url('../images/ico_arrowdown_16.svg') no-repeat center center / contain;transition: 0.4s ease;}
