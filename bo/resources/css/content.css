@@ -52,3 +52,13 @@
 .form_control{display:flex;align-items:center;flex-wrap: wrap;gap:4px;}
 .form_control.tel input{width:77px;}
 .form_control .inputbox+.inputbox{margin-top:0;}
+
+
+
+.wrap.frame{min-width:initial;}
+.wrap.frame .container{margin-top:0;height:auto;}
+.section{padding:32px 32px 40px 32px;background: #Fff;}
+.section + .section{margin-top:12px;}
+.table table input{width:calc(100% - 200px);}
+
+.btn_wrap{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:4px;}
