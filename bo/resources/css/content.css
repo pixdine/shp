@@ -6,6 +6,7 @@
 /*title*/
 .bdr{display: flex;align-items: center;gap: 8px;border-bottom:1px solid #E7EBEE;margin-bottom:12px;}
 .title h2{font-size:16px;font-weight:600;padding:10px 0;}
+.title h2 strong{color:var(--point);}
 .title p{font-size:12px;font-weight:500;color:#213A56}
 .tit_wrap{display:flex;align-items:center;justify-content:space-between;}
 .tit_wrap .tit_area,.tit_wrap .btn_area{display:inline-flex;column-gap:8px;align-items:center;}
@@ -52,3 +53,15 @@
 .form_control{display:flex;align-items:center;flex-wrap: wrap;gap:4px;}
 .form_control.tel input{width:77px;}
 .form_control .inputbox+.inputbox{margin-top:0;}
+
+
+
+.wrap.frame{min-width:initial;}
+.wrap.frame .container{margin-top:0;height:auto;flex-direction: column;}
+.section{padding:32px 32px 40px 32px;background: #Fff;}
+.section + .section{margin-top:12px;}
+/* .table table .inputbox{width:calc(100% - 200px);} */
+.table .inputbox{width:calc(100% - 295px);}
+.table .form_control .inputbox{width:auto;}
+
+.btn_wrap{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:4px;}

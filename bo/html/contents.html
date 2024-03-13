@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>SHP BO</title>
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+</head>
+<body>
+    <div id="wrap" class="wrap frame">
+        <div id="container" class="container">
+			<div class="section">
+				<div class="title bdr">
+					<h2>회원관리</h2>
+				</div>
+				<div class="table">
+					<table>
+						<colgroup>
+							<col style="width:10%">
+							<col style="width:40%">
+							<col style="width:10%">
+							<col style="width:40%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">조회기간</th>
+								<td colspan="3">
+									<div class="period">
+										<select id="" title="">
+											<option value="" selected="">가입일자</option>
+											<option value="">가입일자</option>
+										</select>
+										<div class="input_date">
+											<span class="date">
+												<input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
+											</span>
+											<span class="dash">~</span>
+											<span class="date">
+												<input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
+											</span>
+											<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+											<div class="radio_list">
+												<span class="range">
+													<input type="radio" id="range1" name="schRange" title="오늘 선택">
+													<label for="range1">오늘</label>
+												</span>
+												<span class="range">
+													<input type="radio" id="range2" name="schRange" title="1주일 선택">
+													<label for="range2">1주일</label>
+												</span>
+												<span class="range">
+													<input type="radio" id="range3" name="schRange" title="30일 선택">
+													<label for="range3">30일</label>
+												</span>
+												<span class="range">
+													<input type="radio" id="range4" name="schRange" title="3개월 선택">
+													<label for="range4">3개월</label>
+												</span>
+												<span class="range">
+													<input type="radio" id="range5" name="schRange" title="6개월 선택">
+													<label for="range5">6개월</label>
+												</span>
+											</div>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">구분</th>
+								<td>
+									<div class="checkbox_list">
+										<span class="checkbox">
+											<input type="checkbox" id="checkbox1_t" name="checkbox" title="정회원 선택">
+											<label for="checkbox1_t">정회원</label>
+										</span>
+										<span class="checkbox">
+											<input type="checkbox" id="checkbox2_t" name="checkbox" title="준회원 선택">
+											<label for="checkbox2_t">준회원</label>
+										</span>
+									</div>
+								</td>
+								<th scope="row">회원상태</th>
+								<td>
+									<div class="checkbox_list">
+										<span class="checkbox">
+											<input type="checkbox" id="checkbox01" name="checkbox" title="정회원 선택">
+											<label for="checkbox01">정상</label>
+										</span>
+										<span class="checkbox">
+											<input type="checkbox" id="checkbox02" name="checkbox" title="준회원 선택">
+											<label for="checkbox02">휴회</label>
+										</span>
+										<span class="checkbox">
+											<input type="checkbox" id="checkbox03" name="checkbox" title="준회원 선택">
+											<label for="checkbox03">휴회</label>
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">업장</th>
+								<td>
+									<select id="" title="">
+										<option value="" selected="">전체</option>
+										<option value="">전체</option>
+									</select>
+								</td>
+								<th scope="row">시즌</th>
+								<td>
+									<select id="" title="">
+										<option value="" selected="">전체</option>
+										<option value="">전체</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">회원유형</th>
+								<td>
+									<select id="" title="">
+										<option value="" selected="">전체</option>
+										<option value="">전체</option>
+									</select>
+								</td>
+								<th scope="row">회원권유형</th>
+								<td>
+									<select id="" title="">
+										<option value="" selected="">전체</option>
+										<option value="">전체</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">회사/회원명</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="회사/회원명" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+								<th scope="row">E-mail</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="E-mail" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">생년월일</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="생년월일" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+								<th scope="row">Par-Q유효기간</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="Par-Q유효기간" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">FOH가입여부</th>
+								<td>
+									<div class="checkbox_list">
+										<span class="checkbox">
+											<input type="checkbox" id="checkbox1_t" name="checkbox" title="가입 선택">
+											<label for="checkbox1_t">가입</label>
+										</span>
+										<span class="checkbox">
+											<input type="checkbox" id="checkbox2_t" name="checkbox" title="미가입 선택">
+											<label for="checkbox2_t">미가입</label>
+										</span>
+									</div>
+								</td>
+								<th scope="row">성별</th>
+								<td>
+									<div class="checkbox_list">
+										<span class="checkbox">
+											<input type="checkbox" id="gender1" name="gender" title="남 선택">
+											<label for="gender1">남</label>
+										</span>
+										<span class="checkbox">
+											<input type="checkbox" id="gender2" name="gender" title="여 선택">
+											<label for="gender2">여</label>
+										</span>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">관리번호</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="관리번호" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+								<th scope="row">회원번호</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="회원번호" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">사원번호</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="사원번호" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+								<th scope="row">휴대폰번호</th>
+								<td>
+									<div class="inputbox">
+										<input type="text" placeholder="휴대폰번호" value="" title="텍스트를 입력해주세요">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="btn_wrap">
+					<button type="button" class="btn big bctype2"><span>초기화</span></button>
+					<button type="button" class="btn big bctype1"><span>검색</span></button>
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="title bdr">
+					<h2>조회결과 (총 <strong>4</strong>건)</h2>
+				</div>
+			</div>
+        </div>
+    </div> 
+</body>

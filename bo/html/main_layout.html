@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>SHP BO</title>
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+</head>
+<body>
+	<div id="wrap" class="wrap">
+		<!-- header -->
+		<header id="header" class="header">
+            <div class="header_top">
+                <div class="header_item">
+                    <h1 class="logo"><a href="#"><img src="../resources/images/logo.svg" alt="SHP Backoffice"></a></h1>
+
+                    <div class="utils">
+                        <a href="#">
+                            <span class="item noti">
+                                <i class="ico_noti"></i>
+                                <span class="txt">공지사항</span>
+                                <span class="cnt">4</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="item doc">
+                                <i class="ico_doc"></i>
+                                <span class="txt">매출</span>
+                                <span class="cnt">4</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="item voc"> 
+                                <i class="ico_voc"></i>
+                                <span class="txt">VOC</span>
+                                <span class="cnt">100</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="header_item time_area">
+                    <span class="item">
+                        <i class="ico_time"></i>
+                        <span class="txt">남은시간 <em class="time">04:34</em></span>
+                    </span>
+                </div>
+
+                <div class="header_item">
+                    <div class="tooltip_layer_wrap" data-tooltip="myinfo">
+                        <button type="button" class="tooltip_btn">
+                            <span class="item user">
+                                <i class="ico_user"></i>
+                                <span class="txt">김민수</span>
+                            </span>
+                        </button>
+
+                        <div class="tooltip_layer">
+                            <div class="btns">
+                                <button type="button" class="btn">로그아웃</button>
+                                <a href="#" class="btn">프로필영역</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sorting">
+                        <select title="업장선택">
+                            <option>업장선택</option>
+                        </select>
+                        <select title="지점선택" disabled>
+                            <option>지점선택</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gnb_wrap" id="gnb">
+                <div class="inputbox search">
+                    <input type="search" class="inp" id="name" name="name" placeholder="메뉴검색" title="메뉴검색 입력" autocomplete="off" value="">
+                    <button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+                </div>
+                
+                <nav>
+                    <ul class="menu_list">
+                        <li>
+                            <a href="#">회원관리</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">개인 회원 관리</a></li>
+                                <li><a href="#">로그인 이력 관리</a></li>
+                            </ul>
+                        </li>
+                        <li class="on">
+                            <a href="#">강사/강습관리</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">개인 회원 관리</a></li>
+                                <li><a href="#">로그인 이력 관리</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">업장/출입관리</a></li>
+                        <li><a href="#">매출관리</a></li>
+                        <li><a href="#">통계관리</a></li>
+                        <li>
+                            <a href="#">시스템관리</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">업무그룹관리</a></li>
+                                <li><a href="#">앱버전관리</a></li>
+                                <li><a href="#">메뉴관리</a></li>
+                                <li><a href="#">사용자관리</a></li>
+                                <li><a href="#">기본정보관리</a></li>
+                                <li><a href="#">모니터링관리</a></li>
+                                <li><a href="#">개인관리</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <hr>
+
+                <button type="button" class="btn_allmenu"><span class="blind">전체메뉴 보기</span></button>
+            </div>
+		</header>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container" class="container">
+            <!-- aside -->
+            <aside class="aside active" id="sidebar">
+                <div class="aside_cont">
+                    <h2>강사/강습관리</h2>
+
+                    <div class="lnb_menu_wrap">
+                        <ul class="lnb_menu">
+                            <li><a href="#" class="btn_menu">강사관리</a></li>
+                            <!-- <li><a href="#" class="btn_menu">강사계약관리</a></li> -->
+                            <li class="has_sub">
+                                <button type="button" class="btn_menu btn_depth2">강사계약관리</button>
+                                <ul class="lnb_depth3">
+                                    <li><a href="#" class="btn_menu">강습실적조회</a></li>
+                                    <li><a href="#" class="btn_menu">강습실적관리</a></li>
+                                    <li><a href="#" class="btn_menu">강습실적관리</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub">
+                                <button type="button" class="btn_menu btn_depth2">강사실적관리</button>
+                                <ul class="lnb_depth3">
+                                    <li><a href="#" class="btn_menu">강습실적조회</a></li>
+                                    <li><a href="#" class="btn_menu">강습실적관리</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bookmark" id="bookmark">
+                    <p class="tit"><button type="button" class="btn_bookmark">즐겨찾기</button></p>
+
+                    <div class="bookmark_list_wrap">
+                        <ul class="bookmark_list">
+                            <li><a href="#">강사관리</a></li>
+                            <li><a href="#">강사계약관리</a></li>
+                            <!-- <li><a href="#">강사계약관리</a></li>
+                            <li><a href="#">강사계약관리</a></li>
+                            <li><a href="#">강사계약관리</a></li>
+                            <li><a href="#">강사계약관리</a></li> -->
+                            <!-- <li><a href="#">강사계약관리</a></li> -->
+                            <!-- <li><a href="#">강사계약관리</a></li>
+                            <li><a href="#">강사계약관리</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+
+                <button type="button" class="btn_handler"><span class="blind">메뉴 열기</span></button>
+            </aside>
+            <!-- //aside -->
+
+            <!-- contents -->
+            <main role="main" class="contents">
+                <iframe src="./contents.html"></iframe>
+            </main>
+            <!-- contents -->
+        </div>
+		<!-- //container -->
+	</div>
+
+	<!-- js -->
+	<script src="../resources/js/ui.common.js"></script>
+	<!-- //js -->
+</body>
+</html>
