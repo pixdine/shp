@@ -66,3 +66,11 @@
 .btn_wrap{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:4px;}
 .btn_acdion{position: relative;font-size:12px;font-weight:400;padding-right:20px;}
 .btn_acdion::after{content: ""; position: absolute;top: 50%;right:0;transform: translateY(-50%);width: 16px;height: 16px;background: url('../images/ico_arrowdown_16.svg') no-repeat center center / contain;transition: 0.4s ease;}
+
+
+
+/*tab*/
+.tab .tab_menu{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;width: 100%;}
+.tab .tab_menu li{margin-right:4px;}
+.tab .tab_menu li a{display: block;width: 100%;height: 36px;padding: 0 16px;border-radius:12px 12px 0 0;background-color: #E7EBEE;color: #111;font-size: 14px;font-weight:700;text-align: center;line-height:36px;}
+.tab .tab_menu li.active a{background-color:#fff;}
