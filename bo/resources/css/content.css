@@ -45,10 +45,15 @@
 .range input{position: absolute;left: -9999px;}
 .range label{display: inline-block;min-width:80px;border:1px solid #DCE0E5;border-radius:4px;padding:9px 12px;box-sizing: border-box;text-align:center;font-weight: 400;vertical-align: top;word-break: break-all;cursor: pointer;}
 .range input:checked+label{background: #E9F2FF;color: var(--point);border-color:var(--point);}
+.range input:disabled+label{color:#7F8A94;background-color:#E7EBEE;}
+
+
 
 .required{display: inline-block;margin-left: 4px;color: #FF4C4C;}
 
 .sort_wrap{display:flex;align-items:center;justify-content:space-between;}
+.sort_wrap .btn_area{display:flex;align-items:center;gap:4px;}
+.sort_wrap .btn_area select{margin-left:8px;}
 
 .form_control{display:flex;align-items:center;flex-wrap: wrap;gap:4px;}
 .form_control.tel input{width:77px;}
@@ -67,3 +72,9 @@
 .btn_acdion{position: relative;font-size:12px;font-weight:400;padding-right:20px;}
 .btn_acdion::after{content: ""; position: absolute;top: 50%;right:0;transform: translateY(-50%);width: 16px;height: 16px;background: url('../images/ico_arrowdown_16.svg') no-repeat center center / contain;transition: 0.4s ease;}
 
+
+
+.area_wrap{display:flex;gap:16px;height:100vh;}
+.area_left{width:500px;}
+.area_right{flex:1;}
+.area_wrap .section{height:100%;}
