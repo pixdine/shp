@@ -171,10 +171,10 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .inputbox+.inputbox{margin-top:8px}
 
 /*tooltip layer*/
+.tooltip_layer {position: absolute;right: 0;margin-top: 8px;z-index: 1;width: max-content;border: 1px solid #DCE0E5;border-radius: 4px;background-color: #fff;opacity: 0;transition: all 0.5s ease;}
+.tooltip_layer .btns .btn {display: block;width: 100%;padding: 0 11px;font-size: 12px;text-align: left;line-height: 31px;border-radius: 0;border: none;letter-spacing: -1px;}
+.tooltip_layer .btns .btn + .btn {border-top: 1px solid #DCE0E5;}
 .tooltip_layer_wrap {position: relative;overflow: hidden;}
-.tooltip_layer_wrap .tooltip_layer {position: absolute;right: 0;margin-top: 8px;z-index: 1;width: 82px;border: 1px solid #DCE0E5;border-radius: 4px;background-color: #fff;opacity: 0;transition: all 0.5s ease;}
-.tooltip_layer_wrap .btns .btn {display: block;padding: 0 11px;font-size: 12px;text-align: left;line-height: 31px;border-radius: 0;border: none;}
-.tooltip_layer_wrap .btns .btn + .btn {border-top: 1px solid #DCE0E5;}
 .tooltip_layer_wrap.active {overflow: initial;}
 .tooltip_layer_wrap.active .tooltip_layer {opacity: 1;}
 
@@ -259,6 +259,10 @@ Layout
 .aside .lnb_menu > li.on.has_sub > .btn_menu::after {background-image: url("../images/ico_arrowdown_16_active.svg");}
 .aside .lnb_menu > li.open.has_sub > .btn_menu::after {transform: translateY(-50%) rotate(180deg);}
 .aside .lnb_menu .has_sub.open .lnb_depth3 {opacity: 1;}
+/* .aside .lnb_menu .tooltip_layer_wrap .tooltip_layer {top: 50%;right: 12px;margin-top: 0;} */
+.aside .lnb_menu_wrap {position: relative;overflow: hidden;}
+.aside .lnb_menu_wrap .tooltip_layer {top: 50%;right: 12px;margin-top: 0;}
+.aside .lnb_menu_wrap > .tooltip_layer {display: none;}
 
 /* aside - bookmark */
 .aside .bookmark {overflow: hidden;height: 48px;margin-top: auto;padding: 8px 0;border-top: 1px solid #E7EBEE;transition: all 0.5s ease;}

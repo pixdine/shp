@@ -1,3 +1,5 @@
+const body = document.querySelector("body");
+
 window.onload = () => {
     let ww = window.innerWidth;
 
@@ -5,9 +7,10 @@ window.onload = () => {
     handleSideBar();
     handleBookmark();
     handleAllMenu();
-    handleLnb();
     activeTooltip("[data-tooltip]");
+    leftMenu.init();
 }
+
 
 window.addEventListener("resize", () => {
     let ww = window.innerWidth;
@@ -55,56 +58,109 @@ function stateSideBar() {
 
 
 // lnb메뉴
-function handleLnb() {
-    const lnb = document.querySelector(".lnb_menu");
-    const depth2 = lnb.querySelectorAll(".btn_depth2");
-    const btnMenu = lnb.querySelectorAll(".btn_menu");
-    let prevItem = null;
+const leftMenu = {
+    lnbWrap : null,
+    lnb: null,
+    btnMenu: null,
+    tooltip: null,
+    newTooltip: null,
+    prevTooltipIndex: null,
+    lnbWrapPosY: null,
+    prevItem: null,
+    depth2: null,
+    
+    init: function() {
+        lnbWrap = document.querySelector(".lnb_menu_wrap");
+        lnb = document.querySelector(".lnb_menu");
+        depth2 = lnb.querySelectorAll(".btn_depth2");
+        btnMenus = lnb.querySelectorAll(".btn_menu");
+        tooltip = lnbWrap.querySelector(".tooltip_layer");
+        lnbWrapPosY = lnbWrap.getBoundingClientRect().top;
+        
+        this.inintEvent();
+        this.handleDepth2();
+        this.clickBody();
+    }, 
+    
+    inintEvent: function() {
+        btnMenus.forEach((item, index) => {
+            // 활성화
+            item.addEventListener("click", () => {
+                if(!item.classList.contains("btn_depth2")) {
+                    if(this.prevItem !== null) {
+                        btnMenus[this.prevItem].closest("li").classList.remove("on");
+                        btnMenus[this.prevItem].parentElement.parentElement.parentElement.classList.remove("on");
+                        this.prevItem = null;
+                    }
+                    item.closest("li").classList.add("on");
+                    if(item.closest("li.has_sub")) {
+                        item.closest("li.has_sub").classList.add("on");
+                    }
+                    this.prevItem = index;
+                }
+            });
 
-    btnMenu.forEach((item, index) => {
-        item.addEventListener("click", (e) => {
-            // console.log(item.parentElement.parentElement.parentElement);
-            if(!item.classList.contains("btn_depth2")) {
-                if(prevItem !== null) {
-                    btnMenu[prevItem].closest("li").classList.remove("on");
-                    btnMenu[prevItem].parentElement.parentElement.parentElement.classList.remove("on");
-                }
-                item.closest("li").classList.add("on");
-                
-                if(item.parentElement.parentElement.parentElement.classList.contains("has_sub")) {
-                    item.parentElement.parentElement.parentElement.classList.add("on");
-                }
-                prevItem = index;
-            }
+            // 우클릭
+            item.addEventListener("contextmenu", (e) => {
+                e.preventDefault();
+
+                this.cloneTooltip();
+                this.hideTooltip();
+                this.openTooltip(item, index);
+            });
         });
-
-        // 메뉴 우클릭
-        item.addEventListener("contextmenu", (e) => {
-            e.preventDefault();
-            console.log("오른쪽");
-        })
-    });
+    },
 
     // 2depth 접기/펼치기
-    depth2.forEach((item, index) => {
-        item.addEventListener("click", (e) => {
-            if(!item.closest(".has_sub")) return;
-
-            const defaultHeight = item.offsetHeight;
-            const depth3 = item.nextElementSibling;
-            let depth3Height = depth3.offsetHeight;
-            let openHeight = defaultHeight + depth3Height;
-
-            item.closest(".has_sub").classList.toggle("open");
-
-            if(item.closest(".has_sub").classList.contains("open")) {
-                item.closest(".has_sub").style.height = `${openHeight}px`;
-            } else {
-                item.closest(".has_sub").style.height = `${defaultHeight}px`;
-            }
+    handleDepth2: function() {
+        depth2.forEach((item, index) => {
+            item.addEventListener("click", (e) => {
+                if(!item.closest(".has_sub")) return;
+    
+                const defaultHeight = item.offsetHeight;
+                const depth3 = item.nextElementSibling;
+                let depth3Height = depth3.offsetHeight;
+                let openHeight = defaultHeight + depth3Height;
+    
+                item.closest(".has_sub").classList.toggle("open");
+    
+                if(item.closest(".has_sub").classList.contains("open")) {
+                    item.closest(".has_sub").style.height = `${openHeight}px`;
+                } else {
+                    item.closest(".has_sub").style.height = `${defaultHeight}px`;
+                }
+            });
         });
-    });
+    },
+    openTooltip: function(item, index) {
+        if(item.hasAttribute("data-tooltip")) {
+            if(!item.parentElement.classList.contains("active")) {
+                item.parentElement.classList.add("tooltip_layer_wrap", "active");
+                item.parentElement.append(this.newTooltip);
+                this.prevTooltipIndex = index;
+            }
+        }
+    },
+    cloneTooltip: function() {
+        this.newTooltip = tooltip.cloneNode(true);
+    },
+    hideTooltip: function() {
+        if(this.prevTooltipIndex !== null) {
+            // console.log(this.prevTooltipIndex);
+            let prevMenuParentEl = btnMenus[this.prevTooltipIndex].parentElement;
+            prevMenuParentEl.classList.remove("tooltip_layer_wrap", "active");
+            prevMenuParentEl.querySelector(".tooltip_layer").remove();
+            this.prevTooltipIndex = null;
+        }
+    },
+    clickBody: function() {
+        body.addEventListener("click", (e) => {
+            this.hideTooltip();
+        });
+    }
 }
+
+
 
 // 즐겨찾기
 function handleBookmark() {
