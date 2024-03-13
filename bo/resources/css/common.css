@@ -226,7 +226,7 @@ Layout
 /* container */
 .container {position: relative;overflow-y: hidden; display: flex;height: calc(100vh - 118px);margin-top: 118px;}
 .container .contents {flex: 1;padding: 21px 32px 40px;background-color: #F3F5F6;}
-.container .contents iframe {overflow-y: auto;width: 100%;height: 100%;background-color: #fff;}
+.container .contents iframe {overflow-y: auto;width: 100%;height: 100%;}
 .wrap.scroll_x .container {height: calc(100vh - 130px);}
 
 /* aside */
