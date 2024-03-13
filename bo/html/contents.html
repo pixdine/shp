@@ -18,9 +18,9 @@
 					<div class="title">
 						<h2>회원관리</h2>
 					</div>
-					<button type="button" class="btn_acdion"><span>펼치기</span></button>
+					<button type="button" class="btn_acdion" id="btnShowRow"><span>펼치기</span></button>
 				</div>
-				<div class="table">
+				<div class="table" data-search>
 					<table>
 						<colgroup>
 							<col style="width:10%">
@@ -104,7 +104,7 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="row_hide">
 								<th scope="row">업장</th>
 								<td>
 									<select id="" title="">
@@ -120,7 +120,7 @@
 									</select>
 								</td>
 							</tr>
-							<tr>
+							<tr class="row_hide">
 								<th scope="row">회원유형</th>
 								<td>
 									<select id="" title="">
@@ -136,7 +136,7 @@
 									</select>
 								</td>
 							</tr>
-							<tr>
+							<tr class="row_hide">
 								<th scope="row">회사/회원명</th>
 								<td>
 									<div class="inputbox">
@@ -150,7 +150,7 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="row_hide">
 								<th scope="row">생년월일</th>
 								<td>
 									<div class="inputbox">
@@ -164,7 +164,7 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="row_hide">
 								<th scope="row">FOH가입여부</th>
 								<td>
 									<div class="checkbox_list">
@@ -192,7 +192,7 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="row_hide">
 								<th scope="row">관리번호</th>
 								<td>
 									<div class="inputbox">
@@ -206,7 +206,7 @@
 									</div>
 								</td>
 							</tr>
-							<tr>
+							<tr class="row_hide">
 								<th scope="row">사원번호</th>
 								<td>
 									<div class="inputbox">
@@ -251,4 +251,9 @@
 			</div>
         </div>
     </div> 
+
+	<!-- js -->
+	<script src="../resources/js/ui.common.js"></script>
+	<!-- //js -->
 </body>
+</html>

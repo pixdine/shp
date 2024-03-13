@@ -9,6 +9,7 @@ window.onload = () => {
     handleAllMenu();
     activeTooltip("[data-tooltip]");
     leftMenu.init();
+    UI.handleRow.init();
 }
 
 
@@ -16,6 +17,7 @@ window.addEventListener("resize", () => {
     let ww = window.innerWidth;
     checkDevice(ww);
 });
+
 
 // 디바이스 체크
 function checkDevice(ww) {
@@ -31,7 +33,7 @@ function toggleClass(target, handler, active) {
 
 // 사이드바
 function handleSideBar() {
-    if(document.getElementById("sidebar").length === 0) return;
+    if(document.getElementById("sidebar") === null) return;
 
     const sidebar = document.getElementById("sidebar");
     const handler = sidebar.querySelector(".btn_handler");
@@ -56,6 +58,48 @@ function stateSideBar() {
     }
 }
 
+const UI = {
+    handleRow: {
+        handler: null,
+        handlerTxt: null,
+        table: null,
+        rowHides: null,
+
+        init: function() {
+            if(document.querySelector("#btnShowRow") === null) return;
+
+            handler = document.querySelector("#btnShowRow");
+            handlerTxt = handler.querySelector("span");
+            table = document.querySelector("[data-search]");
+            rowHides = table.querySelectorAll(".row_hide");
+
+            if(rowHides.length === 0) {
+                handler.classList.add("hide");
+            }
+
+            this.initEvent();
+        },
+        initEvent: function() {
+            handler.addEventListener("click", () => {
+                handler.classList.toggle("active");
+
+                rowHides.forEach(item => {
+                    item.classList.toggle("show");
+                });
+
+                this.handleTxt();
+            });
+        },
+        handleTxt: function() {
+            if(handler.classList.contains("active")) {
+                handlerTxt.textContent = "닫기";
+            } else {
+                handlerTxt.textContent = "펼치기";
+            }
+        }
+    },
+}
+
 
 // lnb메뉴
 const leftMenu = {
@@ -70,6 +114,8 @@ const leftMenu = {
     depth2: null,
     
     init: function() {
+        if(document.querySelector(".lnb_menu_wrap") === null) return;
+
         lnbWrap = document.querySelector(".lnb_menu_wrap");
         lnb = document.querySelector(".lnb_menu");
         depth2 = lnb.querySelectorAll(".btn_depth2");
@@ -164,7 +210,7 @@ const leftMenu = {
 
 // 즐겨찾기
 function handleBookmark() {
-    if(document.getElementById("bookmark").length === 0) return;
+    if(document.getElementById("bookmark") === null) return;
 
     const bookmark = document.getElementById("bookmark");
     const handler = bookmark.querySelector(".btn_bookmark");
@@ -191,6 +237,8 @@ function handleBookmark() {
 
 // 전체메뉴
 function handleAllMenu() {
+    if(document.getElementById("gnb") === null) return;
+
     const gnb = document.querySelector("#gnb");
     const handler = gnb.querySelector(".btn_allmenu");
     let navHeight = gnb.querySelector(".menu_list").offsetHeight;
@@ -213,6 +261,8 @@ function handleAllMenu() {
 
 // tooltip layer
 function activeTooltip(selector) {
+    if(document.querySelector(".tooltip_btn") === null) return;
+
     const body = document.querySelector("body");
     const wrap = document.querySelector(selector);
     const handler = wrap.querySelector(".tooltip_btn");
