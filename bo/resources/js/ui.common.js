@@ -77,8 +77,15 @@ function handleLnb() {
                 prevItem = index;
             }
         });
+
+        // 메뉴 우클릭
+        item.addEventListener("contextmenu", (e) => {
+            e.preventDefault();
+            console.log("오른쪽");
+        })
     });
 
+    // 2depth 접기/펼치기
     depth2.forEach((item, index) => {
         item.addEventListener("click", (e) => {
             if(!item.closest(".has_sub")) return;
