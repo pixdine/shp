@@ -258,6 +258,7 @@ Layout
 .aside .lnb_menu > li.on > .btn_menu {color: var(--point);}
 .aside .lnb_menu > li.on.has_sub > .btn_menu::after {background-image: url("../images/ico_arrowdown_16_active.svg");}
 .aside .lnb_menu > li.open.has_sub > .btn_menu::after {transform: translateY(-50%) rotate(180deg);}
+.aside .lnb_menu .has_sub.open {overflow: initial;}
 .aside .lnb_menu .has_sub.open .lnb_depth3 {opacity: 1;}
 /* .aside .lnb_menu .tooltip_layer_wrap .tooltip_layer {top: 50%;right: 12px;margin-top: 0;} */
 .aside .lnb_menu_wrap {position: relative;overflow: hidden;}
