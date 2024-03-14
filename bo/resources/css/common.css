@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* reset */
-html, body {font-size:10px;}
+html, body {font-size:12px;}
 body{font-family: "맑은고딕", Malgun Gothic, 'Apple SD Gothic Neo', '돋움', Dotum, '굴림', Gulim, Helvetica, sans-serif;font-weight:400;color:#111;letter-spacing:-0.5px;line-height:1.4;-webkit-text-size-adjust:none;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{margin:0;padding:0;border:0;box-sizing:border-box;-webkit-box-sizing:border-box;word-break:keep-all;word-wrap:break-word;white-space:normal;/*font-family:inherit;*/}
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section{display:block;}
@@ -112,11 +112,12 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .table tbody tr{border-bottom:1px solid #E7EBEE;}
 .table th,.table td{height:40px;padding:4px 12px;color:#213A56;vertical-align:middle;word-break:break-word;font-size:12px;font-weight:500;}
 .table th{background-color:#E9F2FF;color:#213A56;text-align: left;}
+.tbl_right{text-align:right;}
 
 /*button*/
-.btn{display:inline-flex;position:relative;align-items:center;justify-content:center;width:auto;min-width:60px;height:32px;padding:0 12px;line-height:12px;font-size:12px;font-weight:500;border:1px solid transparent;text-align:center;border-radius:4px;}/* h32 */
-.btn.big{height:40px;line-height:16px;font-size:14px;font-weight:700;min-width:120px;}/*h40*/
-.btn.small{height:24px;}/*h24*/
+.btn{display:inline-flex;position:relative;align-items:center;justify-content:center;width:auto;height:32px;padding:0 12px;line-height:12px;font-size:12px;font-weight:500;border:1px solid transparent;text-align:center;border-radius:4px;}/* h32 */
+.btn.big{height:40px;line-height:16px;font-size:14px;font-weight:700;min-width:120px;padding:0 16px;}/*h40*/
+.btn.small{height:24px;padding:0 8px}/*h24*/
 
 /* button : bgcolor */
 .bctype1{background-color:var(--point);border-color:var(--point);color:#fff;}
