@@ -9,7 +9,8 @@ window.onload = () => {
     handleAllMenu();
     activeTooltip("[data-tooltip]");
     leftMenu.init();
-    UI.handleRow.init();
+    common.handleRow.init();
+    common.clearText();
 }
 
 
@@ -58,7 +59,7 @@ function stateSideBar() {
     }
 }
 
-const UI = {
+const common = {
     handleRow: {
         handler: null,
         handlerTxt: null,
@@ -98,6 +99,33 @@ const UI = {
             }
         }
     },
+    clearText: function() {
+        if(document.querySelectorAll(".inputbox").length === 0) return;
+
+        const inputboxs = document.querySelectorAll(".inputbox");
+        inputboxs.forEach(item => {
+            if(item.querySelector(".btn_ico.clear") === null) return;
+
+            const btnClear = item.querySelector(".btn_ico.clear");
+            const input = item.querySelector("input");
+            
+            input.addEventListener("input", (e) => {
+                if(e.target.value.length > 0) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            });
+            input.addEventListener("focusout", (e) => {
+                item.classList.remove("active");
+            });
+            btnClear.addEventListener("click", () => {
+                input.value = "";
+                input.focus();
+                item.classList.remove("active");
+            });
+        });
+    }
 }
 
 
