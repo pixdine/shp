@@ -19,46 +19,6 @@ window.addEventListener("resize", () => {
     checkDevice(ww);
 });
 
-
-// 디바이스 체크
-function checkDevice(ww) {
-    const wrap = document.querySelector(".wrap");
-    ww < 1600 ? wrap.classList.add("scroll_x") : wrap.classList.remove("scroll_x");
-}
-
-function toggleClass(target, handler, active) {
-    handler.addEventListener("click", () => {
-        target.classList.toggle(active);
-    });
-}
-
-// 사이드바
-function handleSideBar() {
-    if(document.getElementById("sidebar") === null) return;
-
-    const sidebar = document.getElementById("sidebar");
-    const handler = sidebar.querySelector(".btn_handler");
-    const handlerTxt = handler.querySelector(".blind");
-    toggleClass(sidebar, handler, "active");
-
-    stateSideBar();
-
-    handler.addEventListener("click", () => {
-        stateSideBar();
-    });
-}
-
-// 사이드바 상태
-function stateSideBar() {
-    const sidebar = document.getElementById("sidebar");
-    const handlerTxt = document.querySelector(".btn_handler .blind");
-    if(sidebar.classList.contains("active")) {
-        handlerTxt.textContent = "메뉴 닫기";
-    } else {
-        handlerTxt.textContent = "메뉴 열기";
-    }
-}
-
 const common = {
     handleRow: {
         handler: null,
@@ -234,7 +194,44 @@ const leftMenu = {
     }
 }
 
+// 디바이스 체크
+function checkDevice(ww) {
+    const wrap = document.querySelector(".wrap");
+    ww < 1600 ? wrap.classList.add("scroll_x") : wrap.classList.remove("scroll_x");
+}
 
+function toggleClass(target, handler, active) {
+    handler.addEventListener("click", () => {
+        target.classList.toggle(active);
+    });
+}
+
+// 사이드바
+function handleSideBar() {
+    if(document.getElementById("sidebar") === null) return;
+
+    const sidebar = document.getElementById("sidebar");
+    const handler = sidebar.querySelector(".btn_handler");
+    const handlerTxt = handler.querySelector(".blind");
+    toggleClass(sidebar, handler, "active");
+
+    stateSideBar();
+
+    handler.addEventListener("click", () => {
+        stateSideBar();
+    });
+}
+
+// 사이드바 상태
+function stateSideBar() {
+    const sidebar = document.getElementById("sidebar");
+    const handlerTxt = document.querySelector(".btn_handler .blind");
+    if(sidebar.classList.contains("active")) {
+        handlerTxt.textContent = "메뉴 닫기";
+    } else {
+        handlerTxt.textContent = "메뉴 열기";
+    }
+}
 
 // 즐겨찾기
 function handleBookmark() {
