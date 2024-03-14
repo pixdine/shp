@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHP BO component</title>
-    <link rel="stylesheet" type="text/css" href="../resources/css/common.css">
-    <link rel="stylesheet" type="text/css" href="../resources/css/content.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>SHP BO</title>
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
     <style media="all">
         .container{overflow-y:auto;display:block;height:auto !important;margin-top:0;}
         .wrap{display: block;}
@@ -23,7 +26,7 @@
     </style>
 </head>
 <body>
-    <div id="wrap" class="wrap">
+    <div id="wrap" class="wrap frame">
         <div class="container">
             <!--title-->
             <div class="guide_sec">
@@ -163,7 +166,7 @@
             <!--table-->
             <div class="guide_sec">
                 <div class="guide_inner">
-                    <h2 class="h2">Table</h2>
+                    <h2 class="h2">Table(작업중)</h2>
                     <div class="table">
                         <table>
                             <colgroup>
@@ -284,13 +287,15 @@
                                     <th scope="row">회사/회원명</th>
                                     <td>
                                         <div class="inputbox">
-                                            <input type="text" placeholder="회사/회원명" value="" title="텍스트를 입력해주세요">
+                                            <input type="text" placeholder="회사/회원명" value="" title="텍스트를 입력해주세요" autocomplete="off">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                     <th scope="row">E-mail</th>
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="E-mail" value="" title="텍스트를 입력해주세요">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -299,12 +304,14 @@
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="생년월일" value="" title="텍스트를 입력해주세요">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                     <th scope="row">Par-Q유효기간</th>
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="Par-Q유효기간" value="" title="텍스트를 입력해주세요">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -341,12 +348,14 @@
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="관리번호" value="" title="텍스트를 입력해주세요">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                     <th scope="row">회원번호</th>
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="회원번호" value="" title="텍스트를 입력해주세요">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -355,12 +364,14 @@
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="사원번호" value="" title="텍스트를 입력해주세요">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                     <th scope="row">휴대폰번호</th>
                                     <td>
                                         <div class="inputbox">
                                             <input type="text" placeholder="휴대폰번호" value="" title="텍스트를 입력해주세요">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                         </div>
                                     </td>
                                 </tr>
@@ -396,14 +407,17 @@
                                         <div class="form_control tel">
                                             <div class="inputbox">
                                                 <input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+                                                <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                             </div>
                                             <span class="dash">-</span>
                                             <div class="inputbox">
                                                 <input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+                                                <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                             </div>
                                             <span class="dash">-</span>
                                             <div class="inputbox">
                                                 <input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+                                                <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                             </div>
                                         </div>
                                     </td>
@@ -412,9 +426,11 @@
                                         <div class="form_control">
                                             <div class="inputbox">
                                                 <input type="text" placeholder="" value="aaaaaaaaaaaa" title="비밀번호를 입력해주세요" disabled>
+                                                <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                             </div>
                                             <div class="inputbox">
                                                 <input type="text" placeholder="" value="aaaaaaaaaaaa" title="비밀번호를 입력해주세요" disabled>
+                                                <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                             </div>
                                             <button type="button" class="btn bctype1"><span>초기화</span></button>
                                         </div>
@@ -426,6 +442,7 @@
                                         <div class="form_control">
                                             <div class="inputbox">
                                                 <input type="text" placeholder="" value="" title="비밀번호를 입력해주세요" disabled>
+                                                <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                                             </div>
                                             <div class="inputbox search">
                                                 <input type="search" class="inp" id="search" name="search" placeholder="" title="검색어 입력" autocomplete="off" value="" disabled>
