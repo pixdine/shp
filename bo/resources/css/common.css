@@ -137,8 +137,8 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .inputbox.search input{padding-right:36px;min-width:212px;}
 .inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
 
-.inputbox .btn_ico.clear{display:none;position: absolute;right:12px;top:50%;transform: translateY(-50%);}
-.inputbox.active .btn_ico.clear{display:block;}
+.inputbox .btn_ico.clear{position: absolute;right:12px;top:50%;transform: translateY(-50%);opacity: 0;cursor: text;}
+.inputbox.active .btn_ico.clear{opacity: 1;cursor: pointer;}
 .inputbox.search input{padding-right:36px;}
 .inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
 .inputbox.search .btn_ico.clear{right:36px;}

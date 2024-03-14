@@ -181,8 +181,16 @@ const common = {
     
                 const btnClear = item.querySelector(".btn_ico.clear");
                 const input = item.querySelector("input");
-                
+
+                // console.log(btnClear);
                 input.addEventListener("input", (e) => {
+                    if(e.target.value.length > 0) {
+                        item.classList.add("active");
+                    } else {
+                        item.classList.remove("active");
+                    }
+                });
+                input.addEventListener("focus", (e) => {
                     if(e.target.value.length > 0) {
                         item.classList.add("active");
                     } else {
@@ -192,6 +200,7 @@ const common = {
                 input.addEventListener("focusout", (e) => {
                     item.classList.remove("active");
                 });
+                
                 btnClear.addEventListener("click", () => {
                     input.value = "";
                     input.focus();
