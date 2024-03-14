@@ -91,3 +91,4 @@
 .win_sec+.win_sec{margin-top:24px;}
 .win_sec .win_area{display:flex;gap:12px;}
 .win_area .profile_img{overflow: hidden;width:120px;height:160px;background: url('../images/img_profile.png') no-repeat center center / 100% auto;}
+.win_area .profile_img img{width: 100%;height: 100%;object-fit: cover;background-color: #fff;}
