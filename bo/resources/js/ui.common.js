@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-window.onload = () => {
+window.executeMacro = function() {
     let ww = window.innerWidth;
 
     checkDevice(ww);
