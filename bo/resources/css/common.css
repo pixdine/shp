@@ -174,10 +174,19 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .radio_list .radio+.radio{margin-left:20px;}
 
 /*date*/
-.input_date .date{position: relative;display: inline-block;}
+.input_date .date{position: relative;display: inline-block;border-radius:4px;background-color:#fff;}
 .input_date .date input{width:92px;}
 .input_date .dash{display: inline-block;padding: 0 4px;color:#213A56;font-size:12px;font-weight:600;}
 .inputbox+.inputbox{margin-top:8px}
+
+/*datepicker*/
+.tui-datepicker{z-index:1;}
+.tui-datepicker .tui-timepicker-row{display:flex;align-items:center;gap:5px;}
+.tui-datepicker .tui-timepicker-select{min-width:auto;}
+.tui-datepicker .tui-datepicker-footer .tui-timepicker{display:flex;justify-content:center;padding-left:0;padding-right:0;}
+.tui-datepicker-input{width:auto;height:auto;border:none;}
+.tui-datepicker-input input{position:relative;width:150px !important;background-color:transparent;z-index:1;cursor:pointer;}
+.tui-datepicker-input .btn_ico.calendar{position:absolute;top:50%;right:12px;transform:translateY(-50%);}
 
 /*tooltip layer*/
 .tooltip_layer {position: absolute;right: 0;margin-top: 8px;z-index: 1;width: max-content;border: 1px solid #DCE0E5;border-radius: 4px;background-color: #fff;opacity: 0;transition: all 0.5s ease;}

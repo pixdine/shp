@@ -7,8 +7,10 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
+    <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+    
     <style media="all">
         .container{overflow-y:auto;display:block;height:auto !important;margin-top:0;}
         .wrap{display: block;}
@@ -131,6 +133,19 @@
                     </select>
                     <h3 class="h3">calendar</h3>
                     <div class="input_date">
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="startpicker-input" type="text" aria-label="Date" class="datepicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                        </span>
+                        <span class="dash">~</span>
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus">
+                            <input id="endpicker-input" type="text" aria-label="Date" class="datepicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div id="endpicker-container" style="margin-left: -1px;"></div>
+                        </span>
+                    </div>
+                    <!-- <div class="input_date">
                         <span class="date">
                             <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
                         </span>
@@ -139,7 +154,8 @@
                             <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
                         </span>
                         <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
-                    </div>
+                    </div> -->
+
                     <h3 class="h3">search</h3>
                     <div class="inputbox search">
                         <input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력해주세요." title="검색어 입력" autocomplete="off" value="">
@@ -499,15 +515,40 @@
         </div>
     </div>
 
+    
     <!-- js -->
+    <script type="text/javascript" src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.js"></script>
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
     <script>
+        const today = new Date();
+        var picker = tui.DatePicker.createRangePicker({
+            startpicker: {
+                date: today,
+                input: '#startpicker-input',
+                container: '#startpicker-container'
+            },
+            endpicker: {
+                date: today,
+                input: '#endpicker-input',
+                container: '#endpicker-container'
+            },
+            selectableRanges: [
+                [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+            ],
+            format: 'YYYY-MM-dd HH:mm',
+            timePicker: true
+        });
+
         window.onload = () => {
             // 공통 함수들 호출
             window.executeMacro();
 
             common.ui.tab.init("#tab");
+            picker.on('change:end', () => {
+                console.log(123);
+            });
         }
     </script>
 </body>
