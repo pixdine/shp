@@ -182,20 +182,20 @@ const common = {
                 const btnClear = item.querySelector(".btn_ico.clear");
                 const input = item.querySelector("input");
 
+                function activeClass(e) {
+                    if(e.target.value.length > 0) {
+                        item.classList.add("active");
+                    } else {
+                        item.classList.remove("active");
+                    }
+                }
+
                 // console.log(btnClear);
                 input.addEventListener("input", (e) => {
-                    if(e.target.value.length > 0) {
-                        item.classList.add("active");
-                    } else {
-                        item.classList.remove("active");
-                    }
+                    activeClass(e);
                 });
                 input.addEventListener("focus", (e) => {
-                    if(e.target.value.length > 0) {
-                        item.classList.add("active");
-                    } else {
-                        item.classList.remove("active");
-                    }
+                    activeClass(e);
                 });
                 input.addEventListener("focusout", (e) => {
                     item.classList.remove("active");
@@ -207,6 +207,32 @@ const common = {
                     item.classList.remove("active");
                 });
             });
+        },
+        tab: {
+            tab: null,
+            menuItems: null,
+            contItems: null,
+            preveIndex: 0,
+
+            init: function(selector) {
+                tab = document.querySelector(selector);
+                menuItems = tab.querySelectorAll(".tab_menu li");
+                contItems = tab.querySelectorAll(".tab_cont .tab_cont_item");
+
+                this.initEvent();
+            },
+            initEvent: function() {
+                // console.log(menuItems);
+                menuItems.forEach((item, index) => {
+                    item.addEventListener("click", () => {
+                        menuItems[this.preveIndex].classList.remove("active");
+                        contItems[this.preveIndex].classList.remove("active");
+                        item.classList.add("active");
+                        contItems[index].classList.add("active");
+                        this.preveIndex = index;
+                    });
+                });
+            }
         }
     }
     

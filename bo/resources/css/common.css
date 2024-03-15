@@ -192,6 +192,8 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .tab .tab_menu li{margin-right:4px;}
 .tab .tab_menu li a{display: block;width: 100%;height: 36px;padding: 0 16px;border-radius:12px 12px 0 0;background-color: #E7EBEE;color: #111;font-size: 14px;font-weight:700;text-align: center;line-height:36px;}
 .tab .tab_menu li.active a{background-color:#fff;}
+.tab .tab_cont_item{display: none;}
+.tab .tab_cont_item.active{display: block;}
 
 /***********************************************************************
 Layout
