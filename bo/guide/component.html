@@ -19,6 +19,8 @@
         .guide_inner .h2 {margin:0 -40px 40px;padding: 10px 40px;font-size: 24px;font-weight: 700;background-color: #F3F5F6;}
         .guide_inner .h3{position: relative;margin-top: 30px;margin-bottom: 10px;font-size: 18px;}
         .guide_inner .h3:first-of-type{margin-top:0;}
+        .guide_inner .c_desc{position: relative; margin-top: 20px; padding-left: 10px; font-weight: bold; margin-bottom: 10px; color: #666;}
+        .guide_inner .c_desc:before{content: ''; display: block; position: absolute; left: 0; top: 8px; width: 3px; height: 3px; background-color: #999;}
 
 
         /*tab*/
@@ -70,9 +72,11 @@
                     <h3 class="h3">.btn.big[H40]</h3>
                     <button type="button" class="btn big bctype1"><span>검색</span></button>
                     <button type="button" class="btn big bctype2"><span>초기화</span></button>
+
                     <h3 class="h3">.btn[H32]</h3>
                     <button type="button" class="btn bctype1"><span>검색</span></button>
                     <button type="button" class="btn bctype2"><span>초기화</span></button>
+
                     <h3 class="h3">.btn.small[H24]</h3>
                     <button type="button" class="btn small bctype1"><span>검색</span></button>
                     <button type="button" class="btn small bctype2"><span>초기화</span></button>
@@ -113,21 +117,62 @@
                         <label for="radio3">라디오버튼 (Disable)</label>
                     </span>
 
+                    <h3 class="h3">radio (Range)</h3>
+                    <div class="period">
+                        <div class="radio_list">
+                            <span class="range">
+                                <input type="radio" id="today" name="periodRange" title="오늘 선택" checked><!-- D: 선택 시 checked 추가 -->
+                                <label for="today">오늘</label>
+                            </span>
+                            <span class="range">
+                                <input type="radio" id="weekly" name="periodRange" title="1주일 선택">
+                                <label for="weekly">1주일</label>
+                            </span>
+                            <span class="range">
+                                <input type="radio" id="month1" name="periodRange" title="30일 선택">
+                                <label for="month1">30일</label>
+                            </span>
+                            <span class="range">
+                                <input type="radio" id="month3" name="periodRange" title="3개월 선택">
+                                <label for="month3">3개월</label>
+                            </span>
+                            <span class="range">
+                                <input type="radio" id="month6" name="periodRange" title="6개월 선택" disabled><!-- D: 비활성화 시 disabled 추가 -->
+                                <label for="month6">6개월</label>
+                            </span>
+                        </div>
+                    </div>
+
+
                     <h3 class="h3">input</h3>
+                    <p class="c_desc">Default</p>
                     <div class="inputbox">
                         <input type="text" placeholder="Default 텍스트필드" value="" title="텍스트를 입력해주세요">
                         <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                     </div>
+                    <p class="c_desc">Done</p>
                     <div class="inputbox">
-                        <input type="text" placeholder="Done 텍스트필드" value="" title="텍스트를 입력해주세요">
+                        <input type="text" placeholder="Done 텍스트필드" value="입력값" title="텍스트를 입력해주세요">
                         <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                     </div>
+                    <p class="c_desc">Disabled</p>
                     <div class="inputbox">
-                        <input type="text" placeholder="Disabled 텍스트필드" value="" title="텍스트를 입력해주세요" disabled="">
+                        <input type="text" placeholder="Disabled 텍스트필드" value="입력값" title="텍스트를 입력해주세요" disabled="">
+                        <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                    </div>
+                    <p class="c_desc">Readonly</p>
+                    <div class="inputbox">
+                        <input type="text" placeholder="Disabled 텍스트필드" value="입력값" title="텍스트를 입력해주세요" readonly>
                         <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                     </div>
                     <h3 class="h3">select</h3>
+                    <p class="c_desc">Default</p>
                     <select id="idDep" title="">
+                        <option value="" selected="">전체</option>
+                        <option value="">전체</option>
+                    </select>
+                    <p class="c_desc">Disabled</p>
+                    <select id="idDep" title="" disabled>
                         <option value="" selected="">전체</option>
                         <option value="">전체</option>
                     </select>
