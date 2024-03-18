@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>SHP BO</title>
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+</head>
+<body>
+    <div class="win_popup"><!-- D: 윈도우 팝업 사이즈 width:924px -->
+        <div class="win_header">
+            <h2 class="tit_win">공지 상세</h2>
+        </div>
+        <div class="win_cont">
+            <div class="win_box">
+                <div class="win_sec">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:120px">
+                                <col style="width:auto">
+                                <col style="width:120px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">사이트<em class="required">*</em></th>
+                                    <td>
+                                        <div class="inputbox">
+                                            <input type="text" placeholder="사이트" value="" title="사이트를 입력해주세요" autocomplete="off">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">전시대상</th>
+                                    <td>
+                                        <select id="" title="">
+                                            <option value="" selected="">회원+강사</option>
+                                            <option value="">회원+강사</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">게시 기간<em class="required">*</em></th>
+                                    <td>
+                                        <div class="input_date">
+                                            <span class="date">
+                                                <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="" disabled>
+                                            </span>
+                                            <span class="dash">~</span>
+                                            <span class="date">
+                                                <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="" disabled>
+                                            </span>
+                                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">분류</th>
+                                    <td>
+                                        <select id="" title="">
+                                            <option value="" selected="">공지사항</option>
+                                            <option value="">공지사항</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">제목<em class="required">*</em></th>
+                                    <td colspan="3">
+                                        <div class="inputbox">
+                                            <input type="text" placeholder="제목" value="" title="제목를 입력해주세요" autocomplete="off">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">등록자ID</th>
+                                    <td>
+                                        <div class="inputbox">
+                                            <input type="text" placeholder="등록자ID" value="황*현(ID)" title="등록자ID를 입력해주세요" autocomplete="off" disabled>
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </td>
+                                    <th scope="row">등록일</th>
+                                    <td>
+                                        <div class="inputbox">
+                                            <input type="text" placeholder="등록일" value="2021-08-24" title="등록일을 입력해주세요" autocomplete="off" disabled>
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">게시 여부</th>
+                                    <td>
+                                        <div class="radio_list">
+                                            <span class="radio">
+                                                <input type="radio" id="post1" name="post" title="게시 선택">
+                                                <label for="post1">게시</label>
+                                            </span>
+                                            <span class="radio">
+                                                <input type="radio" id="post2" name="post" title="게시안함 선택">
+                                                <label for="post2">게시안함</label>
+                                            </span>
+                                        </div>
+                                    </td>
+                                    <th scope="row">상단고정 여부</th>
+                                    <td>
+                                        <div class="radio_list">
+                                            <span class="radio">
+                                                <input type="radio" id="fix1" name="fix" title="고정 선택">
+                                                <label for="fix1">고정</label>
+                                            </span>
+                                            <span class="radio">
+                                                <input type="radio" id="fix2" name="fix" title="고정안함 선택">
+                                                <label for="fix2">고정안함</label>
+                                            </span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="win_sec">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:120px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row" colspan="2">공지내용<em class="required">*</em></th>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="textarea">
+                                            <textarea rows="20" id="formWCont" placeholder="공지사항 내용을 입력하는 영역입니다." title="내용을 입력하세요."></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="win_footer">
+            <div class="btn_wrap">
+                <button type="button" class="btn big bctype2"><span>닫기</span></button>
+                <button type="button" class="btn big bctype1"><span>저장</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+	<script src="../resources/js/ui.common.js"></script>
+	<!-- //js -->
+    <script>
+        window.onload = () => {
+            common.ui.tab.init("#tab");
+        }
+    </script>
+</body>
+</html>

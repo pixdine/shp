@@ -65,7 +65,7 @@
 .wrap.frame .container{margin-top:0;height:auto;flex-direction: column;}
 .section{padding:32px 32px 40px 32px;background: #Fff;}
 .section + .section{margin-top:12px;}
-.table .inputbox{width:calc(100% - 295px);}
+/*.table .inputbox{width:calc(100% - 295px);}*/
 .table .form_control .inputbox{width:auto;}
 .table .row_hide{display: none;}
 .table .row_hide.show{display: table-row;}
@@ -87,8 +87,13 @@
 /*window popup*/
 .win_popup{background-color:#F3F5F6;padding:32px 32px 40px 32px;}
 .win_header .tit_win{font-size:16px;font-weight:700;line-height:19px;margin-bottom:20px;}
-.win_cont .tab .tab_cont_item{padding:32px 32px 40px 32px;background-color:#fff;}
+.win_cont .tab .tab_cont,
+.win_box{padding:32px 32px 40px 32px;background-color:#fff;border-radius:12px;}
+.win_cont .tab .tab_cont{border-radius:0 0 12px 12px;}
 .win_sec+.win_sec{margin-top:24px;}
 .win_sec .win_area{display:flex;gap:12px;}
 .win_area .profile_img{overflow: hidden;width:120px;height:160px;background: url('../images/img_profile.png') no-repeat center center / 100% auto;}
 .win_area .profile_img img{width: 100%;height: 100%;object-fit: cover;background-color: #fff;}
+.win_popup select{width:100%;}
+.win_popup .textarea{height:222px;margin-top:40px;margin-left: -12px;margin-right: -12px; border-top: 1px solid #E7EBEE;}
+.txt_msg{margin-top:8px;color:var(--point);}

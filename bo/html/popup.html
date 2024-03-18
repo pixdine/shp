@@ -16,7 +16,7 @@
             <h2 class="tit_win">개인회원/사용자 정보 상세</h2>
         </div>
         <div class="win_cont">
-            <div class="tab">
+            <div class="tab" id="tab">
                 <ul class="tab_menu">
                     <li class="active">
                         <a href="javascript:;">기본 정보<span class="blind">해당 내용 보기</span></a>
@@ -38,7 +38,7 @@
                     </li>
                 </ul>
                 <div class="tab_cont">
-                    <div class="tab_cont_item">
+                    <div class="tab_cont_item active">
                         <div class="win_sec">
                             <div class="tit_wrap bdr">
                                 <div class="tit_area">
@@ -214,21 +214,22 @@
                             </div>
                         </div>
                     </div>
+                    <div class="tab_cont_item">골프회원정보 내용</div>
+                    <div class="tab_cont_item">상품정보 내용</div>
+                    <div class="tab_cont_item">출입내역 내용</div>
+                    <div class="tab_cont_item">VOC상담 내용</div>
+                    <div class="tab_cont_item">회원관리 정보 내용</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- //js -->
+    <!-- js -->
+	<script src="../resources/js/ui.common.js"></script>
+	<!-- //js -->
     <script>
         window.onload = () => {
-            // 공통 함수들 호출
-            window.executeMacro();
-
             common.ui.tab.init("#tab");
-            picker.on('change:end', () => {
-                console.log(123);
-            });
         }
     </script>
 </body>
