@@ -180,7 +180,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .inputbox+.inputbox{margin-top:8px}
 
 /*datepicker*/
-.tui-datepicker{z-index:1;}
+.tui-datepicker{z-index:2;}
 .tui-datepicker .tui-timepicker-row{display:flex;align-items:center;gap:5px;}
 .tui-datepicker .tui-timepicker-select{min-width:auto;}
 .tui-datepicker .tui-datepicker-footer .tui-timepicker{display:flex;justify-content:center;padding-left:0;padding-right:0;}
