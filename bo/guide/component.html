@@ -582,8 +582,8 @@
                 [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
             ],
             language: 'ko',
-            format: 'YYYY-MM-dd HH:mm',
-            timePicker: true,
+            format: 'YYYY-MM-dd HH:mm', //시간 선택없이 달력만 나오는 경우 HH:mm 삭제 
+            timePicker: false, //시간 선택없이 달력만 나오는 경우 timePicker: false
         });
 
         window.onload = () => {
