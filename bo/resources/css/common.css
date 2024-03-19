@@ -65,8 +65,8 @@ input[type="tel"]{padding:0 12px;width:100%;height:32px;font-size:12px;font-weig
 input[type="text"]:disabled,
 input[type="password"]:disabled,
 input[type="tel"]:disabled,
-input[type="search"]:disabled,
-input[readonly]{background-color:#E7EBEE;opacity:1;color:#7F8A94;cursor:default;-webkit-tap-highlight-color:transparent;border-color:#DCE0E5}
+input[type="search"]:disabled{background-color:#E7EBEE;opacity:1;color:#7F8A94;cursor:default;-webkit-tap-highlight-color:transparent;border-color:#DCE0E5}
+input[readonly]{background-color:#E7EBEE;opacity:1;color:#525960;cursor:default;-webkit-tap-highlight-color:transparent;border-color:#DCE0E5}
 
 input[type="text"]:focus,
 input[type="password"]:focus,
@@ -94,7 +94,7 @@ input[type="search"]::-webkit-search-results-decoration{display: none;}
 ::-webkit-input-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
 ::-moz-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
 :-ms-input-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
-:-moz-placeholder{color:#7F8A94;font-size:12px;font-weight:500;}
+:-moz-placeholder{color:#7F8A94;font-size:12px;font-weight:500;} 
 input[disabled]::placeholder{color:#7F8A94}
 input[readonly]::placeholder{color:#525960;}
 
@@ -102,7 +102,7 @@ input[readonly]::placeholder{color:#525960;}
 
 select{position: relative;display: inline-block;position: relative;height:32px;padding:0 36px 0 12px;vertical-align: middle;font-size:12px;-webkit-appearance: none;appearance: none;border:1px solid #DCE0E5;border-radius:4px;background:#fff url('../images/ico_select.png') right 8px center no-repeat;min-width:140px;}
 select::-ms-expand{display: none; /* IE 10, 11 */}
-select:disabled{border-color:#ccc;background-color:#f7f7f7;/* opacity:0.5; */}
+select:disabled{border-color:#DCE0E5;background-color:#E7EBEE;color:#7F8A94/* opacity:0.5; */}
 
 textarea{display:block;width:100%;height:100%;padding:16px;background-color:#ffffff;color:#111;font-size:12px;line-height:20px;-webkit-appearance:none;-moz-appearance:none;appearance:none;resize:none;border:1px solid transparent;}
 textarea:focus{border-color:var(--point);}
@@ -189,6 +189,9 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .input_date .date input{width:92px;}
 .input_date .dash{display: inline-block;padding: 0 4px;color:#213A56;font-size:12px;font-weight:600;}
 .inputbox+.inputbox{margin-top:8px}
+input.datepicker[readonly]{border-color:#DCE0E5;color:#111;}
+input.datepicker[disabled]{border-color:#DCE0E5;background-color:#E7EBEE;color:#7F8A94;}
+
 
 /*datepicker*/
 .tui-datepicker{z-index:1;}
