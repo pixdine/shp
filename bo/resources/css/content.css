@@ -78,7 +78,7 @@
 
 
 
-.area_wrap{display:flex;gap:16px;height:100vh;}
+.area_wrap{display:flex;height:100vh;}
 .area_left{width:500px;}
 .area_right{flex:1;}
 .area_wrap .section{height:100%;}
