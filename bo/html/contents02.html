@@ -13,19 +13,32 @@
 <body>
     <div id="wrap" class="wrap frame">
         <div id="container" class="container">
-			<div class="area_wrap">
-				<div class="area_left">
-					<div class="section">
-						Left area (tree / grid)
+			<div class="section">
+				<div class="area_wrap">
+					<div class="area_left">
+						<div class="title bdr">
+							<h2>사용자 목록 (총 <strong>3</strong>건)</h2>
+						</div>
 					</div>
-				</div>
-				<div class="area_right">
-					<div class="section">
-						Right area (Search / grid / contents)
-					</div>	
+					<div class="area_right">
+						<div class="title bdr">
+							<h2>사용자 상세 정보</h2>
+						</div>
+					</div>
 				</div>
 			</div>
 			
-        </div>
+		</div>
     </div> 
+
+	<!-- js -->
+	<script src="../resources/js/ui.common.js"></script>
+	<!-- //js -->
+
+	<script>
+        window.onload = () => {
+            // 공통 함수들 호출
+            window.executeMacro();
+        }
+    </script>
 </body>

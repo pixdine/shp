@@ -51,7 +51,7 @@
 
 .required{display: inline-block;margin-left: 4px;color: #FF4C4C;}
 
-.sort_wrap{display:flex;align-items:center;justify-content:space-between;}
+.sort_wrap{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}
 .sort_wrap .btn_area{display:flex;align-items:center;gap:4px;}
 .sort_wrap .btn_area select{margin-left:8px;}
 
@@ -78,8 +78,8 @@
 
 
 
-.area_wrap{display:flex;height:100vh;}
-.area_left{width:500px;}
+.area_wrap{display:flex;gap:20px;;}
+.area_left{width:390px;}
 .area_right{flex:1;}
 .area_wrap .section{height:100%;}
 
