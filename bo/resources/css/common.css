@@ -202,6 +202,9 @@ input.datepicker[disabled]{border-color:#DCE0E5;background-color:#E7EBEE;color:#
 .tui-datepicker-input{width:auto;height:auto;border:none;}
 .tui-datepicker-input input{position:relative;width:150px !important;background-color:transparent;z-index:1;cursor:pointer;}
 .tui-datepicker-input .btn_ico.calendar{position:absolute;top:50%;right:12px;transform:translateY(-50%);}
+.tui-calendar {letter-spacing: 0;}
+.tui-calendar th, .tui-calendar td{letter-spacing: 0;}
+.tui-calendar .tui-calendar-body-header th{padding:0;text-align:center;}
 
 /*tooltip layer*/
 .tooltip_layer {position: absolute;right: 0;margin-top: 8px;z-index: 1;width: max-content;border: 1px solid #DCE0E5;border-radius: 4px;background-color: #fff;opacity: 0;transition: all 0.5s ease;}

@@ -17,6 +17,7 @@ window.executeMacro = function() {
 
     checkDevice(ww);
     activeTooltip("[data-tooltip]");
+    common.leftMenu.init();
     common.ui.handleRow.init();
     common.ui.clearText();
 }
@@ -215,6 +216,8 @@ const common = {
             preveIndex: 0,
 
             init: function(selector) {
+                if(document.querySelector(selector) === null) return;
+
                 tab = document.querySelector(selector);
                 menuItems = tab.querySelectorAll(".tab_menu li");
                 contItems = tab.querySelectorAll(".tab_cont .tab_cont_item");
