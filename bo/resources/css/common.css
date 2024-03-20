@@ -100,7 +100,7 @@ input[readonly]::placeholder{color:#525960;}
 
 ::before, ::after {box-sizing: border-box;}
 
-select{position: relative;display: inline-block;position: relative;height:32px;padding:0 36px 0 12px;vertical-align: middle;font-size:12px;-webkit-appearance: none;appearance: none;border:1px solid #DCE0E5;border-radius:4px;background:#fff url('../images/ico_select.png') right 8px center no-repeat;min-width:140px;}
+select{position: relative;display: inline-block;position: relative;height:32px;padding:0 36px 0 12px;vertical-align: middle;font-size:12px;-webkit-appearance: none;appearance: none;border:1px solid #DCE0E5;border-radius:4px;background:#fff url('../images/ico_select.png') right 8px center no-repeat;}
 select::-ms-expand{display: none; /* IE 10, 11 */}
 select:disabled{border-color:#DCE0E5;background-color:#E7EBEE;color:#7F8A94/* opacity:0.5; */}
 
