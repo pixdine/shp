@@ -4,10 +4,10 @@ window.executeLayout = function() {
     let ww = window.innerWidth;
 
     checkDevice(ww);
-    handleSideBar();
-    handleBookmark();
     handleAllMenu();
     activeTooltip("[data-tooltip]");
+    handleSideBar();
+    handleBookmark();
     common.leftMenu.init();
     common.ui.clearText();
 }
@@ -17,6 +17,8 @@ window.executeMacro = function() {
 
     checkDevice(ww);
     activeTooltip("[data-tooltip]");
+    handleSideBar();
+    handleBookmark();
     common.leftMenu.init();
     common.ui.handleRow.init();
     common.ui.clearText();
