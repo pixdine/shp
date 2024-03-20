@@ -65,7 +65,7 @@
 .wrap.frame .container{margin-top:0;height:auto;flex-direction: column;}
 .section{padding:32px 32px 40px 32px;background: #Fff;}
 .section + .section{margin-top:12px;}
-.table .inputbox{width:calc(100% - 295px);}
+/*.table .inputbox{width:calc(100% - 295px);}*/
 .table .form_control .inputbox{width:auto;}
 .table .row_hide{display: none;}
 .table .row_hide.show{display: table-row;}
@@ -78,7 +78,7 @@
 
 
 
-.area_wrap{display:flex;gap:16px;height:100vh;}
+.area_wrap{display:flex;height:100vh;}
 .area_left{width:500px;}
 .area_right{flex:1;}
 .area_wrap .section{height:100%;}
@@ -87,8 +87,37 @@
 /*window popup*/
 .win_popup{background-color:#F3F5F6;padding:32px 32px 40px 32px;}
 .win_header .tit_win{font-size:16px;font-weight:700;line-height:19px;margin-bottom:20px;}
-.win_cont .tab .tab_cont_item{padding:32px 32px 40px 32px;background-color:#fff;}
+.win_cont .tab .tab_cont,
+.win_box{padding:32px 32px 40px 32px;background-color:#fff;border-radius:12px;}
+.win_cont .tab .tab_cont{border-radius:0 0 12px 12px;}
 .win_sec+.win_sec{margin-top:24px;}
 .win_sec .win_area{display:flex;gap:12px;}
 .win_area .profile_img{overflow: hidden;width:120px;height:160px;background: url('../images/img_profile.png') no-repeat center center / 100% auto;}
 .win_area .profile_img img{width: 100%;height: 100%;object-fit: cover;background-color: #fff;}
+.win_popup select{width:100%;}
+.win_popup .textarea{height:222px;margin-top:40px;margin-left: -12px;margin-right: -12px; border-top: 1px solid #E7EBEE;}
+.txt_msg{margin-top:8px;color:var(--point);}
+
+/*tree*/
+.tree_contents .treejs .treejs-node{font-size: 12px;}
+.tree_contents .treejs .treejs-checkbox{width: 16px;height: 16px;margin-right:4px;}
+.tree_contents .treejs .treejs-checkbox::after{display: none !important;}
+.tree_contents .treejs .treejs-checkbox::before{top:0;background: url("../images/ico_folder_16.svg") no-repeat center center / contain;border: 0;}
+.tree_contents .treejs .treejs-node__checked{color:var(--point);}
+.tree_contents .treejs .treejs-node__checked > .treejs-checkbox:before,
+.tree_contents .treejs .treejs-node__halfchecked > .treejs-checkbox:before{background-color: transparent;background-image: url("../images/ico_folder_16_active.svg");}
+.tree_contents .treejs .treejs-node.treejs-placeholder .treejs-checkbox::before{background-image: url("../images/ico_file_16.svg");}
+
+.tree_contents .line{margin:4px 0;display:flex;justify-content:flex-start}
+.tree_contents .caret-icon{width:16px;text-align:center;cursor:pointer;background: url("../images/ico_folder_16.svg") no-repeat center center / contain;}
+.tree_contents .empty-icon{width:18px}
+.tree_contents .json-type{margin-right:4px;margin-left:4px}
+.tree_contents .json-key{color:#444;margin-right:4px;margin-left:4px}
+.tree_contents .json-index{margin-right:4px;margin-left:4px}
+.tree_contents .json-separator{}
+.tree_contents .json-value{margin-left:8px}
+.tree_contents .json-number{color:#f9ae58}
+.tree_contents .json-boolean{color:#ec5f66}
+.tree_contents .json-string{color:#86b25c}
+.tree_contents .json-size{margin-right:4px;margin-left:4px}
+.tree_contents .hide{display:none}

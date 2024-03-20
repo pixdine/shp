@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>SHP BO</title>
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+</head>
+<body>
+    <div class="win_popup"><!-- D: 윈도우 팝업 사이즈 width:526px -->
+        <div class="win_header">
+            <h2 class="tit_win">비밀번호 변경</h2>
+        </div>
+        <div class="win_cont">
+            <div class="win_box">
+                <div class="win_sec">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width:120px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">현재 비밀번호</th>
+                                    <td>
+                                        <div class="inputbox">
+                                            <input type="password" placeholder="비밀번호 입력" value="" title="현재 비밀번호를 입력해주세요" autocomplete="off">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">신규 비밀번호</th>
+                                    <td>
+                                        <div class="inputbox">
+                                            <input type="password" placeholder="비밀번호 입력" value="" title="신규 비밀번호를 입력해주세요" autocomplete="off">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">신규 비밀번호 확인</th>
+                                    <td>
+                                        <div class="inputbox">
+                                            <input type="password" placeholder="비밀번호 입력" value="" title="신규 비밀번호 확인을 입력해주세요" autocomplete="off">
+                                            <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <p class="txt_msg">※ 영문, 숫자, 특수문자 조합 8자 이상</p>
+        </div>
+        <div class="win_footer">
+            <div class="btn_wrap">
+                <button type="button" class="btn big bctype1"><span>비밀번호 변경</span></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+	<script src="../resources/js/ui.common.js"></script>
+	<!-- //js -->
+    <script>
+        window.onload = () => {
+            common.ui.tab.init("#tab");
+        }
+    </script>
+</body>
+</html>
