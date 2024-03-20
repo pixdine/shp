@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
-
+	
+	<link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
 </head>
@@ -37,15 +38,18 @@
 											<option value="" selected="">가입일자</option>
 											<option value="">가입일자</option>
 										</select>
-										<div class="input_date">
-											<span class="date">
-												<input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
+										<div class="input_date range_picker_wrap">
+											<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
+												<input type="text" aria-label="Date" class="datepicker startpicker" readonly>
+												<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+												<div class="picker_container" style="margin-left: -1px;"></div>
 											</span>
 											<span class="dash">~</span>
-											<span class="date">
-												<input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
+											<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
+												<input type="text" aria-label="Date" class="datepicker endpicker" readonly>
+												<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+												<div class="picker_container" style="margin-left: -1px;"></div>
 											</span>
-											<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
 											<div class="radio_list">
 												<span class="range">
 													<input type="radio" id="range1" name="schRange" title="오늘 선택">
@@ -261,13 +265,56 @@
     </div> 
 
 	<!-- js -->
+    <script type="text/javascript" src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.js"></script>
+    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
 
 	<script>
+        //2024-03-20 : 캘린더 관련 스크립트
+        const today = new Date();
+        const DatePicker = tui.DatePicker;
+        
+        const dateWraps = document.querySelectorAll(".date_wrap");
+        const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
+        
+        dateWraps.forEach((item, index) => {
+            const pickerContainer = item.querySelector(".startpicker-container");
+            const element = item.querySelector(".startpicker");
+            const picker = new DatePicker(pickerContainer, {
+                date: today,
+                input: {
+                    element: element,
+                    format: 'yyyy-MM-dd'
+                }
+            });
+        });
+
+        rangePickerWraps.forEach((item, index) => {
+            const picker = DatePicker.createRangePicker({
+                startpicker: {
+                    date: today,
+                    input: item.querySelector(".date_start .startpicker"),
+                    container: item.querySelector(".date_start .picker_container"),
+                },
+                endpicker: {
+                    date: today,
+                    input: item.querySelector(".date_end .endpicker"),
+                    container: item.querySelector(".date_end .picker_container"),
+                },
+                selectableRanges: [
+                    [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+                ],
+                format: 'YYYY-MM-dd HH:mm',
+                timePicker: true
+            });
+        });
+
         window.onload = () => {
             // 공통 함수들 호출
             window.executeMacro();
+
+            common.ui.tab.init("#tab");
         }
     </script>
 </body>
