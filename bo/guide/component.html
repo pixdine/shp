@@ -176,71 +176,57 @@
                         <option value="">전체</option>
                     </select>
                     <h3 class="h3">calendar</h3>
+                    <!-- 2024-03-20 : 캘린더(기간선택/시간선택포함) -->
                     <div class="input_date range_picker_wrap">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
-                            <input type="text" aria-label="Date" class="datepicker startpicker">
+                            <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                             <div class="picker_container" style="margin-left: -1px;"></div>
                         </span>
                         <span class="dash">~</span>
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
-                            <input type="text" aria-label="Date" class="datepicker endpicker">
+                            <input type="text" aria-label="Date" class="datepicker endpicker" readonly>
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                             <div class="picker_container" style="margin-left: -1px;"></div>
                         </span>
-                    </div><br>
+                    </div>
+                    <!-- //2024-03-20 : 캘린더(기간선택/시간선택포함) -->
+                    <br>
+                    <!-- 2024-03-20 : 캘린더(기간선택/시간선택포함) -->
                     <div class="input_date range_picker_wrap">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
-                            <input type="text" aria-label="Date" class="datepicker startpicker">
+                            <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                             <div class="picker_container" style="margin-left: -1px;"></div>
                         </span>
                         <span class="dash">~</span>
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
-                            <input type="text" aria-label="Date" class="datepicker endpicker">
+                            <input type="text" aria-label="Date" class="datepicker endpicker" readonly>
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                             <div class="picker_container" style="margin-left: -1px;"></div>
                         </span>
-                    </div><br>
-
+                    </div>
+                    <!-- //2024-03-20 : 캘린더(기간선택/시간선택포함) -->
+                    <br>
+                    <!-- 2024-03-20 : 캘린더 -->
                     <div class="input_date">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_wrap">
-                            <input type="text" aria-label="Date" class="datepicker startpicker">
-                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
-                            <div class="startpicker-container" style="margin-left: -1px;"></div>
-                        </span>
-                    </div> <br>
-                    <div class="input_date">
-                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_wrap">
-                            <input type="text" aria-label="Date" class="datepicker startpicker">
+                            <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                             <div class="startpicker-container" style="margin-left: -1px;"></div>
                         </span>
                     </div>
-
-                    <!-- <div class="input_date">
-                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus">
-                            <input id="startpicker-input" type="text" aria-label="Date" class="datepicker" readonly>
+                    <!-- //2024-03-20 : 캘린더 -->
+                    <br>
+                    <!-- 2024-03-20 : 캘린더 -->
+                    <div class="input_date">
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_wrap">
+                            <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
-                            <div id="startpicker-container" style="margin-left: -1px;"></div>
+                            <div class="startpicker-container" style="margin-left: -1px;"></div>
                         </span>
-                        <span class="dash">~</span>
-                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus">
-                            <input id="endpicker-input" type="text" aria-label="Date" class="datepicker" readonly>
-                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
-                            <div id="endpicker-container" style="margin-left: -1px;"></div>
-                        </span>
-                    </div> -->
-                    <!-- <div class="input_date">
-                        <span class="date">
-                            <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
-                        </span>
-                        <span class="dash">~</span>
-                        <span class="date">
-                            <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
-                        </span>
-                        <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
-                    </div> -->
+                    </div>
+                    <!-- //2024-03-20 : 캘린더 -->
 
                     <h3 class="h3">search</h3>
                     <div class="inputbox search">
@@ -608,6 +594,7 @@
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
     <script>
+        //2024-03-20 : 캘린더 관련 스크립트
         const today = new Date();
         const DatePicker = tui.DatePicker;
         
