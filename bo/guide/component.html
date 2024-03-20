@@ -176,7 +176,49 @@
                         <option value="">전체</option>
                     </select>
                     <h3 class="h3">calendar</h3>
+                    <div class="input_date range_picker_wrap">
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
+                            <input type="text" aria-label="Date" class="datepicker startpicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div class="picker_container" style="margin-left: -1px;"></div>
+                        </span>
+                        <span class="dash">~</span>
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
+                            <input type="text" aria-label="Date" class="datepicker endpicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div class="picker_container" style="margin-left: -1px;"></div>
+                        </span>
+                    </div><br>
+                    <div class="input_date range_picker_wrap">
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
+                            <input type="text" aria-label="Date" class="datepicker startpicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div class="picker_container" style="margin-left: -1px;"></div>
+                        </span>
+                        <span class="dash">~</span>
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
+                            <input type="text" aria-label="Date" class="datepicker endpicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div class="picker_container" style="margin-left: -1px;"></div>
+                        </span>
+                    </div><br>
+
                     <div class="input_date">
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_wrap">
+                            <input type="text" aria-label="Date" class="datepicker startpicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div class="startpicker-container" style="margin-left: -1px;"></div>
+                        </span>
+                    </div> <br>
+                    <div class="input_date">
+                        <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_wrap">
+                            <input type="text" aria-label="Date" class="datepicker startpicker">
+                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                            <div class="startpicker-container" style="margin-left: -1px;"></div>
+                        </span>
+                    </div>
+
+                    <!-- <div class="input_date">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus">
                             <input id="startpicker-input" type="text" aria-label="Date" class="datepicker" readonly>
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
@@ -188,7 +230,7 @@
                             <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                             <div id="endpicker-container" style="margin-left: -1px;"></div>
                         </span>
-                    </div>
+                    </div> -->
                     <!-- <div class="input_date">
                         <span class="date">
                             <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="">
@@ -567,23 +609,41 @@
 	<!-- //js -->
     <script>
         const today = new Date();
-        var picker = tui.DatePicker.createRangePicker({
-            startpicker: {
+        const DatePicker = tui.DatePicker;
+        
+        const dateWraps = document.querySelectorAll(".date_wrap");
+        const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
+        
+        dateWraps.forEach((item, index) => {
+            const pickerContainer = item.querySelector(".startpicker-container");
+            const element = item.querySelector(".startpicker");
+            const picker = new DatePicker(pickerContainer, {
                 date: today,
-                input: '#startpicker-input',
-                container: '#startpicker-container'
-            },
-            endpicker: {
-                date: today,
-                input: '#endpicker-input',
-                container: '#endpicker-container'
-            },
-            selectableRanges: [
-                [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
-            ],
-            language: 'ko',
-            format: 'YYYY-MM-dd HH:mm', //시간 선택없이 달력만 나오는 경우 HH:mm 삭제 
-            timePicker: true, //시간 선택없이 달력만 나오는 경우 timePicker: false
+                input: {
+                    element: element,
+                    format: 'yyyy-MM-dd'
+                }
+            });
+        });
+
+        rangePickerWraps.forEach((item, index) => {
+            const picker = DatePicker.createRangePicker({
+                startpicker: {
+                    date: today,
+                    input: item.querySelector(".date_start .startpicker"),
+                    container: item.querySelector(".date_start .picker_container"),
+                },
+                endpicker: {
+                    date: today,
+                    input: item.querySelector(".date_end .endpicker"),
+                    container: item.querySelector(".date_end .picker_container"),
+                },
+                selectableRanges: [
+                    [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+                ],
+                format: 'YYYY-MM-dd HH:mm',
+                timePicker: true
+            });
         });
 
         window.onload = () => {
@@ -591,9 +651,6 @@
             window.executeMacro();
 
             common.ui.tab.init("#tab");
-            picker.on('change:end', () => {
-                console.log(123);
-            });
         }
     </script>
 </body>
