@@ -7,7 +7,6 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
-	<link rel="stylesheet" type="text/css" href="../resources/css/jsonview.css"/>
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
 </head>
@@ -31,15 +30,11 @@
         </div>
     </div> 
 
-	<script src="https://uicdn.toast.com/tui-tree/latest/tui-tree.js"></script>
-	<link
-	rel="stylesheet"
-	type="text/css"
-	href="https://uicdn.toast.com/tui-tree/latest/tui-tree.css"
-	/>
+	<script src="../resources/js/lib/tui-tree.js"></script>
+	<link rel="stylesheet" type="text/css" href="../resources/css/tui-tree.css"/>
 	<script>
 		const data = [
-			{text: 'rootA', children: [
+			{text: '마케팅관리', children: [
 				{text: 'root-1A'},
 				{text: 'root-1B'},
 				{text: 'root-1C'},
@@ -61,7 +56,8 @@
 				{text: 'root-3C'},
 				{text: 'root-3D'}
 			]},
-			{text: 'rootB', children: [
+
+			{text: '대메뉴테스트', children: [
 				{text: 'B_sub1'},
 				{text: 'B_sub2'},
 				{text: 'b'}
@@ -73,6 +69,5 @@
 			data: data,
     		// nodeDefaultState: 'opened',
 		});
-		
 	</script>
 </body>
