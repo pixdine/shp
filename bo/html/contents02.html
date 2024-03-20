@@ -7,12 +7,14 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
+	<link rel="stylesheet" type="text/css" href="../resources/css/jsonview.css"/>
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
 </head>
 <body>
     <div id="wrap" class="wrap frame">
         <div id="container" class="container">
+<<<<<<< HEAD
 			<div class="section">
 				<div class="area_wrap">
 					<div class="area_left">
@@ -24,6 +26,13 @@
 						<div class="title bdr">
 							<h2>사용자 상세 정보</h2>
 						</div>
+=======
+			<div class="area_wrap">
+				<div class="area_left">
+					<div class="section">
+						Left area (tree / grid)
+						<div id="tree" class="tui-tree-wrap"></div>
+>>>>>>> e2fa2da336257935b935c9811bbf03e0a852040c
 					</div>
 				</div>
 			</div>
@@ -31,6 +40,7 @@
 		</div>
     </div> 
 
+<<<<<<< HEAD
 	<!-- js -->
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
@@ -41,4 +51,50 @@
             window.executeMacro();
         }
     </script>
+=======
+	<script src="https://uicdn.toast.com/tui-tree/latest/tui-tree.js"></script>
+	<link
+	rel="stylesheet"
+	type="text/css"
+	href="https://uicdn.toast.com/tui-tree/latest/tui-tree.css"
+	/>
+	<script>
+		const data = [
+			{text: 'rootA', children: [
+				{text: 'root-1A'},
+				{text: 'root-1B'},
+				{text: 'root-1C'},
+				{text: 'root-1D'},
+				{text: 'root-2A', children: [
+					{text: 'sub_1A', children:[
+						{text: 'sub_sub_1A'}
+					]},
+					{text: 'sub_2A'}
+				]},
+				{text: 'root-2B'},
+				{text: 'root-2C'},
+				{text: 'root-2D'},
+				{text: 'root-3A', children: [
+					{text: 'sub3_a'},
+					{text: 'sub3_b'}
+				]},
+				{text: 'root-3B'},
+				{text: 'root-3C'},
+				{text: 'root-3D'}
+			]},
+			{text: 'rootB', children: [
+				{text: 'B_sub1'},
+				{text: 'B_sub2'},
+				{text: 'b'}
+			]}
+		];
+		const Tree = tui.Tree;
+		const container = document.getElementById('tree');
+		const instance = new Tree(container, {
+			data: data,
+    		// nodeDefaultState: 'opened',
+		});
+		
+	</script>
+>>>>>>> e2fa2da336257935b935c9811bbf03e0a852040c
 </body>
