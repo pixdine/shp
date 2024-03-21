@@ -113,11 +113,6 @@
 	<link rel="stylesheet" type="text/css" href="../resources/css/tui-tree.css"/>
 	<!-- //css -->
 	<script>
-		window.onload = () => {
-            // 공통 함수들 호출
-            window.executeMacro();
-        }
-
 		const data = [
 			{text: '마케팅관리', children: [
 				{text: 'root-1A'},
@@ -148,17 +143,18 @@
 				{text: 'b'}
 			]}
 		];
-		const tree = new tui.Tree('#tree', {
+
+		window.onload = () => {
+            // 공통 함수들 호출
+            window.executeMacro();
+
+			// tree
+			const tree = new tui.Tree('#tree', {
             data: data,
-            // nodeDefaultState: 'opened'
-        }).enableFeature('Selectable', {
-            selectedClassName: 'tui-tree-selected',
-        });
-		// const Tree = tui.Tree;
-		// const container = document.getElementById('tree');
-		// const instance = new Tree(container, {
-		// 	data: data,
-    	// 	// nodeDefaultState: 'opened',
-		// });
+				// nodeDefaultState: 'opened'
+			}).enableFeature('Selectable', {
+				selectedClassName: 'tui-tree-selected',
+			});
+        }
 	</script>
 </body>
