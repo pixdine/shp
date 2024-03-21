@@ -4820,10 +4820,10 @@ module.exports = {
       '<ul class="tui-tree-subtree {{subtreeClass}}">{{children}}</ul>',
     leafNode:
       '<div class="tui-tree-content-wrapper">' +
-      '<button type="button" class="tui-tree-text {{textClass}} tui-tree-file-btn">' +
+      '<span class="tui-tree-text {{textClass}}">' +
       '<span class="tui-tree-ico tui-ico-file"></span>' +
       '{{text}}' +
-      '</button>' +
+      '</span>' +
       '</div>'
   },
   indent: 23, // value of default css,

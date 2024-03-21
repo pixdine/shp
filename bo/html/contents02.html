@@ -108,7 +108,7 @@
 	<script src="../resources/js/lib/tui-tree.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
-	
+
 	<!-- css -->
 	<link rel="stylesheet" type="text/css" href="../resources/css/tui-tree.css"/>
 	<!-- //css -->
@@ -148,11 +148,17 @@
 				{text: 'b'}
 			]}
 		];
-		const Tree = tui.Tree;
-		const container = document.getElementById('tree');
-		const instance = new Tree(container, {
-			data: data,
-    		// nodeDefaultState: 'opened',
-		});
+		const tree = new tui.Tree('#tree', {
+            data: data,
+            // nodeDefaultState: 'opened'
+        }).enableFeature('Selectable', {
+            selectedClassName: 'tui-tree-selected',
+        });
+		// const Tree = tui.Tree;
+		// const container = document.getElementById('tree');
+		// const instance = new Tree(container, {
+		// 	data: data,
+    	// 	// nodeDefaultState: 'opened',
+		// });
 	</script>
 </body>
