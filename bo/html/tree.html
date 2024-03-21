@@ -218,11 +218,6 @@
 	<link rel="stylesheet" type="text/css" href="../resources/css/tui-tree.css"/>
 	<!-- //css -->
 	<script>
-		window.onload = () => {
-            // 공통 함수들 호출
-            window.executeMacro();
-        }
-
 		const data = [
 			{text: '마케팅관리', children: [
 				{text: 'root-1A'},
@@ -253,56 +248,65 @@
 				{text: 'b'}
 			]}
 		];
-		const tree = new tui.Tree('#tree', {
+
+		window.onload = () => {
+            // 공통 함수들 호출
+            window.executeMacro();
+
+			createTree(); // tree
+			createDatepicker(); //datepicker
+        }
+
+		function createTree() {
+			if(document.querySelector("#tree") === null) return;
+
+			const tree = new tui.Tree('#tree', {
             data: data,
-            // nodeDefaultState: 'opened'
-        }).enableFeature('Selectable', {
-            selectedClassName: 'tui-tree-selected',
-        });
-		// const Tree = tui.Tree;
-		// const container = document.getElementById('tree');
-		// const instance = new Tree(container, {
-		// 	data: data,
-    	// 	// nodeDefaultState: 'opened',
-		// });
+				// nodeDefaultState: 'opened'
+			}).enableFeature('Selectable', {
+				selectedClassName: 'tui-tree-selected',
+			});
+		}
 
-		 //2024-03-20 : 캘린더 관련 스크립트
-		 const today = new Date();
-        const DatePicker = tui.DatePicker;
-        
-        const dateWraps = document.querySelectorAll(".date_wrap");
-        const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
-        
-        dateWraps.forEach((item, index) => {
-            const pickerContainer = item.querySelector(".startpicker-container");
-            const element = item.querySelector(".startpicker");
-            const picker = new DatePicker(pickerContainer, {
-                date: today,
-                input: {
-                    element: element,
-                    format: 'yyyy-MM-dd'
-                }
-            });
-        });
+		//2024-03-20 : 캘린더 관련 스크립트
+		function createDatepicker() {
+			const today = new Date();
+			const DatePicker = tui.DatePicker;
+			
+			const dateWraps = document.querySelectorAll(".date_wrap");
+			const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
+			
+			dateWraps.forEach((item, index) => {
+				const pickerContainer = item.querySelector(".startpicker-container");
+				const element = item.querySelector(".startpicker");
+				const picker = new DatePicker(pickerContainer, {
+					date: today,
+					input: {
+						element: element,
+						format: 'yyyy-MM-dd'
+					}
+				});
+			});
 
-        rangePickerWraps.forEach((item, index) => {
-            const picker = DatePicker.createRangePicker({
-                startpicker: {
-                    date: today,
-                    input: item.querySelector(".date_start .startpicker"),
-                    container: item.querySelector(".date_start .picker_container"),
-                },
-                endpicker: {
-                    date: today,
-                    input: item.querySelector(".date_end .endpicker"),
-                    container: item.querySelector(".date_end .picker_container"),
-                },
-                selectableRanges: [
-                    [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
-                ],
-                format: 'YYYY-MM-dd HH:mm',
-                timePicker: true
-            });
-        });
+			rangePickerWraps.forEach((item, index) => {
+				const picker = DatePicker.createRangePicker({
+					startpicker: {
+						date: today,
+						input: item.querySelector(".date_start .startpicker"),
+						container: item.querySelector(".date_start .picker_container"),
+					},
+					endpicker: {
+						date: today,
+						input: item.querySelector(".date_end .endpicker"),
+						container: item.querySelector(".date_end .picker_container"),
+					},
+					selectableRanges: [
+						[today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+					],
+					format: 'YYYY-MM-dd HH:mm',
+					timePicker: true
+				});
+			});
+		}
 	</script>
 </body>

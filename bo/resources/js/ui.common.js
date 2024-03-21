@@ -6,8 +6,8 @@ window.executeLayout = function() {
     checkDevice(ww);
     handleAllMenu();
     activeTooltip("[data-tooltip]");
-    handleSideBar();
     handleBookmark();
+    common.sidebar.init();
     common.leftMenu.init();
     common.ui.clearText();
 }
@@ -17,9 +17,6 @@ window.executeMacro = function() {
 
     checkDevice(ww);
     activeTooltip("[data-tooltip]");
-    handleSideBar();
-    handleBookmark();
-    common.leftMenu.init();
     common.ui.handleRow.init();
     common.ui.clearText();
 }
@@ -31,6 +28,54 @@ window.addEventListener("resize", () => {
 });
 
 const common = {
+    // 사이드바
+    sidebar: function() {
+        if(document.getElementById("sidebar") === null) return;
+
+        const sidebar = document.getElementById("sidebar");
+        const handler = sidebar.querySelector(".btn_handler");
+        const handlerTxt = handler.querySelector(".blind");
+        toggleClass(sidebar, handler, "active");
+
+        stateSideBar();
+
+        handler.addEventListener("click", () => {
+            stateSideBar();
+        });
+    },
+    sidebar: {
+        sidebar: null,
+        handler: null,
+        handlerTxt: null,
+        container: null,
+
+        init: function() {
+            if(document.querySelector("#sidebar") === null) return;
+
+            sidebar = document.querySelector("#sidebar");
+            handler = sidebar.querySelector(".btn_handler");
+            handlerTxt = handler.querySelector(".blind");
+            container = window.parent.document.querySelector('.container');
+            
+            this.initEvent();
+        },
+        initEvent: function() {
+            toggleClass(container, handler, "has_side");
+            toggleClass(sidebar, handler, "active");
+            this.checkState();
+
+            handler.addEventListener("click", () => {
+                this.checkState();
+            });
+        },
+        checkState: function() {
+            if(container.classList.contains("has_side")) {
+                handlerTxt.textContent = "메뉴 닫기";
+            } else {
+                handlerTxt.textContent = "메뉴 열기";
+            }
+        }
+    },
     // lnb메뉴
     leftMenu: {
         lnbWrap : null,
@@ -245,6 +290,8 @@ const common = {
 
 // 디바이스 체크
 function checkDevice(ww) {
+    if(document.querySelector(".wrap") === null) return;
+
     const wrap = document.querySelector(".wrap");
     ww < 1600 ? wrap.classList.add("scroll_x") : wrap.classList.remove("scroll_x");
 }
@@ -253,33 +300,6 @@ function toggleClass(target, handler, active) {
     handler.addEventListener("click", () => {
         target.classList.toggle(active);
     });
-}
-
-// 사이드바
-function handleSideBar() {
-    if(document.getElementById("sidebar") === null) return;
-
-    const sidebar = document.getElementById("sidebar");
-    const handler = sidebar.querySelector(".btn_handler");
-    const handlerTxt = handler.querySelector(".blind");
-    toggleClass(sidebar, handler, "active");
-
-    stateSideBar();
-
-    handler.addEventListener("click", () => {
-        stateSideBar();
-    });
-}
-
-// 사이드바 상태
-function stateSideBar() {
-    const sidebar = document.getElementById("sidebar");
-    const handlerTxt = document.querySelector(".btn_handler .blind");
-    if(sidebar.classList.contains("active")) {
-        handlerTxt.textContent = "메뉴 닫기";
-    } else {
-        handlerTxt.textContent = "메뉴 열기";
-    }
 }
 
 // 즐겨찾기

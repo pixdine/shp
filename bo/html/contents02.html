@@ -308,53 +308,13 @@
 
 	
 	<!-- js -->
-	<script src="../resources/js/lib/tui-tree.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
 
 	<script>
-		const data = [
-			{text: '마케팅관리', children: [
-				{text: 'root-1A'},
-				{text: 'root-1B'},
-				{text: 'root-1C'},
-				{text: 'root-1D'},
-				{text: 'root-2A', children: [
-					{text: 'sub_1A', children:[
-						{text: 'sub_sub_1A'}
-					]},
-					{text: 'sub_2A'}
-				]},
-				{text: 'root-2B'},
-				{text: 'root-2C'},
-				{text: 'root-2D'},
-				{text: 'root-3A', children: [
-					{text: 'sub3_a'},
-					{text: 'sub3_b'}
-				]},
-				{text: 'root-3B'},
-				{text: 'root-3C'},
-				{text: 'root-3D'}
-			]},
-
-			{text: '대메뉴테스트', children: [
-				{text: 'B_sub1'},
-				{text: 'B_sub2'},
-				{text: 'b'}
-			]}
-		];
-
 		window.onload = () => {
             // 공통 함수들 호출
             window.executeMacro();
-
-			// tree
-			const tree = new tui.Tree('#tree', {
-            data: data,
-				// nodeDefaultState: 'opened'
-			}).enableFeature('Selectable', {
-				selectedClassName: 'tui-tree-selected',
-			});
         }
 	</script>
 </body>
