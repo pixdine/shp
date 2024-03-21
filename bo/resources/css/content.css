@@ -85,6 +85,12 @@
 .area_wrap .section{height:100%;}
 .cont+.cont{margin-top:40px;}
 
+.top_wrap{display:flex;align-items:center;justify-content:space-between;}
+.top_wrap .tab .tab_menu li{display:flex;align-items:center;}
+.top_wrap .tab .tab_menu li:not(.active) a{color:#525960;}
+.top_wrap .tab .tab_menu li a{padding-right:12px;text-align:left;}
+.top_wrap .btn_area{display:flex;align-items:center;gap:12px;}
+.top_wrap .btn_area [class*="arrow_"].disabled{opacity: 0.6;}
 
 /*window popup*/
 .win_popup{background-color:#F3F5F6;padding:32px 32px 40px 32px;}
