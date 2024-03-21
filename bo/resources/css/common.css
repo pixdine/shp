@@ -142,7 +142,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .btn_ico.calendar{background-image: url('../images/ico_calendar.svg');width:24px;height:24px;}
 .btn_ico.delete{background-image: url('../images/ico_delete.svg');width:24px;height:24px;}
 .btn_ico.clear{background-image: url('../images/ico_close_16.svg');width:16px;height:16px;}
-.btn_ico[class*="arrow_"]{background-image: url('../images/ico_arrowright_16_default.svg');width:16px;height:16px;}
+.btn_ico[class*="arrow_"]{background-image: url('../images/ico_arrowright_16_default.svg');width:24px;height:24px;}
 .btn_ico.arrow_left{transform: rotate(180deg);}
 
 .inputbox{position: relative;}

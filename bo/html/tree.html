@@ -7,7 +7,6 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
-	<link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
 </head>
@@ -254,7 +253,6 @@
             window.executeMacro();
 
 			createTree(); // tree
-			createDatepicker(); //datepicker
         }
 
 		function createTree() {
@@ -265,47 +263,6 @@
 				// nodeDefaultState: 'opened'
 			}).enableFeature('Selectable', {
 				selectedClassName: 'tui-tree-selected',
-			});
-		}
-
-		//2024-03-20 : 캘린더 관련 스크립트
-		function createDatepicker() {
-			const today = new Date();
-			const DatePicker = tui.DatePicker;
-			
-			const dateWraps = document.querySelectorAll(".date_wrap");
-			const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
-			
-			dateWraps.forEach((item, index) => {
-				const pickerContainer = item.querySelector(".startpicker-container");
-				const element = item.querySelector(".startpicker");
-				const picker = new DatePicker(pickerContainer, {
-					date: today,
-					input: {
-						element: element,
-						format: 'yyyy-MM-dd'
-					}
-				});
-			});
-
-			rangePickerWraps.forEach((item, index) => {
-				const picker = DatePicker.createRangePicker({
-					startpicker: {
-						date: today,
-						input: item.querySelector(".date_start .startpicker"),
-						container: item.querySelector(".date_start .picker_container"),
-					},
-					endpicker: {
-						date: today,
-						input: item.querySelector(".date_end .endpicker"),
-						container: item.querySelector(".date_end .picker_container"),
-					},
-					selectableRanges: [
-						[today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
-					],
-					format: 'YYYY-MM-dd HH:mm',
-					timePicker: true
-				});
 			});
 		}
 	</script>
