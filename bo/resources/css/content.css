@@ -30,12 +30,12 @@
 .btn_login_wrap .btn{width:100%;}
 .function_wrap{margin-top:32px;}
 .function_wrap .btn{width:100%;}
-.function_wrap .form_item{display:flex;align-items:center;margin-top:8px;gap:12px;justify-content: space-between;}
+.function_wrap .form_item{display:flex;align-items:center;margin-top:8px;gap:12px;}
 .function_wrap .form_item .form_label{font-size:12px;font-weight:700;color:#213A56;}
 .function_wrap .form_item .form_control{display:flex;align-items:center;gap:4px;}
-.function_wrap .form_item .form_control .inputbox input{width:170px;}
+.function_wrap .form_item .form_control .inputbox input{width:173px;}
 .function_wrap .form_item .form_control .btn{padding:0px 5px;width: 90px;}
-.function_wrap .time_area{font-size:12px;font-weight:500;color:var(--point);}
+.function_wrap .time_area{font-size:12px;font-weight:500;color:var(--point);margin-left: auto;}
 
 
 /*main*/
