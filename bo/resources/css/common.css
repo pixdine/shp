@@ -142,6 +142,8 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .btn_ico.calendar{background-image: url('../images/ico_calendar.svg');width:24px;height:24px;}
 .btn_ico.delete{background-image: url('../images/ico_delete.svg');width:24px;height:24px;}
 .btn_ico.clear{background-image: url('../images/ico_close_16.svg');width:16px;height:16px;}
+.btn_ico[class*="arrow_"]{background-image: url('../images/ico_arrowright_16_default.svg');width:16px;height:16px;}
+.btn_ico.arrow_left{transform: rotate(180deg);}
 
 .inputbox{position: relative;}
 .inputbox .txt_fix{position:absolute;top: 50%;right: 12px;transform: translateY(-50%);}
@@ -216,9 +218,9 @@ input.datepicker[disabled]{border-color:#DCE0E5;background-color:#E7EBEE;color:#
 
 /*tab*/
 .tab .tab_menu{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-box-align:center;-moz-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;width: 100%;}
-.tab .tab_menu li{margin-right:4px;}
-.tab .tab_menu li a{display: block;width: 100%;height: 36px;padding: 0 16px;border-radius:12px 12px 0 0;background-color: #E7EBEE;color: #111;font-size: 14px;font-weight:700;text-align: center;line-height:36px;}
-.tab .tab_menu li.active a{background-color:#fff;}
+.tab .tab_menu li{margin-right:4px;border-radius:12px 12px 0 0;background-color: #E7EBEE;padding: 0 16px;}
+.tab .tab_menu li.active{background-color:#fff;}
+.tab .tab_menu li a{display: block;width: 100%;height: 36px;color: #111;font-size: 14px;font-weight:700;text-align: center;line-height:36px;}
 .tab .tab_cont_item{display: none;}
 .tab .tab_cont_item.active{display: block;}
 

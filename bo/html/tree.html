@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>SHP BO</title>
+	<meta name="format-detection" content="telephone=no">
+
+	<link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+</head>
+<body>
+    <div id="wrap" class="wrap frame">
+        <div id="container" class="container">
+			<div class="top_wrap">
+				<div class="tab">
+					<ul class="tab_menu">
+						<li class="active">
+							<a href="javascript:;">메인<span class="blind">해당 내용 보기</span></a>
+							<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+						</li>
+						<li>
+							<a href="javascript:;">강습프로그램일정<span class="blind">해당 내용 보기</span></a>
+							<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+						</li>
+						<li>
+							<a href="javascript:;">회원관리<span class="blind">해당 내용 보기</span></a>
+							<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+						</li>
+					</ul>
+				</div>
+				<div class="btn_area">
+					<div class="arrow_btn">
+						<button type="button" class="btn_ico arrow_left disabled"><span class="blind">왼쪽</span></button>
+						<button type="button" class="btn_ico arrow_rigth"><span class="blind">오른쪽</span></button>
+					</div>
+					<button type="button" class="btn small bctype3"><span>전체탭닫기</span></button>
+				</div>
+			</div>
+			<div class="section">
+				<div class="area_wrap">
+					<div class="area_left">
+						<div class="title bdr">
+							<h2>메뉴관리</h2>
+						</div>
+						<div class="sort_wrap">
+							<div class="inputbox search">
+								<input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력하세요." title="검색어 입력" autocomplete="off" value="">
+								<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+								<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+							</div>
+						</div>
+						<div id="tree" class="tui-tree-wrap"></div>
+					</div>
+					<div class="area_right">
+						<div class="cont">
+							<div class="title bdr">
+								<h2>메뉴 상세 정보</h2>
+							</div>
+							<div class="sort_wrap">
+								<div class="btn_area">
+									<button type="button" class="btn bctype2"><span>대메뉴</span></button>
+									<button type="button" class="btn bctype2"><span>삭제</span></button>
+									<button type="button" class="btn bctype2"><span>저장</span></button>
+								</div>
+							</div>
+							<div class="table">
+								<table>
+									<colgroup>
+										<col style="width:120px">
+										<col style="width:auto">
+										<col style="width:120px">
+										<col style="width:auto">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">메뉴명<em class="required">*</em></th>
+											<td>
+												<div class="form_control">
+													<div class="inputbox">
+														<input type="text" placeholder="" value="" title="" disabled="">
+														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+													</div>
+													<div class="inputbox">
+														<input type="text" placeholder="" value="" title="">
+														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+													</div>
+												</div>
+											</td>
+											<th scope="row">상위 메뉴명</th>
+											<td>
+												<div class="form_control">
+													<div class="inputbox">
+														<input type="text" placeholder="" value="" title="" disabled="">
+														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+													</div>
+													<div class="inputbox">
+														<input type="text" placeholder="" value="" title="" disabled=""
+														
+														>
+														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">최하위여부</th>
+											<td>
+												<span class="checkbox">
+													<input type="checkbox" id="or1" name="or" title="선택">
+													<label for="or1"></label>
+												</span>
+											</td>
+											<th scope="row">개인정보여부</th>
+											<td>
+												<span class="checkbox">
+													<input type="checkbox" id="privacy1" name="privacy " title="선택">
+													<label for="privacy1"></label>
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">사용여부</th>
+											<td>
+												<select id="idDep" title="">
+													<option value="" selected="">사용</option>
+													<option value="">사용</option>
+												</select>
+											</td>
+											<th scope="row">정렬순서</th>
+											<td>
+												<select id="idDep" title="">
+													<option value="" selected=""></option>
+													<option value=""></option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">권한대상명<em class="required">*</em></th>
+											<td>
+												<div class="inputbox">
+													<input type="text" placeholder="" value="" title="권한대상명을 입력해주세요" autocomplete="off">
+													<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+												</div>
+											</td>
+											<th scope="row">메뉴유형</th>
+											<td>
+												<select id="idDep" title="">
+													<option value="" selected="">메뉴</option>
+													<option value="">메뉴</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">호출 URL</th>
+											<td colspan="3">
+												<div class="inputbox">
+													<input type="text" placeholder="" value="" title="호출 URL를 입력해주세요" autocomplete="off">
+													<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">버튼ID</th>
+											<td colspan="3">
+												<div class="inputbox">
+													<input type="text" placeholder="" value="" title="버튼ID를 입력해주세요" autocomplete="off">
+													<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row" rowspan="2">사용자 도움말</th>
+											<td colspan="3">
+
+											</td>
+										</tr>
+										<tr>
+											<td colspan="3">
+												<div class="textarea">
+													<textarea rows="10" id="formWCont" placeholder="사용자 도움말" title="내용을 입력하세요."></textarea>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="cont">
+							<div class="title bdr">
+								<h2>하위 메뉴 리스트</h2>
+							</div>
+							<div class="sort_wrap">
+								<div class="btn_area">
+									<button type="button" class="btn bctype2"><span>추가</span></button>
+									<button type="button" class="btn bctype2"><span>삭제</span></button>
+									<button type="button" class="btn bctype2"><span>저장</span></button>
+								</div>
+							</div>
+							<div class="" style="height:52px;">그리드영역</div><!--태그 삭제 후 그리드영역 추가 -->
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+    </div> 
+
+	
+	<!-- js -->
+	<script src="../resources/js/lib/tui-tree.js"></script>
+	<script src="../resources/js/ui.common.js"></script>
+	<!-- //js -->
+
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="../resources/css/tui-tree.css"/>
+	<!-- //css -->
+	<script>
+		window.onload = () => {
+            // 공통 함수들 호출
+            window.executeMacro();
+        }
+
+		const data = [
+			{text: '마케팅관리', children: [
+				{text: 'root-1A'},
+				{text: 'root-1B'},
+				{text: 'root-1C'},
+				{text: 'root-1D'},
+				{text: 'root-2A', children: [
+					{text: 'sub_1A', children:[
+						{text: 'sub_sub_1A'}
+					]},
+					{text: 'sub_2A'}
+				]},
+				{text: 'root-2B'},
+				{text: 'root-2C'},
+				{text: 'root-2D'},
+				{text: 'root-3A', children: [
+					{text: 'sub3_a'},
+					{text: 'sub3_b'}
+				]},
+				{text: 'root-3B'},
+				{text: 'root-3C'},
+				{text: 'root-3D'}
+			]},
+
+			{text: '대메뉴테스트', children: [
+				{text: 'B_sub1'},
+				{text: 'B_sub2'},
+				{text: 'b'}
+			]}
+		];
+		const tree = new tui.Tree('#tree', {
+            data: data,
+            // nodeDefaultState: 'opened'
+        }).enableFeature('Selectable', {
+            selectedClassName: 'tui-tree-selected',
+        });
+		// const Tree = tui.Tree;
+		// const container = document.getElementById('tree');
+		// const instance = new Tree(container, {
+		// 	data: data,
+    	// 	// nodeDefaultState: 'opened',
+		// });
+
+		 //2024-03-20 : 캘린더 관련 스크립트
+		 const today = new Date();
+        const DatePicker = tui.DatePicker;
+        
+        const dateWraps = document.querySelectorAll(".date_wrap");
+        const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
+        
+        dateWraps.forEach((item, index) => {
+            const pickerContainer = item.querySelector(".startpicker-container");
+            const element = item.querySelector(".startpicker");
+            const picker = new DatePicker(pickerContainer, {
+                date: today,
+                input: {
+                    element: element,
+                    format: 'yyyy-MM-dd'
+                }
+            });
+        });
+
+        rangePickerWraps.forEach((item, index) => {
+            const picker = DatePicker.createRangePicker({
+                startpicker: {
+                    date: today,
+                    input: item.querySelector(".date_start .startpicker"),
+                    container: item.querySelector(".date_start .picker_container"),
+                },
+                endpicker: {
+                    date: today,
+                    input: item.querySelector(".date_end .endpicker"),
+                    container: item.querySelector(".date_end .picker_container"),
+                },
+                selectableRanges: [
+                    [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+                ],
+                format: 'YYYY-MM-dd HH:mm',
+                timePicker: true
+            });
+        });
+	</script>
+</body>
