@@ -7,7 +7,6 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
-    <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
     
@@ -599,53 +598,60 @@
     <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
+
+    <!-- css -->
+	<link rel="stylesheet" type="text/css" href="../resources/css/tui-date-picker.css"/>
+	<!-- //css -->
     <script>
         //2024-03-20 : 캘린더 관련 스크립트
         const today = new Date();
         const DatePicker = tui.DatePicker;
         
-        const dateWraps = document.querySelectorAll(".date_wrap");
-        const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
-        
-        dateWraps.forEach((item, index) => {
-            const pickerContainer = item.querySelector(".startpicker-container");
-            const element = item.querySelector(".startpicker");
-            const picker = new DatePicker(pickerContainer, {
-                date: today,
-                input: {
-                    element: element,
-                    format: 'yyyy-MM-dd'
-                },
-                language: 'ko'
-            });
-        });
+        function createDatepicker() {
+			const dateWraps = document.querySelectorAll(".date_wrap");
+			const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
+			
+			dateWraps.forEach((item, index) => {
+				const pickerContainer = item.querySelector(".startpicker-container");
+				const element = item.querySelector(".startpicker");
+				const picker = new DatePicker(pickerContainer, {
+					date: today,
+					input: {
+						element: element,
+						format: 'yyyy-MM-dd'
+					},
+					language: 'ko'
+				});
+			});
 
-        rangePickerWraps.forEach((item, index) => {
-            const picker = DatePicker.createRangePicker({
-                startpicker: {
-                    date: today,
-                    input: item.querySelector(".date_start .startpicker"),
-                    container: item.querySelector(".date_start .picker_container"),
-                },
-                endpicker: {
-                    date: today,
-                    input: item.querySelector(".date_end .endpicker"),
-                    container: item.querySelector(".date_end .picker_container"),
-                },
-                selectableRanges: [
-                    [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
-                ],
-                format: 'YYYY-MM-dd HH:mm',
-                timePicker: true,
-                language: 'ko'
-            });
-        });
+			rangePickerWraps.forEach((item, index) => {
+				const picker = DatePicker.createRangePicker({
+					startpicker: {
+						date: today,
+						input: item.querySelector(".date_start .startpicker"),
+						container: item.querySelector(".date_start .picker_container"),
+					},
+					endpicker: {
+						date: today,
+						input: item.querySelector(".date_end .endpicker"),
+						container: item.querySelector(".date_end .picker_container"),
+					},
+					selectableRanges: [
+						[today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+					],
+					format: 'YYYY-MM-dd HH:mm',
+					timePicker: true,
+					language: 'ko'
+				});
+			});
+		}
 
         window.onload = () => {
             // 공통 함수들 호출
             window.executeMacro();
 
             common.ui.tab.init("#tab");
+            createDatepicker();
         }
     </script>
 </body>
