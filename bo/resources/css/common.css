@@ -196,6 +196,8 @@ input.datepicker[readonly]{border-color:#DCE0E5;color:#111;}
 input.datepicker[disabled]{border-color:#DCE0E5;background-color:#E7EBEE;color:#7F8A94;}
 input.datepicker[disabled] ~ .btn_ico.calendar{z-index: 1;}
 input.datepicker{background-color: transparent;cursor:pointer;}
+.input_date .tui-datepicker-input > input{background-color: transparent;cursor:pointer;}
+.input_date .tui-datepicker-input > input:disabled{background-color: #E7EBEE;}
 
 /*tooltip layer*/
 .tooltip_layer {position: absolute;right: 0;margin-top: 8px;z-index: 1;width: max-content;border: 1px solid #DCE0E5;border-radius: 4px;background-color: #fff;opacity: 0;transition: all 0.5s ease;}
