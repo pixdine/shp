@@ -499,7 +499,7 @@
 }
 
 .tui-datepicker-dropdown.tui-is-open .tui-dropdown-button {
-    display: block
+display: block
 }
 
 .tui-datepicker-dropdown.tui-is-open .tui-dropdown-menu, .tui-datepicker-dropdown.tui-is-open .tui-dropdown-button {
