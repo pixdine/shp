@@ -57,10 +57,9 @@
 .sort_wrap .btn_area select{margin-left:8px;}
 
 .form_control{display:flex;align-items:center;flex-wrap:nowrap;gap:4px;}
-.form_control.tel input{width:77px;}
-.form_control .inputbox{flex:1}
 .form_control .inputbox+.inputbox{margin-top:0;}
-
+.form_control.tel .inputbox{width:77px;flex:none;}
+.form_control.tel .inputbox input{width:100%;}
 
 
 .wrap.frame{min-width:initial;}
