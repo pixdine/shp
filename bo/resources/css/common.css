@@ -97,7 +97,7 @@ input[type="search"]::-webkit-search-results-decoration{display: none;}
 :-moz-placeholder{color:#7F8A94;font-size:12px;font-weight:500;} 
 input[disabled]::placeholder{color:#7F8A94}
 input[readonly]::placeholder{color:#525960;}
-input[disabled]+button,input[readonly]+button{cursor:default;display:none;}
+input[disabled]+button{cursor:default;}
 
 ::before, ::after {box-sizing: border-box;}
 
@@ -147,7 +147,8 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 
 .inputbox{position: relative;}
 .inputbox .txt_fix{position:absolute;top: 50%;right: 12px;transform: translateY(-50%);}
-
+.inputbox input[disabled]+button,
+.inputbox input[readonly]+button{cursor:default;display:none;}
 .inputbox.search input{padding-right:36px;}
 .inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
 
@@ -196,7 +197,6 @@ input.datepicker[readonly]{border-color:#DCE0E5;color:#111;}
 input.datepicker[disabled]{border-color:#DCE0E5;background-color:#E7EBEE;color:#7F8A94;}
 input.datepicker[disabled] ~ .btn_ico.calendar{z-index: 1;}
 input.datepicker{background-color: transparent;cursor:pointer;}
-.input_date .tui-datepicker-input > input{background-color: transparent;cursor:pointer;}
 .input_date .tui-datepicker-input > input:disabled{background-color: #E7EBEE;}
 
 /*tooltip layer*/
