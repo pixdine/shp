@@ -93,7 +93,9 @@
 .top_wrap .tab .tab_menu li a{padding-right:12px;text-align:left;white-space: nowrap;}
 .top_wrap .btn_area .arrow_btn{display:flex;}
 .top_wrap .btn_area{display:flex;align-items:center;gap:12px;}
-.top_wrap .btn_area [class*="arrow_"].disabled{opacity: 0.6;cursor:default;}
+.top_wrap .btn_area [class*="arrow_"].disabled,
+.top_wrap .btn_area [class*="arrow_"][disabled]{opacity: 0.6;cursor:default;}
+
 
 /*window popup*/
 .win_popup{background-color:#F3F5F6;padding:32px 32px 40px 32px;}
