@@ -6,9 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
-
-	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/common.css"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/content.css"/>
 </head>
 <body>
     <div id="wrap" class="wrap frame">
@@ -30,17 +29,18 @@
 						</li>
 					</ul>
 				</div>
+				<!-- D: 이전/다음 버튼 기능과 전체탭닫기 기능은 개발에서 처리 부탁드립니다. -->
 				<div class="btn_area">
 					<div class="arrow_btn">
-						<button type="button" class="btn_ico arrow_left disabled"><span class="blind">왼쪽</span></button>
-						<button type="button" class="btn_ico arrow_rigth"><span class="blind">오른쪽</span></button>
+						<button type="button" class="btn_ico arrow_left" disabled><span class="blind">이전</span></button><!-- D: 이전/다음 버튼 비활성화 시 disabled 추가 -->
+						<button type="button" class="btn_ico arrow_rigth"><span class="blind">다음</span></button>
 					</div>
 					<button type="button" class="btn small bctype3"><span>전체탭닫기</span></button>
 				</div>
 			</div>
 			<div class="section">
 				<div class="area_wrap">
-					<div class="area_left">
+					<div class="area_left wfix"><!--width 사이즈 고정일땐 class 'wfix' 추가 / 'wfix' 없으면 width값 50%-->
 						<div class="title bdr">
 							<h2>사용자 목록 (총 <strong>3</strong>건)</h2>
 						</div>
@@ -244,17 +244,17 @@
 											<td>
 												<div class="input_date range_picker_wrap">
 													<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
-														<input type="text" aria-label="Date" class="datepicker startpicker" disabled><!--비활성일경우 disabled 추가-->
+														<input type="text" aria-label="Date" class="datepicker startpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
 														<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
 														<div class="picker_container" style="margin-left: -1px;"></div>
 													</span>
 													<span class="dash">~</span>
 													<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
-														<input type="text" aria-label="Date" class="datepicker endpicker" disabled><!--비활성일경우 disabled 추가-->
+														<input type="text" aria-label="Date" class="datepicker endpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
 														<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
 														<div class="picker_container" style="margin-left: -1px;"></div>
 													</span>
-													<button type="button" class="btn_ico delete"><span class="blind">초기화</span></button>
+													<button type="button" class="btn_ico delete"><span class="blind">초기화</span></button><!-- D: 초기화 버튼 클릭 시 달력 부분에 disabled 되어있는걸 readonly로 변경 -->
 												</div>
 											</td>
 										</tr>
@@ -306,14 +306,23 @@
     </div> 
 
 	
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/common/tui-date-picker.css"/><!-- 캘린더 관련 css -->
+    <!-- //css -->
+	
 	<!-- js -->
-	<script src="../resources/js/ui.common.js"></script>
-	<!-- //js -->
+    <script src="../resources/js/lib/tui-time-picker.js"></script><!-- 캘린더 관련 js -->
+    <script src="../resources/js/lib/tui-date-picker.js"></script><!-- 캘린더 관련 js -->
+    <script src="../resources/js/ui.common.js"></script>
+    <!-- //js -->
 
 	<script>
 		window.onload = () => {
             // 공통 함수들 호출
             window.executeMacro();
+
+			//2024-03-22 : 캘린더 관련 스크립트
+			createDatepicker();
         }
 	</script>
 </body>

@@ -7,8 +7,8 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
-	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/common/content.css"/>
 </head>
 <body>
 	<div id="wrap" class="wrap">
@@ -16,7 +16,7 @@
 		<header id="header" class="header">
             <div class="header_top">
                 <div class="header_item">
-                    <h1 class="logo"><a href="#"><img src="../resources/images/logo.svg" alt="SHP Backoffice"></a></h1>
+                    <h1 class="logo"><a href="#"><img src="../resources/image/logo.svg" alt="SHP Backoffice"></a></h1>
 
                     <div class="utils">
                         <a href="#">
@@ -83,39 +83,106 @@
                     <button type="button" class="btn_ico search"><span class="blind">검색</span></button>
                 </div>
                 
+                <!-- 2024-03-22 : 메뉴수정 -->
                 <nav>
                     <ul class="menu_list">
                         <li>
-                            <a href="#">회원관리</a>
+                            <a href="#">회원</a>
                             <ul class="gnb_depth2">
-                                <li><a href="#">개인 회원 관리</a></li>
-                                <li><a href="#">로그인 이력 관리</a></li>
+                                <li><a href="#">회원관리</a></li>
+                                <li><a href="#">대기회원관리(반트)</a></li>
+                                <li><a href="#">대기자관리(CFC)</a></li>
+                                <li><a href="#">연기관리</a></li>
+                                <li><a href="#">휴/복/탈회관리</a></li>
+                                <li><a href="#">건강정보관리</a></li>
+                                <li><a href="#">연회비청구관리</a></li>
                             </ul>
                         </li>
                         <li class="on">
-                            <a href="#">강사/강습관리</a>
+                            <a href="#">강사·강습</a>
                             <ul class="gnb_depth2">
-                                <li><a href="#">개인 회원 관리</a></li>
-                                <li><a href="#">로그인 이력 관리</a></li>
+                                <li><a href="#">강사관리</a></li>
+                                <li><a href="#">강습상담예약</a></li>
+                                <li><a href="#">강습일정관리</a></li>
+                                <li><a href="#">강습계약관리</a></li>
+                                <li><a href="#">강습실적관리</a></li>
+                                <li><a href="#">강사료정산</a></li>
+                                <li><a href="#">강사평가</a></li>
+                                <li><a href="#">GX관리</a></li>
+                                <li><a href="#">체험상품관리</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">업장/출입관리</a></li>
-                        <li><a href="#">매출관리</a></li>
-                        <li><a href="#">통계관리</a></li>
                         <li>
-                            <a href="#">시스템관리</a>
+                            <a href="#">업장·출입</a>
                             <ul class="gnb_depth2">
-                                <li><a href="#">업무그룹관리</a></li>
-                                <li><a href="#">앱버전관리</a></li>
-                                <li><a href="#">메뉴관리</a></li>
+                                <li><a href="#">보관함관리</a></li>
+                                <li><a href="#">출입관리</a></li>
+                                <li><a href="#">골프타석관리</a></li>
+                                <li><a href="#">라운지관리</a></li>
+                                <li><a href="#">직원출퇴근관리</a></li>
+                                <li><a href="#">협력사가입코드관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">주문·매출·정산</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">주문조회</a></li>
+                                <li><a href="#">결제관리</a></li>
+                                <li><a href="#">Void 관리</a></li>
+                                <li><a href="#">매출집계</a></li>
+                                <li><a href="#">정산관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">상품</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">상품관리</a></li>
+                                <li><a href="#">상품등록</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">상담·게시판</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">VOC/상담관리</a></li>
+                                <li><a href="#">게시판관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">마케팅·발송</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">(무료)쿠폰관리</a></li>
+                                <li><a href="#">타겟관리</a></li>
+                                <li><a href="#">만족도조사관리</a></li>
+                                <li><a href="#">발송관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">통계·리포트</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">등록매출현황</a></li>
+                                <li><a href="#">이용현황</a></li>
+                                <li><a href="#">회원분석</a></li>
+                                <li><a href="#">매출분석</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Admin</a>
+                            <ul class="gnb_depth2">
+                                <li><a href="#">권한관리</a></li>
                                 <li><a href="#">사용자관리</a></li>
-                                <li><a href="#">기본정보관리</a></li>
-                                <li><a href="#">모니터링관리</a></li>
-                                <li><a href="#">개인관리</a></li>
+                                <li><a href="#">메뉴관리</a></li>
+                                <li><a href="#">보관함등록</a></li>
+                                <li><a href="#">시스템공지</a></li>
+                                <li><a href="#">기초코드</a></li>
+                                <li><a href="#">업장관리</a></li>
+                                <li><a href="#">업체관리</a></li>
+                                <li><a href="#">로그관리</a></li>
+                                <li><a href="#">시즌관리</a></li>
                             </ul>
                         </li>
                     </ul>
                 </nav>
+                <!-- //2024-03-22 : 메뉴수정 -->
 
                 <hr>
 

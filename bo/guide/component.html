@@ -7,11 +7,11 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
-	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
-    <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/common.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/common/content.css"/>
     
     <style media="all">
-        .container{overflow-y:auto;display:block;height:auto !important;margin-top:0;}
+        .container{overflow-y:auto;display:block;height:auto !important;margin-top:0;background-color:#fff;}
         .wrap{display: block;}
         .wrap.scroll_x{height: auto;}
         .guide_inner{padding: 0 40px 40px;}
@@ -20,12 +20,6 @@
         .guide_inner .h3:first-of-type{margin-top:0;}
         .guide_inner .c_desc{position: relative; margin-top: 20px; padding-left: 10px; font-weight: bold; margin-bottom: 10px; color: #666;}
         .guide_inner .c_desc:before{content: ''; display: block; position: absolute; left: 0; top: 8px; width: 3px; height: 3px; background-color: #999;}
-
-
-        /*tab*/
-.tab .tab_meun{width:100%;}
-.tab .tab_meun li{padding:0 16px;margin-right:4px;}
-.tab .tab_meun li a{display: block;width: 100%;height:36px;text-align: center;line-height: 36px;font-size:14px;font-weight:600;background-color:#E7EBEE;border-radius:12px 12px 0 0;}
     </style>
 </head>
 <body>
@@ -101,6 +95,11 @@
                         <input type="checkbox" id="checkbox3" name="checkbox" title="해당항목 선택" disabled>
                         <label for="checkbox3">체크박스 (Disable)</label>
                     </span>
+                    <br/> <br/>
+                    <span class="checkbox">
+                        <input type="checkbox" id="or1" name="or" title="선택">
+                        <label for="or1"><span class="blind">선택</span></label>
+                    </span>
 
                     <h3 class="h3">radio</h3>
                     <span class="radio">
@@ -114,6 +113,11 @@
                     <span class="radio">
                         <input type="radio" id="radio3" name="radio" title="해당항목 선택" disabled>
                         <label for="radio3">라디오버튼 (Disable)</label>
+                    </span>
+                    <br/> <br/>
+                    <span class="radio">
+                        <input type="radio" id="radio01" name="or" title="선택">
+                        <label for="radio01"><span class="blind">선택</span></label>
                     </span>
 
                     <h3 class="h3">radio (Range)</h3>
@@ -162,6 +166,7 @@
                     <p class="c_desc">Readonly</p>
                     <div class="inputbox">
                         <input type="text" placeholder="Disabled 텍스트필드" value="입력값" title="텍스트를 입력해주세요" readonly>
+                        <button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
                     </div>
                     <h3 class="h3">select</h3>
                     <p class="c_desc">Default</p>
@@ -175,7 +180,7 @@
                         <option value="">전체</option>
                     </select>
                     <h3 class="h3">calendar</h3>
-                    <!-- 2024-03-20 : 캘린더(기간선택/시간선택포함) -->
+                    <!-- 2024-03-22 : 캘린더(기간선택/시간선택포함) -->
                     <div class="input_date range_picker_wrap">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
                             <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
@@ -189,9 +194,9 @@
                             <div class="picker_container" style="margin-left: -1px;"></div>
                         </span>
                     </div>
-                    <!-- //2024-03-20 : 캘린더(기간선택/시간선택포함) -->
+                    <!-- //2024-03-22 : 캘린더(기간선택/시간선택포함) -->
                     <br>
-                    <!-- 2024-03-20 : 캘린더(기간선택/시간선택포함) -->
+                    <!-- 2024-03-22 : 캘린더(기간선택/시간선택포함) -->
                     <div class="input_date range_picker_wrap">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
                             <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
@@ -205,9 +210,9 @@
                             <div class="picker_container" style="margin-left: -1px;"></div>
                         </span>
                     </div>
-                    <!-- //2024-03-20 : 캘린더(기간선택/시간선택포함) -->
+                    <!-- //2024-03-22 : 캘린더(기간선택/시간선택포함) -->
                     <br>
-                    <!-- 2024-03-20 : 캘린더 -->
+                    <!-- 2024-03-22 : 캘린더 -->
                     <div class="input_date">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_wrap">
                             <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
@@ -215,9 +220,9 @@
                             <div class="startpicker-container" style="margin-left: -1px;"></div>
                         </span>
                     </div>
-                    <!-- //2024-03-20 : 캘린더 -->
+                    <!-- //2024-03-22 : 캘린더 -->
                     <br>
-                    <!-- 2024-03-20 : 캘린더 -->
+                    <!-- 2024-03-22 : 캘린더 -->
                     <div class="input_date">
                         <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_wrap">
                             <input type="text" aria-label="Date" class="datepicker startpicker" readonly>
@@ -225,7 +230,7 @@
                             <div class="startpicker-container" style="margin-left: -1px;"></div>
                         </span>
                     </div>
-                    <!-- //2024-03-20 : 캘린더 -->
+                    <!-- //2024-03-22 : 캘린더 -->
 
                     <h3 class="h3">search</h3>
                     <div class="inputbox search">
@@ -253,7 +258,8 @@
             <!--table-->
             <div class="guide_sec">
                 <div class="guide_inner">
-                    <h2 class="h2">Table(작업중)</h2>
+                    <h2 class="h2">Table</h2>
+                    <!-- 2024-03-22 : 테이블 관련 수정(colgroup, 컴포넌트 등) -->
                     <div class="table">
                         <table>
                             <colgroup>
@@ -480,17 +486,17 @@
                                     <td>
                                         <div class="input_date range_picker_wrap">
                                             <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
-                                                <input type="text" aria-label="Date" class="datepicker startpicker" disabled><!--비활성일경우 disabled 추가-->
+                                                <input type="text" aria-label="Date" class="datepicker startpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
                                                 <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                                                 <div class="picker_container" style="margin-left: -1px;"></div>
                                             </span>
                                             <span class="dash">~</span>
                                             <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
-                                                <input type="text" aria-label="Date" class="datepicker endpicker" disabled><!--비활성일경우 disabled 추가-->
+                                                <input type="text" aria-label="Date" class="datepicker endpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
                                                 <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
                                                 <div class="picker_container" style="margin-left: -1px;"></div>
                                             </span>
-                                            <button type="button" class="btn_ico delete"><span class="blind">초기화</span></button>
+                                            <button type="button" class="btn_ico delete"><span class="blind">초기화</span></button><!-- D: 초기화 버튼 클릭 시 달력 부분에 disabled 되어있는걸 readonly로 변경 -->
                                         </div>
                                     </td>
                                 </tr>
@@ -548,6 +554,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- //2024-03-22 : 테이블 관련 수정(colgroup, 컴포넌트 등) -->
                 </div>
             </div>
             <!--//table-->
@@ -556,6 +563,7 @@
             <div class="guide_sec">
                 <div class="guide_inner">
                     <h2 class="h2">Tab</h2>
+                    <!-- 2024-03-22 : 탭 관련 -->
                     <div class="tab" id="tab">
                         <ul class="tab_menu">
                             <li class="active">
@@ -586,24 +594,25 @@
                             <div class="tab_cont_item">회원관리 정보 내용</div>
                         </div>
                     </div>
+                    <!-- //2024-03-22 : 탭 관련 -->
                 </div>
             </div>
             <!--//Tab-->
         </div>
     </div>
 
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="../resources/css/common/tui-date-picker.css"/><!-- 캘린더 관련 css -->
+    <!-- //css -->
     
     <!-- js -->
-    <script type="text/javascript" src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.js"></script>
-    <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script>
-	<script src="../resources/js/ui.common.js"></script>
-	<!-- //js -->
+    <script src="../resources/js/lib/tui-time-picker.js"></script><!-- 캘린더 관련 js -->
+    <script src="../resources/js/lib/tui-date-picker.js"></script><!-- 캘린더 관련 js -->
+    <script src="../resources/js/ui.common.js"></script>
+    <!-- //js -->
 
-    <!-- css -->
-	<link rel="stylesheet" type="text/css" href="../resources/css/tui-date-picker.css"/>
-	<!-- //css -->
     <script>
-        //2024-03-20 : 캘린더 관련 스크립트
+        //2024-03-22 : 캘린더 관련 스크립트
         const today = new Date();
         const DatePicker = tui.DatePicker;
         
@@ -650,7 +659,10 @@
             // 공통 함수들 호출
             window.executeMacro();
 
+            //2024-03-22 : 탭 관련 스크립트
             common.ui.tab.init("#tab");
+
+            //2024-03-22 : 캘린더 관련 스크립트
             createDatepicker();
         }
     </script>
