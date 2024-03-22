@@ -34,19 +34,18 @@ const common = {
         handlerTxt: null,
         container: null,
 
-        init: function(parentEl) {
+        init: function() {
             if(document.querySelector("#sidebar") === null) return;
 
             sidebar = document.querySelector("#sidebar");
             handler = sidebar.querySelector(".btn_handler");
             handlerTxt = handler.querySelector(".blind");
-            // container = window.parent.document.querySelector('.container');
-            console.log(parentEl);
+            container = window.parent.document.querySelector('.container');
             
             this.initEvent();
         },
         initEvent: function() {
-            // toggleClass(container, handler, "has_side");
+            toggleClass(container, handler, "has_side");
             toggleClass(sidebar, handler, "active");
             this.checkState();
 
@@ -61,9 +60,6 @@ const common = {
                 handlerTxt.textContent = "메뉴 열기";
             }
         },
-        test1: function() {
-            console.log("test");
-        }
     },
     // lnb메뉴
     leftMenu: {

@@ -88,12 +88,10 @@
 	<!-- //js -->
 
 	<script>
-		console.log(window.parent);
-		const container = window.parent.document.querySelector('.container');
         window.onload = () => {
             // 공통 함수들 호출
             window.executeLayout();
-			common.sidebar.init(container);
+			common.sidebar.init();
         }
     </script>
 </body>
