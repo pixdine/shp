@@ -7,6 +7,7 @@
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
 
+    <link rel="stylesheet" type="text/css" href="../resources/css/tui-date-picker.css"/><!-- 캘린더 관련 css -->
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
 </head>
@@ -46,15 +47,19 @@
                                 <tr>
                                     <th scope="row">게시 기간<em class="required">*</em></th>
                                     <td>
-                                        <div class="input_date">
-                                            <span class="date">
-                                                <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="" disabled>
+                                        <div class="input_date range_picker_wrap">
+                                            <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
+                                                <input type="text" aria-label="Date" class="datepicker startpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
+                                                <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                                                <div class="picker_container" style="margin-left: -1px;"></div>
                                             </span>
                                             <span class="dash">~</span>
-                                            <span class="date">
-                                                <input type="text" name="" value="2024-02-12" class="datepicker" id="" title="" disabled>
+                                            <span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
+                                                <input type="text" aria-label="Date" class="datepicker endpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
+                                                <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                                                <div class="picker_container" style="margin-left: -1px;"></div>
                                             </span>
-                                            <button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+                                            <button type="button" class="btn_ico delete"><span class="blind">초기화</span></button><!-- D: 초기화 버튼 클릭 시 달력 부분에 disabled 되어있는걸 readonly로 변경 -->
                                         </div>
                                     </td>
                                     <th scope="row">분류</th>
@@ -155,12 +160,66 @@
     </div>
 
     <!-- js -->
-	<script src="../resources/js/ui.common.js"></script>
-	<!-- //js -->
+    <script src="../resources/js/lib/tui-time-picker.js"></script><!-- 캘린더 관련 js -->
+    <script src="../resources/js/lib/tui-date-picker.js"></script><!-- 캘린더 관련 js -->
+    <script src="../resources/js/ui.common.js"></script>
+   <!-- //js -->
+
     <script>
-        window.onload = () => {
-            common.ui.tab.init("#tab");
-        }
+    //2024-03-22 : 캘린더 관련 스크립트
+    const today = new Date();
+    const DatePicker = tui.DatePicker;
+
+    function createDatepicker() {
+        const dateWraps = document.querySelectorAll(".date_wrap");
+        const rangePickerWraps = document.querySelectorAll(".range_picker_wrap");
+        
+        dateWraps.forEach((item, index) => {
+            const pickerContainer = item.querySelector(".startpicker-container");
+            const element = item.querySelector(".startpicker");
+            const picker = new DatePicker(pickerContainer, {
+                date: today,
+                input: {
+                    element: element,
+                    format: 'yyyy-MM-dd'
+                },
+                language: 'ko'
+            });
+        });
+
+        rangePickerWraps.forEach((item, index) => {
+            const picker = DatePicker.createRangePicker({
+                startpicker: {
+                    date: today,
+                    input: item.querySelector(".date_start .startpicker"),
+                    container: item.querySelector(".date_start .picker_container"),
+                },
+                endpicker: {
+                    date: today,
+                    input: item.querySelector(".date_end .endpicker"),
+                    container: item.querySelector(".date_end .picker_container"),
+                },
+                selectableRanges: [
+                    [today, new Date(today.getFullYear() + 1, today.getMonth(), today.getDate())]
+                ],
+                format: 'YYYY-MM-dd HH:mm',
+                timePicker: true,
+                language: 'ko'
+            });
+        });
+    }
+
+    window.onload = () => {
+        // 공통 함수들 호출
+        window.executeMacro();
+
+        //2024-03-22 : 탭 관련 스크립트
+        common.ui.tab.init("#tab");
+
+        //2024-03-22 : 캘린더 관련 스크립트
+        createDatepicker();
+    }
     </script>
+
 </body>
 </html>
