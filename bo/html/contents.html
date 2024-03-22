@@ -6,8 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
-	
-	<!-- <link rel="stylesheet" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" /> -->
+	<link rel="stylesheet" type="text/css" href="../resources/css/tui-date-picker.css"/><!-- 캘린더 관련 css -->
 	<link rel="stylesheet" type="text/css" href="../resources/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="../resources/css/content.css"/>
 </head>
@@ -290,18 +289,13 @@
     </div> 
 
 	<!-- js -->
-	<script src="../resources/js/lib/tui-time-picker.js"></script>
-    <script src="../resources/js/lib/tui-date-picker.js"></script>
-	<!-- <script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.js"></script> -->
+	<script src="../resources/js/lib/tui-time-picker.js"></script><!-- 캘린더 관련 js -->
+    <script src="../resources/js/lib/tui-date-picker.js"></script><!-- 캘린더 관련 js -->
 	<script src="../resources/js/ui.common.js"></script>
 	<!-- //js -->
 
-	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="../resources/css/tui-date-picker.css"/>
-	<!-- //css -->
-
 	<script>
-        //2024-03-20 : 캘린더 관련 스크립트
+        //2024-03-22 : 캘린더 관련 스크립트
         const today = new Date();
         const DatePicker = tui.DatePicker;
 
@@ -334,11 +328,12 @@
             // 공통 함수들 호출
             window.executeMacro();
 
+			//2024-03-22 : 탭 관련 스크립트
             common.ui.tab.init("#tab");
-			createDatepicker();
-        }
 
-		
+			//2024-03-22 : 캘린더 관련 스크립트
+			createDatepicker();
+        }		
     </script>
 </body>
 </html>
