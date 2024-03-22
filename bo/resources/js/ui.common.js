@@ -7,7 +7,6 @@ window.executeLayout = function() {
     handleAllMenu();
     activeTooltip("[data-tooltip]");
     handleBookmark();
-    common.sidebar.init();
     common.leftMenu.init();
     common.ui.clearText();
 }
@@ -29,33 +28,20 @@ window.addEventListener("resize", () => {
 
 const common = {
     // 사이드바
-    sidebar: function() {
-        if(document.getElementById("sidebar") === null) return;
-
-        const sidebar = document.getElementById("sidebar");
-        const handler = sidebar.querySelector(".btn_handler");
-        const handlerTxt = handler.querySelector(".blind");
-        toggleClass(sidebar, handler, "active");
-
-        stateSideBar();
-
-        handler.addEventListener("click", () => {
-            stateSideBar();
-        });
-    },
     sidebar: {
         sidebar: null,
         handler: null,
         handlerTxt: null,
         container: null,
 
-        init: function() {
+        init: function(parentEl) {
             if(document.querySelector("#sidebar") === null) return;
 
             sidebar = document.querySelector("#sidebar");
             handler = sidebar.querySelector(".btn_handler");
             handlerTxt = handler.querySelector(".blind");
             // container = window.parent.document.querySelector('.container');
+            console.log(parentEl);
             
             this.initEvent();
         },
@@ -74,6 +60,9 @@ const common = {
             } else {
                 handlerTxt.textContent = "메뉴 열기";
             }
+        },
+        test1: function() {
+            console.log("test");
         }
     },
     // lnb메뉴

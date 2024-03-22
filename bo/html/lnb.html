@@ -91,6 +91,9 @@
         window.onload = () => {
             // 공통 함수들 호출
             window.executeLayout();
+
+			const container = window.parent.document.querySelector('.container');
+			common.sidebar.init(container);
         }
     </script>
 </body>
