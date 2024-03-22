@@ -55,12 +55,12 @@ const common = {
             sidebar = document.querySelector("#sidebar");
             handler = sidebar.querySelector(".btn_handler");
             handlerTxt = handler.querySelector(".blind");
-            container = window.parent.document.querySelector('.container');
+            // container = window.parent.document.querySelector('.container');
             
             this.initEvent();
         },
         initEvent: function() {
-            toggleClass(container, handler, "has_side");
+            // toggleClass(container, handler, "has_side");
             toggleClass(sidebar, handler, "active");
             this.checkState();
 
@@ -69,7 +69,7 @@ const common = {
             });
         },
         checkState: function() {
-            if(container.classList.contains("has_side")) {
+            if(sidebar.classList.contains("active")) {
                 handlerTxt.textContent = "메뉴 닫기";
             } else {
                 handlerTxt.textContent = "메뉴 열기";
