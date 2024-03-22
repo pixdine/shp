@@ -35,8 +35,8 @@
    background-position: -16px 0px;
  }
  
- .tui-ico-file {background-image: url("../images/ico_file_16.svg");}
- .tui-ico-folder {background-image: url("../images/ico_folder_16.svg");}
+ .tui-ico-file {background-image: url("../../image/ico_file_16.svg");}
+ .tui-ico-folder {background-image: url("../../image/ico_folder_16.svg");}
  
  .tui-ico-root {
    width: 14px;
@@ -45,7 +45,7 @@
  }
  
  .tui-ico-tree {
-    background-image: url("../images/ico_arrowup_16.svg");
+    background-image: url("../../image/ico_arrowup_16.svg");
     transition: 0.4s;
  }
  
@@ -110,7 +110,7 @@
  .tui-tree-content-wrapper .tui-ico-file {
    margin: 0 9px 0 2px;
  } */
-.tui-tree-content-wrapper .tui-ico-file::before {content: "";position: absolute;top: 50%;left: -14px;transform: translateY(-50%);width: 8px;height: 8px;margin-top: -3px;background: url("../images/ico_depth2.svg") no-repeat center center / contain;}
+.tui-tree-content-wrapper .tui-ico-file::before {content: "";position: absolute;top: 50%;left: -14px;transform: translateY(-50%);width: 8px;height: 8px;margin-top: -3px;background: url("../../image/ico_depth2.svg") no-repeat center center / contain;}
  
  .tui-tree-text {
    overflow: hidden;
@@ -131,7 +131,7 @@
  }
 
  .tui-tree-opened > .tui-tree-content-wrapper .tui-ico-tree {transform: rotate(180deg);}
- /* .tui-tree-opened.tui-tree-selected .tui-ico-tree {background-image: url("../images/ico_arrowup_16_active.svg");} */
+ /* .tui-tree-opened.tui-tree-selected .tui-ico-tree {background-image: url("../../image/ico_arrowup_16_active.svg");} */
  
  /* .tui-tree-opened .tui-ico-tree {
    width: 8px;
@@ -227,8 +227,8 @@
  }
  
  .tui-tree-selected.tui-tree-closed > .tui-tree-content-wrapper .tui-ico-tree,
- .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-ico-tree {background-image: url("../images/ico_arrowup_16_active.svg");}
- .tui-tree-selected > .tui-tree-content-wrapper .tui-ico-folder {background-image: url("../images/ico_folder_16_active.svg");}
+ .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-ico-tree {background-image: url("../../image/ico_arrowup_16_active.svg");}
+ .tui-tree-selected > .tui-tree-content-wrapper .tui-ico-folder {background-image: url("../../image/ico_folder_16_active.svg");}
  
  .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-ico-folder {
    /* background-position: -32px -24px; */
@@ -285,7 +285,7 @@
  }
 
  .tui-tree-subtree .tui-tree-subtree .tui-tree-content-wrapper .tui-ico-file::before {
-    background-image: url("../images/ico_depth3.svg");
+    background-image: url("../../image/ico_depth3.svg");
 }
  
  .tui-tree-subtree .tui-tree-subtree .tui-tree-subtree .tui-tree-content-wrapper {
