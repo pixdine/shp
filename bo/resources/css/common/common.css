@@ -138,7 +138,7 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 
 /*btn_ico*/
 .btn_ico{display: inline-flex;width:16px;height:16px;background: url('') no-repeat center center / 16px auto;}
-.btn_ico.search{background-image: url('../../image/ico_search.svg');}
+.btn_ico.search{background-image: url('../../image/ico_search.svg');width:36px;height:32px;}
 .btn_ico.calendar{background-image: url('../../image/ico_calendar.svg');width:24px;height:24px;}
 .btn_ico.delete{background-image: url('../../image/ico_delete.svg');width:24px;height:24px;}
 .btn_ico.clear{background-image: url('../../image/ico_close_16.svg');width:16px;height:16px;}
@@ -150,12 +150,10 @@ table{width: 100%;border-collapse: collapse;border-spacing: 0;background-color: 
 .inputbox input[disabled]+button,
 .inputbox input[readonly]+button{cursor:default;display:none;}
 .inputbox.search input{padding-right:36px;}
-.inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
-
+.inputbox.search .btn_ico.search{position: absolute;right:0;top:0;background-position:center right 12px;}
 .inputbox .btn_ico.clear{position: absolute;right:12px;top:50%;transform: translateY(-50%);opacity: 0;cursor: text;}
 .inputbox.active .btn_ico.clear{opacity: 1;cursor: pointer;}
 .inputbox.search input{padding-right:36px;}
-.inputbox.search .btn_ico.search{position: absolute;right:12px;top:8px;}
 .inputbox.search .btn_ico.clear{right:36px;}
 .input_date{display:flex;align-items:center;}
 .input_date .btn_ico{margin-left:4px;}
