@@ -263,12 +263,14 @@
 				selectedClassName: 'tui-tree-selected',
 			});
 
+			//2024-03-25 : 트리구조 수정
 			let toggleBtns = document.querySelectorAll(".tui-tree-toggle-btn");
 
 			tree.on('clickToggleBtn', function(evt) {
 				// console.log(evt.nodeId);
 				tree.select(evt.nodeId);
 			});
+			//2024-03-25 : 트리구조 수정
 		}
 	</script>
 </body>
