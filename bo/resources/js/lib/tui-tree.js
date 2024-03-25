@@ -4811,11 +4811,11 @@ module.exports = {
       '<button type="button" class="tui-tree-toggle-btn {{toggleBtnClass}}">' +
       '<span class="tui-ico-tree"></span>' +
       '{{stateLabel}}' +
-      '</button>' +
       '<span class="tui-tree-text {{textClass}}">' +
       '<span class="tui-tree-ico tui-ico-folder"></span>' +
       '{{text}}' +
       '</span>' +
+      '</button>' +
       '</div>' +
       '<ul class="tui-tree-subtree {{subtreeClass}}">{{children}}</ul>',
     leafNode:

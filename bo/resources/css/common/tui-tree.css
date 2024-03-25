@@ -82,6 +82,9 @@
  }
  
  .tui-tree-wrap .tui-tree-toggle-btn {
+   display: flex;
+   gap: 2px;
+   width: 100%;
    /* width: 16px;
    height: 16px; */
    font-size: 0;
@@ -215,10 +218,14 @@
    background: #E9F2FF;
  }
  
- .tui-tree-selected > .tui-tree-content-wrapper .tui-tree-text {
+ .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-tree-text {
    font-weight: bold;
    color: var(--point);
    /* color: #4b96e6; */
+ }
+ .tui-tree-selected.tui-tree-leaf > .tui-tree-content-wrapper .tui-tree-text {
+  font-weight: bold;
+  color: #213A56;
  }
  
  .tui-tree-selected > .tui-tree-content-wrapper .tui-ico-folder,
@@ -226,9 +233,9 @@
    /* background-position: -32px -12px; */
  }
  
- .tui-tree-selected.tui-tree-closed > .tui-tree-content-wrapper .tui-ico-tree,
+ /* .tui-tree-selected.tui-tree-closed > .tui-tree-content-wrapper .tui-ico-tree, */
  .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-ico-tree {background-image: url("../../image/ico_arrowup_16_active.svg");}
- .tui-tree-selected > .tui-tree-content-wrapper .tui-ico-folder {background-image: url("../../image/ico_folder_16_active.svg");}
+ .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-ico-folder {background-image: url("../../image/ico_folder_16_active.svg");}
  
  .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-ico-folder {
    /* background-position: -32px -24px; */
@@ -245,7 +252,7 @@
 
 .tui-tree-selected.tui-tree-closed > .tui-tree-content-wrapper .tui-tree-text,
 .tui-tree-selected.tui-tree-opened > .tui-tree-content-wrapper .tui-tree-text {
-    cursor: initial;
+    /* cursor: initial; */
     font-weight: normal;
  }
  
