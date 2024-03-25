@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 	<title>SHP BO</title>
 	<meta name="format-detection" content="telephone=no">
-
 	<link rel="stylesheet" type="text/css" href="../resources/css/common/common.css"/>
 	<link rel="stylesheet" type="text/css" href="../resources/css/common/content.css"/>
 </head>
@@ -213,7 +212,7 @@
 	<!-- //js -->
 
 	<!-- css -->
-	<link rel="stylesheet" type="text/css" href="../resources/css/tui-tree.css"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/common/tui-tree.css"/>
 	<!-- //css -->
 	<script>
 		const data = [
@@ -263,6 +262,27 @@
 			}).enableFeature('Selectable', {
 				selectedClassName: 'tui-tree-selected',
 			});
+
+			let toggleBtns = document.querySelectorAll(".tui-tree-toggle-btn");
+
+			// toggleBtns.forEach((item, index) => {
+			// 	item.addEventListener("click", (e) => {
+			// 		console.log("YYYY");
+			// 		item.closest(".tui-tree-node").classList.add("tui-tree-selected");
+			// 	});
+			// })
+
+			// tree.on('clickToggleBtn', function(evt) {
+			// 	// console.log(evt.target);
+			// 	console.log(evt.target.parentElement);
+			// 	// console.log(evt);
+			// 	// console.log(toggleBtn);
+			// 	if(evt.target.parentElement === toggleBtn) {
+			// 		console.log("YYYY");
+			// 		evt.target.parentElement.closest(".tui-tree-node").classList.add("tui-tree-selected");
+			// 		// evt.target.parentElement.classList.add("tui-tree-selected");
+			// 	}
+			// });
 		}
 	</script>
 </body>
