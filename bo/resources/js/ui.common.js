@@ -4,20 +4,25 @@ window.executeLayout = function() {
     let ww = window.innerWidth;
 
     common.ui.checkDevice(ww);
-    activeTooltip("[data-tooltip]");
-    handleBookmark();
     common.allMenu.init();
-    common.leftMenu.init();
     common.ui.clearText();
+    common.ui.activeTooltip.init("[data-tooltip]");
+}
+
+window.executeMicroLnb = function() {
+    common.sidebar.init();
+    common.leftMenu.init();
+    common.ui.bookmark.init();
+    common.ui.activeTooltip.init("[data-tooltip]");
 }
 
 window.executeMacro = function() {
     let ww = window.innerWidth;
 
     common.ui.checkDevice(ww);
-    activeTooltip("[data-tooltip]");
     common.ui.handleRow.init();
     common.ui.clearText();
+    common.ui.activeTooltip.init("[data-tooltip]");
 }
 
 
@@ -310,61 +315,101 @@ const common = {
                     });
                 });
             }
-        }
-    }
-    
-}
+        },
+        bookmark: {
+            bookmark: null,
+            handler: null,
+            listWrap: null,
+            list: null,
+            titleHeight: null,
+            listWrapHeight: null,
+            openHeight: null,
+            defaultHeight: null,
+            delBtns: null,
+            init: function() {
+                if(document.getElementById("bookmark") === null) return;
 
-// 즐겨찾기
-function handleBookmark() {
-    if(document.getElementById("bookmark") === null) return;
+                bookmark = document.getElementById("bookmark");
+                handler = bookmark.querySelector(".btn_bookmark");
+                listWrap = bookmark.querySelector(".bookmark_list_wrap");
+                list = bookmark.querySelector(".bookmark_list");
+                titleHeight = bookmark.querySelector(".tit").offsetHeight;
+                defaultHeight = bookmark.offsetHeight;
+                delBtns = bookmark.querySelectorAll(".btn_ico.clear");
 
-    const bookmark = document.getElementById("bookmark");
-    const handler = bookmark.querySelector(".btn_bookmark");
-    const listWrap = bookmark.querySelector(".bookmark_list_wrap");
-    const list = bookmark.querySelector(".bookmark_list");
-    let titleHeight = bookmark.querySelector(".tit").offsetHeight;
-    let listWrapHeight = listWrap.offsetHeight;
-    let padding = 16;
-    let openHeight = titleHeight + listWrapHeight + padding + 2;
-    let defaultHeight = titleHeight + padding;
+                // console.log(bookmark.scrollHeight, bookmark.offsetHeight);
+                // console.log(titleHeight, defaultHeight);
 
-    common.ui.toggleClass(bookmark, handler, "active");
-    
-    handler.addEventListener("click", () => {
-        if(bookmark.classList.contains("active")) {
-            bookmark.style.height = `${openHeight}px`;
-            list.childElementCount > 6 ? bookmark.classList.add("shadow") : bookmark.classList.remove("shadow");
-        } else {
-            bookmark.style.height = `${defaultHeight}px`;
-            bookmark.classList.remove("shadow");
-        }
-    });
-}
+                this.initEvent();
+                this.remove();
+            },
+            initEvent: function() {
+                common.ui.toggleClass(bookmark, handler, "active");
 
-// tooltip layer
-function activeTooltip(selector) {
-    if(document.querySelector(".tooltip_btn") === null) return;
+                handler.addEventListener("click", () => {
+                    this.setHeight();
+                });
+            },
+            setHeight: function() {
+                // openHeight = bookmark.scrollHeight;
+                // openHeight = titleHeight + listWrapHeight + padding + 2;
+                listWrapHeight = listWrap.offsetHeight;
+                openHeight = listWrapHeight + defaultHeight;
+                // console.log("setHeight", openHeight);
 
-    const body = document.querySelector("body");
-    const wrap = document.querySelector(selector);
-    const handler = wrap.querySelector(".tooltip_btn");
-    const layer = wrap.querySelector(".tooltip_layer");
+                if(bookmark.classList.contains("active")) {
+                    bookmark.style.height = `${openHeight}px`;
+                    list.childElementCount > 6 ? bookmark.classList.add("shadow") : bookmark.classList.remove("shadow");
+                } else {
+                    bookmark.style.height = `${defaultHeight}px`;
+                    bookmark.classList.remove("shadow");
+                }
+            },
+            remove: function() {
+                delBtns.forEach((item, i) => {
+                    item.addEventListener("click", (e) => {
+                        item.closest("li").remove();
+                        this.setHeight();
+                    });
+                });
+            }
+        },
+        activeTooltip: {
+            // tooltip layer
+            selectorData: null,
+            wrap: null,
+            handler: null,
+            layer: null,
+            init: function(selector) {
+                if(document.querySelector(".tooltip_btn") === null) return;
 
-    handler.addEventListener("click", () => {
-        if(wrap.classList.contains("active")) {
-            wrap.classList.remove("active");
-        } else {
-            wrap.classList.add("active");
-        }
-    });
+                selectorData = selector;
+                wrap = document.querySelector(selector);
+                handler = wrap.querySelector(".tooltip_btn");
+                layer = wrap.querySelector(".tooltip_layer");
 
-    body.addEventListener("click", (e) => {
-        const target = e.target.closest(selector);
-        if(wrap.classList.contains("active")) {
-            if(target !== wrap) {
-                wrap.classList.remove("active");
+                this.initEvent();
+                this.clickBody();
+            },
+            initEvent: function() {
+                handler.addEventListener("click", () => {
+                    if(wrap.classList.contains("active")) {
+                        wrap.classList.remove("active");
+                    } else {
+                        wrap.classList.add("active");
+                    }
+                });
+            },
+            clickBody: function() {
+                body.addEventListener("click", (e) => {
+                    const target = e.target.closest(selectorData);
+                    if(wrap.classList.contains("active")) {
+                        if(target !== wrap) {
+                            wrap.classList.remove("active");
+                        }
+                    }
+                });
             }
         }
-    });
+    }
 }
