@@ -286,9 +286,9 @@ Layout
 .aside .lnb_menu > li::before {content: "";position: absolute;top: 0;left: 0;width: 2px;height: 36px;border-radius: 2px;}
 .aside .lnb_menu > li .btn_menu {position: relative;width: 100%;padding: 0 24px;font-size: 14px;line-height: 36px;text-align: left;}
 .aside .lnb_menu > li > .btn_menu {font-weight: bold;}
-.aside .lnb_menu .has_sub {overflow: hidden;height: 36px;transition: 0.4s;}
+.aside .lnb_menu .has_sub {overflow: hidden;height: 36px;transition: 0.4s;background-color: #fff;}
 .aside .lnb_menu .has_sub > .btn_menu::after {content: "";position: absolute;top: 50%;right: 24px;transform: translateY(-50%);width: 16px;height: 16px;background: url("../../image/ico_arrowdown_16.svg") no-repeat center center / contain;transition: 0.4s ease;}
-.aside .lnb_menu .lnb_depth3 {opacity: 0;}
+.aside .lnb_menu .lnb_depth3 {opacity: 0;transition: 0.4s;transition-delay: 0.1s;}
 .aside .lnb_menu .lnb_depth3 > li .btn_menu {padding-left: 40px;color: #213A56;}
 .aside .lnb_menu .lnb_depth3 > li .btn_menu::before {content: "";position: absolute;top: 50%;left: 24px;transform: translateY(-50%);width: 8px;height: 8px;margin-top: -5px;background: url("../../image/ico_depth2.svg") no-repeat 0 0 / contain;}
 .aside .lnb_menu .lnb_depth3 > li.on {background-color: #E9F2FF;}
