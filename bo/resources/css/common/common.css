@@ -270,9 +270,9 @@ Layout
 .wrap.scroll_x .container {height: calc(100vh - 130px);}
 
 /* aside */
-.aside_wrap {position: relative;width: 280px;transition: 0.4s;margin-left: -260px;}
+.aside_wrap {overflow:hidden;position: relative;flex-shrink:0;width: 280px;transition: 0.4s;margin-left: -260px;}
 .aside_wrap iframe{height: 100%;width: 100%;}
-.aside {position: relative;flex-shrink: 0;display: flex;flex-direction: column;width: 260px;height: 100vh;border-right: 1px solid #E7EBEE;transition: all 0.5s ease;background-color: #fff;}
+.aside {position: relative;flex-shrink: 0;display: flex;flex-direction: column;width: 260px;height: 100vh;border-right: 1px solid #E7EBEE;background-color: #fff;}
 .aside .aside_cont {flex: 1;overflow-y: auto;margin-top: 24px;padding-bottom: 24px;}
 .aside .aside_cont h2 {padding: 0 24px;font-size: 12px;font-weight: bold;color: #525960;line-height: 32px;}
 .aside .btn_handler {position: absolute;top: 50%;left: 100%;transform: translateY(-50%);width: 20px;height: 80px;background-color: var(--point);border-top-right-radius: 4px;border-bottom-right-radius: 4px;}
