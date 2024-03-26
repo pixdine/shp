@@ -58,6 +58,7 @@ a:hover{text-decoration:none;}
 
 
 /************************* Form *************************/
+input,
 input[type="text"],
 input[type="password"],
 input[type="search"],
@@ -197,6 +198,11 @@ input.datepicker[disabled] ~ .btn_ico.calendar{z-index: 1;}
 input.datepicker{background-color: transparent;cursor:pointer;}
 .input_date .tui-datepicker-input > input:disabled{background-color: #E7EBEE;}
 
+/*file*/
+.file input[type=file]{line-height:30px;}
+.file input[type=file]::file-selector-button{position: absolute;width: 0;height: 0;padding: 0;overflow: hidden;border: 0;}
+.file .btn{cursor:pointer;}
+
 /*tooltip layer*/
 .tooltip_layer {position: absolute;right: 0;margin-top: 8px;z-index: 1;width: max-content;border: 1px solid #DCE0E5;border-radius: 4px;background-color: #fff;opacity: 0;transition: all 0.5s ease;}
 .tooltip_layer .btns .btn {display: block;width: 100%;padding: 0 11px;font-size: 12px;text-align: left;line-height: 31px;border-radius: 0;border: none;letter-spacing: -1px;}
@@ -306,9 +312,10 @@ Layout
 .aside .bookmark_list::-webkit-scrollbar{width:10px;height:8px;}
 .aside .bookmark_list::-webkit-scrollbar-track{background-color: transparent;}
 .aside .bookmark_list::-webkit-scrollbar-thumb{background-color:#DCE0E5;border-radius:5px;border: 2px solid #fff;}
-.aside .bookmark_list > li {padding: 0 24px;}
+.aside .bookmark_list > li {display:flex;align-items:center;padding: 0 24px;}
 .aside .bookmark_list > li > a {position: relative;display: block;width: 100%;padding-left: 22px;line-height: 36px;font-size: 14px;font-weight: bold;}
 .aside .bookmark_list > li > a::before {content: "";position: absolute;top: 50%;left: 0;transform: translateY(-50%);width: 16px;height: 16px;background: url("../../image/ico_star_16.svg") no-repeat center center / contain;}
+.aside .bookmark_list > li > .btn_ico.clear{width: 20px;height: 36px;background-position: right center;background-image:url('../../image/ico_close_g_16.svg')}
 .aside .bookmark.active {padding: 16px 0 0;}
 .aside .bookmark.active .btn_bookmark::after {transform: translateY(-50%) rotate(180deg);}
 .aside .bookmark.active .bookmark_list_wrap {opacity: 1;}
