@@ -3,10 +3,10 @@ const body = document.querySelector("body");
 window.executeLayout = function() {
     let ww = window.innerWidth;
 
-    checkDevice(ww);
-    handleAllMenu();
+    common.ui.checkDevice(ww);
     activeTooltip("[data-tooltip]");
     handleBookmark();
+    common.allMenu.init();
     common.leftMenu.init();
     common.ui.clearText();
 }
@@ -14,7 +14,7 @@ window.executeLayout = function() {
 window.executeMacro = function() {
     let ww = window.innerWidth;
 
-    checkDevice(ww);
+    common.ui.checkDevice(ww);
     activeTooltip("[data-tooltip]");
     common.ui.handleRow.init();
     common.ui.clearText();
@@ -23,12 +23,12 @@ window.executeMacro = function() {
 
 window.addEventListener("resize", () => {
     let ww = window.innerWidth;
-    checkDevice(ww);
+    common.ui.checkDevice(ww);
 });
 
 const common = {
-    // 사이드바
     sidebar: {
+        // 사이드바
         sidebar: null,
         handler: null,
         handlerTxt: null,
@@ -45,8 +45,8 @@ const common = {
             this.initEvent();
         },
         initEvent: function() {
-            toggleClass(container, handler, "has_side");
-            toggleClass(sidebar, handler, "active");
+            common.ui.toggleClass(container, handler, "has_side");
+            common.ui.toggleClass(sidebar, handler, "active");
             this.checkState();
 
             handler.addEventListener("click", () => {
@@ -61,8 +61,8 @@ const common = {
             }
         },
     },
-    // lnb메뉴
     leftMenu: {
+        // lnb메뉴
         lnbWrap : null,
         lnb: null,
         btnMenu: null,
@@ -87,7 +87,6 @@ const common = {
             this.handleDepth2();
             this.clickBody();
         }, 
-        
         inintEvent: function() {
             btnMenus.forEach((item, index) => {
                 // 활성화
@@ -165,7 +164,50 @@ const common = {
             });
         }
     },
+    allMenu: {
+        // 전체메뉴
+        header: null,
+        gnb: null,
+        handler: null,
+        defaultNavHeight: null,
+        openNavHeight: null,
+        init: function() {
+            if(document.getElementById("gnb") === null) return;
+
+            header = document.querySelector("#header");
+            gnb = document.querySelector("#gnb");
+            handler = gnb.querySelector(".btn_allmenu");
+            defaultNavHeight = header.offsetHeight
+            openNavHeight = header.scrollHeight;
+
+            this.initEvent();
+        },
+        initEvent: function() {
+            common.ui.toggleClass(header, handler, "active");
+            handler.addEventListener("click", () => {
+                
+                if(header.classList.contains("active")) {
+                    header.style.height = `${openNavHeight}px`;
+                } else {
+                    header.style.height = `${defaultNavHeight}px`;
+                }
+            });
+        }
+    },
     ui: {
+        checkDevice: function(ww) {
+            // 디바이스 체크
+
+            if(document.querySelector(".wrap") === null) return;
+
+            const wrap = document.querySelector(".wrap");
+            ww < 1600 ? wrap.classList.add("scroll_x") : wrap.classList.remove("scroll_x");
+        },
+        toggleClass: function(target, handler, active) {
+            handler.addEventListener("click", () => {
+                target.classList.toggle(active);
+            });
+        },
         handleRow: {
             handler: null,
             handlerTxt: null,
@@ -273,20 +315,6 @@ const common = {
     
 }
 
-// 디바이스 체크
-function checkDevice(ww) {
-    if(document.querySelector(".wrap") === null) return;
-
-    const wrap = document.querySelector(".wrap");
-    ww < 1600 ? wrap.classList.add("scroll_x") : wrap.classList.remove("scroll_x");
-}
-
-function toggleClass(target, handler, active) {
-    handler.addEventListener("click", () => {
-        target.classList.toggle(active);
-    });
-}
-
 // 즐겨찾기
 function handleBookmark() {
     if(document.getElementById("bookmark") === null) return;
@@ -301,7 +329,7 @@ function handleBookmark() {
     let openHeight = titleHeight + listWrapHeight + padding + 2;
     let defaultHeight = titleHeight + padding;
 
-    toggleClass(bookmark, handler, "active");
+    common.ui.toggleClass(bookmark, handler, "active");
     
     handler.addEventListener("click", () => {
         if(bookmark.classList.contains("active")) {
@@ -310,30 +338,6 @@ function handleBookmark() {
         } else {
             bookmark.style.height = `${defaultHeight}px`;
             bookmark.classList.remove("shadow");
-        }
-    });
-}
-
-// 전체메뉴
-function handleAllMenu() {
-    if(document.getElementById("gnb") === null) return;
-
-    const gnb = document.querySelector("#gnb");
-    const handler = gnb.querySelector(".btn_allmenu");
-    let navHeight = gnb.querySelector(".menu_list").offsetHeight;
-    let height = 53;
-    // let activeHeight = height + navHeight;
-
-    gnb.style.height = `${height}px`;
-
-    toggleClass(gnb, handler, "active");
-
-
-    handler.addEventListener("click", () => {
-        if(gnb.classList.contains("active")) {
-            gnb.style.height = `${navHeight}px`;
-        } else {
-            gnb.style.height = `${height}px`;
         }
     });
 }
