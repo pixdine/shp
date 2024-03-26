@@ -314,8 +314,8 @@ Layout
 .aside .bookmark_list::-webkit-scrollbar-thumb{background-color:#DCE0E5;border-radius:5px;border: 2px solid #fff;}
 .aside .bookmark_list > li {display:flex;align-items:center;padding: 0 24px;}
 .aside .bookmark_list > li > a {position: relative;display: block;width: 100%;padding-left: 22px;line-height: 36px;font-size: 14px;font-weight: bold;}
-.aside .bookmark_list > li > a::before {content: "";position: absolute;top: 50%;left: 0;transform: translateY(-50%);width: 16px;height: 16px;background: url("../../image/ico_star_16.svg") no-repeat center center / contain;}
-.aside .bookmark_list > li > .btn_ico.clear{width: 20px;height: 36px;background-position: right center;background-image:url('../../image/ico_close_g_16.svg')}
+.aside .bookmark_list > li > a::before {content: "";position: absolute;top:10px;left: 0;width: 16px;height: 16px;background: url("../../image/ico_star_16.svg") no-repeat center center / contain;}
+.aside .bookmark_list > li > .btn_ico.clear{width: 20px;height: 36px;background-position: right center;background-image:url('../../image/ico_close_g_16.svg');flex-shrink:0;}
 .aside .bookmark.active {padding: 16px 0 0;}
 .aside .bookmark.active .btn_bookmark::after {transform: translateY(-50%) rotate(180deg);}
 .aside .bookmark.active .bookmark_list_wrap {opacity: 1;}
