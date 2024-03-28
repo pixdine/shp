@@ -12,25 +12,302 @@
 <body>
     <div id="wrap" class="wrap frame">
         <div id="container" class="container">
-			<div class="top_wrap">
+			<!-- 2024-03-28 : 전체 구조 수정 -->
+			<div class="tap_wrap">
 				<div class="tab">
 					<ul class="tab_menu">
+						<!-- 2024-03-28 : a태그에 tab_btn 클래스 추가 -->
 						<li class="active">
-							<a href="javascript:;">메인<span class="blind">해당 내용 보기</span></a>
+							<a href="javascript:;" class="tab_btn">메인<span class="blind">해당 내용 보기</span></a>
 							<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
 						</li>
 						<li>
-							<a href="javascript:;">강습프로그램일정<span class="blind">해당 내용 보기</span></a>
+							<a href="javascript:;" class="tab_btn">강습프로그램일정<span class="blind">해당 내용 보기</span></a>
 							<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
 						</li>
 						<li>
-							<a href="javascript:;">회원관리<span class="blind">해당 내용 보기</span></a>
+							<a href="javascript:;" class="tab_btn">회원관리<span class="blind">해당 내용 보기</span></a>
 							<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
 						</li>
+						<!-- //2024-03-28 : a태그에 tab_btn 클래스 추가 -->
 					</ul>
+
+					<div class="tab_cont">
+						<div class="tab_cont_item active">
+							<div class="section">
+								<div class="area_wrap">
+									<div class="area_left wfix"><!--width 사이즈 고정일땐 class 'wfix' 추가 / 'wfix' 없으면 width값 50%-->
+										<div class="title bdr">
+											<h2>사용자 목록 (총 <strong>3</strong>건)</h2>
+										</div>
+										<div class="sort_wrap">
+											<div class="inputbox search">
+												<input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력하세요." title="검색어 입력" autocomplete="off" value="">
+												<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+												<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+											</div>
+										</div>
+										<div class="">그리드영역</div><!--태그 삭제 후 그리드영역 추가 -->
+									</div>
+									<div class="area_right">
+										<div class="cont">
+											<div class="title bdr">
+												<h2>사용자 상세 정보</h2>
+											</div>
+											<div class="sort_wrap">
+												<div class="btn_area">
+													<button type="button" class="btn bctype2"><span>추가</span></button>
+													<button type="button" class="btn bctype2"><span>삭제</span></button>
+													<button type="button" class="btn bctype2"><span>저장</span></button>
+												</div>
+											</div>
+											<div class="table">
+												<table>
+													<colgroup>
+														<col style="width:120px">
+														<col style="width:auto">
+														<col style="width:120px">
+														<col style="width:auto">
+													</colgroup>
+													<tbody>
+														<tr>
+															<th scope="row">로그인ID<em class="required">*</em></th>
+															<td>
+																<div class="form_control">
+																	<div class="inputbox">
+																		<input type="text" placeholder="" value="" title="로그인ID를 입력해주세요" disabled="">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<button type="button" class="btn bctype1"><span>중복체크</span></button>
+																</div>
+															</td>
+															<th scope="row">비밀번호<em class="required">*</em></th>
+															<td>
+																<div class="form_control">
+																	<div class="inputbox">
+																		<input type="text" placeholder="" value="" title="비밀번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<div class="inputbox">
+																		<input type="text" placeholder="" value="" title="비밀번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<button type="button" class="btn bctype1"><span>초기화</span></button>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th scope="row">사용자명<em class="required">*</em></th>
+															<td>
+																<div class="inputbox">
+																	<input type="text" placeholder="" value="" title="사용자명을 입력해주세요">
+																	<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																</div>
+															</td>
+															<th scope="row">업무그룹<em class="required">*</em></th>
+															<td>
+																<div class="form_control">
+																	<div class="inputbox">
+																		<input type="text" placeholder="" value="" title="" disabled="">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<div class="inputbox search">
+																		<input type="search" class="inp" id="search" name="search" placeholder="" title="검색어 입력" autocomplete="off" value="" disabled="">
+																		<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th scope="row">사용자 구분</th>
+															<td>
+																<select id="idDep" title="">
+																	<option value="" selected="">임직원</option>
+																	<option value="">임직원</option>
+																</select>
+															</td>
+															<th scope="row">2차인증 사용여부<em class="required">*</em></th>
+															<td>
+																<div class="radio_list">
+																	<span class="radio">
+																		<input type="radio" id="confirm1" name="confirm" title="해당항목 선택">
+																		<label for="confirm1">Y</label>
+																	</span>
+																	<span class="radio">
+																		<input type="radio" id="confirm2" name="confirm" title="해당항목 선택">
+																		<label for="confirm2">N</label>
+																	</span>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th scope="row">접근권한</th>
+															<td>
+																<select id="idDep" title="">
+																	<option value="" selected="">접근권한</option>
+																	<option value="">접근권한</option>
+																</select>
+															</td>
+															<th scope="row">사용여부<em class="required">*</em></th>
+															<td>
+																<div class="radio_list">
+																	<span class="radio">
+																		<input type="radio" id="use1" name="use" title="해당항목 선택">
+																		<label for="use1">Y</label>
+																	</span>
+																	<span class="radio">
+																		<input type="radio" id="use2" name="use" title="해당항목 선택">
+																		<label for="use2">N</label>
+																	</span>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th scope="row">개인정보열람권한</th>
+															<td>
+																<div class="radio_list">
+																	<span class="radio">
+																		<input type="radio" id="power1" name="power" title="해당항목 선택">
+																		<label for="power1">Y</label>
+																	</span>
+																	<span class="radio">
+																		<input type="radio" id="power2" name="power" title="해당항목 선택">
+																		<label for="power2">N</label>
+																	</span>
+																</div>
+															</td>
+															<th scope="row">전화번호</th>
+															<td>
+																<div class="form_control tel">
+																	<div class="inputbox">
+																		<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<span class="dash">-</span>
+																	<div class="inputbox">
+																		<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<span class="dash">-</span>
+																	<div class="inputbox">
+																		<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th scope="row">휴대폰번호<em class="required">*</em></th>
+															<td>
+																<div class="form_control tel">
+																	<div class="inputbox">
+																		<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<span class="dash">-</span>
+																	<div class="inputbox">
+																		<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																	<span class="dash">-</span>
+																	<div class="inputbox">
+																		<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
+																		<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																	</div>
+																</div>
+															</td>
+															<th scope="row">이메일</th>
+															<td>
+																<div class="inputbox">
+																	<input type="text" placeholder="" value="" title="사용자명을 입력해주세요">
+																	<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<th scope="row">비밀번호<em class="required">*</em></th>
+															<td>
+																<div class="form_control">
+																	<div class="inputbox">
+																		<input type="text" placeholder="" value="" title="비밀번호를 입력해주세요" disabled="">
+																		<span class="txt_fix">회</span>
+																	</div>
+																	<button type="button" class="btn bctype1"><span>초기화</span></button>
+																</div>
+															</td>
+															<th scope="row">사용기간</th>
+															<td>
+																<div class="input_date range_picker_wrap">
+																	<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
+																		<input type="text" aria-label="Date" class="datepicker startpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
+																		<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+																		<div class="picker_container" style="margin-left: -1px;"></div>
+																	</span>
+																	<span class="dash">~</span>
+																	<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
+																		<input type="text" aria-label="Date" class="datepicker endpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
+																		<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
+																		<div class="picker_container" style="margin-left: -1px;"></div>
+																	</span>
+																	<button type="button" class="btn_ico delete"><span class="blind">초기화</span></button><!-- D: 초기화 버튼 클릭 시 달력 부분에 disabled 되어있는걸 readonly로 변경 -->
+																</div>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+										<div class="cont">
+											<div class="title bdr">
+												<h2>업장정보</h2>
+											</div>
+											<div class="sort_wrap">
+												<div class="btn_area">
+													<button type="button" class="btn bctype2"><span>추가</span></button>
+													<button type="button" class="btn bctype2"><span>삭제</span></button>
+													<button type="button" class="btn bctype2"><span>저장</span></button>
+												</div>
+												<div class="inputbox search">
+													<input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력하세요." title="검색어 입력" autocomplete="off" value="">
+													<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+													<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+												</div>
+											</div>
+											<div class="" style="height:100px;">그리드영역</div><!--태그 삭제 후 그리드영역 추가 -->
+										</div>
+										<div class="cont">
+											<div class="title bdr">
+												<h2>메뉴정보</h2>
+												<p>메뉴 정보는 한 사용자 별로 지정하여야 합니다.</p>
+											</div>
+											<div class="sort_wrap">
+												<div class="btn_area">
+													<button type="button" class="btn bctype2"><span>추가</span></button>
+													<button type="button" class="btn bctype2"><span>삭제</span></button>
+													<button type="button" class="btn bctype2"><span>저장</span></button>
+												</div>
+												<div class="inputbox search">
+													<input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력하세요." title="검색어 입력" autocomplete="off" value="">
+													<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
+													<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab_cont_item">
+							<div class="section">강습프로그램일정 내용</div>
+						</div>
+						<div class="tab_cont_item">
+							<div class="section">회원관리 내용</div>
+						</div>
+					</div>
 				</div>
 				<!-- D: 이전/다음 버튼 기능과 전체탭닫기 기능은 개발에서 처리 부탁드립니다. -->
-				<div class="btn_area">
+				<div class="util_btn_area"><!-- 2024-03-28 : 클래스명 변경 -->
 					<div class="arrow_btn">
 						<button type="button" class="btn_ico arrow_left" disabled><span class="blind">이전</span></button><!-- D: 이전/다음 버튼 비활성화 시 disabled 추가 -->
 						<button type="button" class="btn_ico arrow_rigth"><span class="blind">다음</span></button>
@@ -38,270 +315,7 @@
 					<button type="button" class="btn small bctype3"><span>전체탭닫기</span></button>
 				</div>
 			</div>
-			<div class="section">
-				<div class="area_wrap">
-					<div class="area_left wfix"><!--width 사이즈 고정일땐 class 'wfix' 추가 / 'wfix' 없으면 width값 50%-->
-						<div class="title bdr">
-							<h2>사용자 목록 (총 <strong>3</strong>건)</h2>
-						</div>
-						<div class="sort_wrap">
-							<div class="inputbox search">
-								<input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력하세요." title="검색어 입력" autocomplete="off" value="">
-								<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-								<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
-							</div>
-						</div>
-						<div class="">그리드영역</div><!--태그 삭제 후 그리드영역 추가 -->
-					</div>
-					<div class="area_right">
-						<div class="cont">
-							<div class="title bdr">
-								<h2>사용자 상세 정보</h2>
-							</div>
-							<div class="sort_wrap">
-								<div class="btn_area">
-									<button type="button" class="btn bctype2"><span>추가</span></button>
-									<button type="button" class="btn bctype2"><span>삭제</span></button>
-									<button type="button" class="btn bctype2"><span>저장</span></button>
-								</div>
-							</div>
-							<div class="table">
-								<table>
-									<colgroup>
-										<col style="width:120px">
-										<col style="width:auto">
-										<col style="width:120px">
-										<col style="width:auto">
-									</colgroup>
-									<tbody>
-										<tr>
-											<th scope="row">로그인ID<em class="required">*</em></th>
-											<td>
-												<div class="form_control">
-													<div class="inputbox">
-														<input type="text" placeholder="" value="" title="로그인ID를 입력해주세요" disabled="">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<button type="button" class="btn bctype1"><span>중복체크</span></button>
-												</div>
-											</td>
-											<th scope="row">비밀번호<em class="required">*</em></th>
-											<td>
-												<div class="form_control">
-													<div class="inputbox">
-														<input type="text" placeholder="" value="" title="비밀번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<div class="inputbox">
-														<input type="text" placeholder="" value="" title="비밀번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<button type="button" class="btn bctype1"><span>초기화</span></button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">사용자명<em class="required">*</em></th>
-											<td>
-												<div class="inputbox">
-													<input type="text" placeholder="" value="" title="사용자명을 입력해주세요">
-													<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-												</div>
-											</td>
-											<th scope="row">업무그룹<em class="required">*</em></th>
-											<td>
-												<div class="form_control">
-													<div class="inputbox">
-														<input type="text" placeholder="" value="" title="" disabled="">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<div class="inputbox search">
-														<input type="search" class="inp" id="search" name="search" placeholder="" title="검색어 입력" autocomplete="off" value="" disabled="">
-														<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">사용자 구분</th>
-											<td>
-												<select id="idDep" title="">
-													<option value="" selected="">임직원</option>
-													<option value="">임직원</option>
-												</select>
-											</td>
-											<th scope="row">2차인증 사용여부<em class="required">*</em></th>
-											<td>
-												<div class="radio_list">
-													<span class="radio">
-														<input type="radio" id="confirm1" name="confirm" title="해당항목 선택">
-														<label for="confirm1">Y</label>
-													</span>
-													<span class="radio">
-														<input type="radio" id="confirm2" name="confirm" title="해당항목 선택">
-														<label for="confirm2">N</label>
-													</span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">접근권한</th>
-											<td>
-												<select id="idDep" title="">
-													<option value="" selected="">접근권한</option>
-													<option value="">접근권한</option>
-												</select>
-											</td>
-											<th scope="row">사용여부<em class="required">*</em></th>
-											<td>
-												<div class="radio_list">
-													<span class="radio">
-														<input type="radio" id="use1" name="use" title="해당항목 선택">
-														<label for="use1">Y</label>
-													</span>
-													<span class="radio">
-														<input type="radio" id="use2" name="use" title="해당항목 선택">
-														<label for="use2">N</label>
-													</span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">개인정보열람권한</th>
-											<td>
-												<div class="radio_list">
-													<span class="radio">
-														<input type="radio" id="power1" name="power" title="해당항목 선택">
-														<label for="power1">Y</label>
-													</span>
-													<span class="radio">
-														<input type="radio" id="power2" name="power" title="해당항목 선택">
-														<label for="power2">N</label>
-													</span>
-												</div>
-											</td>
-											<th scope="row">전화번호</th>
-											<td>
-												<div class="form_control tel">
-													<div class="inputbox">
-														<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<span class="dash">-</span>
-													<div class="inputbox">
-														<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<span class="dash">-</span>
-													<div class="inputbox">
-														<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">휴대폰번호<em class="required">*</em></th>
-											<td>
-												<div class="form_control tel">
-													<div class="inputbox">
-														<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<span class="dash">-</span>
-													<div class="inputbox">
-														<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-													<span class="dash">-</span>
-													<div class="inputbox">
-														<input type="text" id="text1" maxlength="4" pattern="[0-9]{3}" placeholder="" value="" title="전화번호를 입력해주세요">
-														<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-													</div>
-												</div>
-											</td>
-											<th scope="row">이메일</th>
-											<td>
-												<div class="inputbox">
-													<input type="text" placeholder="" value="" title="사용자명을 입력해주세요">
-													<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<th scope="row">비밀번호<em class="required">*</em></th>
-											<td>
-												<div class="form_control">
-													<div class="inputbox">
-														<input type="text" placeholder="" value="" title="비밀번호를 입력해주세요" disabled="">
-														<span class="txt_fix">회</span>
-													</div>
-													<button type="button" class="btn bctype1"><span>초기화</span></button>
-												</div>
-											</td>
-											<th scope="row">사용기간</th>
-											<td>
-												<div class="input_date range_picker_wrap">
-													<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_start">
-														<input type="text" aria-label="Date" class="datepicker startpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
-														<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
-														<div class="picker_container" style="margin-left: -1px;"></div>
-													</span>
-													<span class="dash">~</span>
-													<span class="date tui-datepicker-input tui-datetime-input tui-has-focus date_end">
-														<input type="text" aria-label="Date" class="datepicker endpicker" disabled><!-- D: 비활성일경우 disabled 추가 -->
-														<button type="button" class="btn_ico calendar"><span class="blind">달력</span></button>
-														<div class="picker_container" style="margin-left: -1px;"></div>
-													</span>
-													<button type="button" class="btn_ico delete"><span class="blind">초기화</span></button><!-- D: 초기화 버튼 클릭 시 달력 부분에 disabled 되어있는걸 readonly로 변경 -->
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="cont">
-							<div class="title bdr">
-								<h2>업장정보</h2>
-							</div>
-							<div class="sort_wrap">
-								<div class="btn_area">
-									<button type="button" class="btn bctype2"><span>추가</span></button>
-									<button type="button" class="btn bctype2"><span>삭제</span></button>
-									<button type="button" class="btn bctype2"><span>저장</span></button>
-								</div>
-								<div class="inputbox search">
-									<input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력하세요." title="검색어 입력" autocomplete="off" value="">
-									<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-									<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
-								</div>
-							</div>
-							<div class="" style="height:100px;">그리드영역</div><!--태그 삭제 후 그리드영역 추가 -->
-						</div>
-						<div class="cont">
-							<div class="title bdr">
-								<h2>메뉴정보</h2>
-								<p>메뉴 정보는 한 사용자 별로 지정하여야 합니다.</p>
-							</div>
-							<div class="sort_wrap">
-								<div class="btn_area">
-									<button type="button" class="btn bctype2"><span>추가</span></button>
-									<button type="button" class="btn bctype2"><span>삭제</span></button>
-									<button type="button" class="btn bctype2"><span>저장</span></button>
-								</div>
-								<div class="inputbox search">
-									<input type="search" class="inp" id="name" name="name" placeholder="검색어를 입력하세요." title="검색어 입력" autocomplete="off" value="">
-									<button type="button" class="btn_ico clear"><span class="blind">삭제</span></button>
-									<button type="button" class="btn_ico search"><span class="blind">검색</span></button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
+			<!-- //2024-03-28 : 전체 구조 수정 -->
 		</div>
     </div> 
 
@@ -321,8 +335,8 @@
             // 공통 함수들 호출
             window.executeMacro();
 
-			//2024-03-22 : 캘린더 관련 스크립트
-			createDatepicker();
+			//2024-03-28 : 탭 관련 스크립트
+            common.ui.tab.init();
         }
 	</script>
 </body>

@@ -290,30 +290,124 @@ const common = {
         },
         tab: {
             tab: null,
+            menu: null,
+            pannel: null,
             menuItems: null,
-            contItems: null,
-            preveIndex: 0,
+            pannelItems: null,
+            preveIndex: null,
+            tabBtns: null,
 
-            init: function(selector) {
-                if(document.querySelector(selector) === null) return;
+            init: function() {
+                if(document.querySelector(".tab") === null) return;
 
-                tab = document.querySelector(selector);
-                menuItems = tab.querySelectorAll(".tab_menu li");
-                contItems = tab.querySelectorAll(".tab_cont .tab_cont_item");
-
-                this.initEvent();
+                tab = document.querySelectorAll(".tab");
+                tab.forEach((tabItem) => {
+                    tabBtns = tabItem.querySelectorAll(".tab_btn");
+                    this.initEvent();
+                });
+                common.ui.handleTabActive.init();
             },
             initEvent: function() {
-                // console.log(menuItems);
-                menuItems.forEach((item, index) => {
+                tabBtns.forEach((item) => {
                     item.addEventListener("click", () => {
+                        menu = item.closest(".tab_menu");
+                        menuItems = menu.querySelectorAll("li");
+                        pannel = menu.nextElementSibling;
+                        pannelItems = pannel.children;
+                        this.checkPreveIndex(menuItems);
+
                         menuItems[this.preveIndex].classList.remove("active");
-                        contItems[this.preveIndex].classList.remove("active");
-                        item.classList.add("active");
-                        contItems[index].classList.add("active");
-                        this.preveIndex = index;
+                        pannelItems[this.preveIndex].classList.remove("active");
+                        item.parentElement.classList.add("active");
+                        this.checkCurrentIndex(menuItems);
                     });
                 });
+            },
+            checkPreveIndex: function(menuItems) {
+                menuItems.forEach((item, index) => {
+                    if(item.classList.contains("active")) {
+                        this.preveIndex = index;
+                    }
+                });
+            },
+            checkCurrentIndex: function(menuItems) {
+                menuItems.forEach((item, index) => {
+                    if(item.classList.contains("active")) {
+                        this.preveIndex = index;
+                        this.activePanel(index);
+                    }
+                });
+            },
+            activePanel: function(index) {
+                pannelItems[index].classList.add("active");
+            }
+        },
+        handleTabActive: {
+            tabWrap: null,
+            tab: null,
+            tabMenu: null,
+            tabMenuItems: null,
+            tabMenuItemsSize: null,
+            tabPanel: null,
+            tabPanelItems: null,
+            btnNext: null,
+            btnPrev: null,
+            prevIndex: null,
+            init: function() {
+                if(document.querySelector(".tap_wrap") === null) return;
+
+                tabWrap = document.querySelector(".tap_wrap");
+                btnNext = tabWrap.querySelector(".arrow_rigth");
+                btnPrev = tabWrap.querySelector(".arrow_left");
+                tab = tabWrap.children[0];
+                tabMenu = tab.children[0];
+                tabPanel = tab.children[1];
+                tabMenuItems = tabMenu.querySelectorAll("li");
+                tabMenuItemsSize = tabMenuItems.length - 1;
+                tabPanelItems = tabPanel.querySelectorAll(".tab_cont_item");
+                // console.log(tabMenuItems);
+
+                this.initEvent();
+                this.checkIndex();
+                this.stateMoveBtns();
+            },
+            initEvent: function() {
+                btnNext.addEventListener("click", () => {
+                    tabMenuItems[this.prevIndex].classList.remove("active");
+                    tabPanelItems[this.prevIndex].classList.remove("active");
+                    tabMenuItems[this.prevIndex + 1].classList.add("active");
+                    tabPanelItems[this.prevIndex + 1].classList.add("active");
+                    this.checkIndex();
+                    this.stateMoveBtns();
+                });
+                btnPrev.addEventListener("click", () => {
+                    tabMenuItems[this.prevIndex].classList.remove("active");
+                    tabPanelItems[this.prevIndex].classList.remove("active");
+                    tabMenuItems[this.prevIndex - 1].classList.add("active");
+                    tabPanelItems[this.prevIndex - 1].classList.add("active");
+                    this.checkIndex();
+                    this.stateMoveBtns();
+                });
+            },
+            checkIndex: function() {
+                tabMenuItems.forEach((item, index) => {
+                    if(item.classList.contains("active")) {
+                        this.prevIndex = index;
+                    }
+                });
+            },
+            stateMoveBtns: function() {
+                if(this.prevIndex === 0) {
+                    btnPrev.disabled = true;
+                } else {
+                    btnPrev.disabled = false;
+                }
+
+                if(this.prevIndex === tabMenuItemsSize) {
+                    btnNext.disabled = true;
+                } else {
+                    btnNext.disabled = false;
+                }
             }
         },
         bookmark: {
